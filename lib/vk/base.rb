@@ -9,9 +9,7 @@ module Vk
 
   class Base
     class_attribute :identity_map, :loader, :key_field, :fields
-    self.identity_map = {}
     self.loader = Vk.request
-    self.fields = []
 
     class << self
       # Find object in identity map or initialize object
@@ -35,6 +33,11 @@ module Vk
         else
           super
         end
+      end
+
+      def inherited(subclass)
+        subclass.identity_map = {}
+        subclass.fields = []
       end
     end
 
@@ -72,6 +75,10 @@ module Vk
       else
         super
       end
+    end
+
+    def inspect
+      "#<#{self.class.name}:#{id} @attributes=#{@attributes.inspect}>"
     end
 
     protected
