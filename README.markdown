@@ -19,7 +19,7 @@ Vk is a wrapper for vk.com API
     profiles = vk.request 'getProfiles', uids: 12345
     puts profiles # [{uid: 12345, first_name: 'Ivan', last_name: 'Ivanov'}]
 
-### Usage with DSL:
+### Usage with DSL
 
     Vk.dsl!
     vk = Vk.request
@@ -28,4 +28,4 @@ Vk is a wrapper for vk.com API
 
 ## License
 
-MIT License. ©  [Alexander Semyonov](http://al.semyonov.us/),  <al@semyonov.us>, 2011
+MIT License. © [Alexander Semyonov](http://al.semyonov.us/), <al@semyonov.us>, 2011

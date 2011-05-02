@@ -6,8 +6,8 @@ begin
 
   desc 'Run specs'
   RSpec::Core::RakeTask.new do |t|
-    t.rspec_opts = %w(-fs --colors)
-    t.ruby_opts = %w(-w)
+    t.rspec_opts = %w(--color)
+    t.verbose = false
   end
 rescue LoadError
   task :spec do
