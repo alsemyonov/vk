@@ -15,16 +15,34 @@ Vk is a wrapper for vk.com API
 
 ### Basic usage
 
+Simple request. Docs ad {Vk::Request}
+
     vk = Vk.request
     profiles = vk.request 'getProfiles', uids: 12345
     puts profiles # [{uid: 12345, first_name: 'Ivan', last_name: 'Ivanov'}]
 
 ### Usage with DSL
 
+View methods list at {Vk::DSL}.
+
     Vk.dsl!
     vk = Vk.request
     profiles = vk.get_profiles([123, 456, 789], fields: %w('has_mobile'))
     puts profiles # [{uid: 1234, ..., has_mobile: 1}]
+
+### Usage with object oriented DSL
+
+Currently implemented classes: {Vk::User}, {Vk::City}, {Vk::Country}.
+
+    user = Vk::User.find 12345
+    user                    # #<Vk::User:12345 @attributes={first_name: 'Ivan', last_name: 'Ivanov', uid: 12345}>
+    user.first_name         # 'Ivan'
+    user.last_name          # 'Ivanov'
+    user.name               # 'Ivan Ivanov'
+    user.city               # #<Vk::City:1 @attributes={name: 'Moscow', cid: 1}>
+    user.country            # #<Vk::Country:1 @attributes={name: 'Russia', cid: 1}>
+    user.friends            # [#<Vk::User:1 @attributes={first_name: "Pavel", last_name: "Durov", uid: 1}>, ...]
+    user.friends.first.city # #<Vk::City:1 @attributes={name: 'Moscow', cid: 1}>
 
 ## License
 
