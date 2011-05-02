@@ -7,8 +7,14 @@ module Vk
 
     class << self
       def find_all(ids, options = {})
-        loader.get_profiles(ids, options).map do |profile|
-          new(profile['uid'], data: profile)
+        loaded_ids = ids & identity_map.keys
+        ids_to_load = ids - loaded_ids
+        identity_map.values_at(*loaded_ids).tap do |results|
+          if ids_to_load.any?
+            results << loader.get_profiles(ids - loaded_ids, options).map do |profile|
+              new(profile['uid'], data: profile)
+            end
+          end
         end
       end
     end
