@@ -19,12 +19,10 @@ module Vk
     PORT    = 80
 
     class << self
-      attr_accessor :app_id, :app_secret
-
       # Generates auth_key for viewer
       # @param [Fixnum, String] viewer_id viewer’s identifier
       def auth_key(viewer_id)
-        Digest::MD5.hexdigest("#{app_id}_#{viewer_id}_#{app_secret}")
+        Digest::MD5.hexdigest("#{Vk.app_id}_#{viewer_id}_#{Vk.app_secret}")
       end
 
       def authenticated?(viewer_id, auth_key)
@@ -32,13 +30,14 @@ module Vk
       end
 
       def dsl!
+        require 'vk/dsl'
         include Vk::DSL
       end
     end
 
     def request(method_name, data = {})
       data.merge!(
-        api_id: VK.app_id,
+        api_id: Vk.app_id,
         format: :json,
         method: method_name,
         v:      VERSION
@@ -58,7 +57,7 @@ module Vk
     private
 
     def signature(data)
-      signature = data.keys.sort.inject('') { |result, key| result << "#{key}=#{data[key]}" } << VK.app_secret
+      signature = data.keys.sort.inject('') { |result, key| result << "#{key}=#{data[key]}" } << Vk.app_secret
       Digest::MD5.hexdigest(signature)
     end
   end

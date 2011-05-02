@@ -16,6 +16,7 @@ rescue LoadError
 end
 
 begin
+  require 'yard'
   require 'yard/rake/yardoc_task'
 
   desc 'Generate documentation'

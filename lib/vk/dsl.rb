@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'vk'
 
-class VK
+module Vk
   module DSL
     # Have user installed app?
     # @param  [String] uid user’s identifier
