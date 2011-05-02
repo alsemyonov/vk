@@ -1,0 +1,3 @@
+module Vk
+  # Your code goes here...
+end
