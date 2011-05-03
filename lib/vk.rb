@@ -10,11 +10,15 @@ module Vk
   autoload :Country,  'vk/country'
 
   class << self
-    attr_accessor :app_id, :app_secret
+    attr_accessor :app_id, :app_secret, :logger
   end
 
   def request
     @request ||= Request.new
+  end
+
+  def log(text, severity = :debug)
+    Vk.logger && Vk.logger.send(severity, text)
   end
 
   def dsl!

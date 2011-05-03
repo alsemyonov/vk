@@ -45,7 +45,7 @@ module Vk
       url           = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}?#{data.to_query}&sig=#{signature(data)}")
       http_response = Net::HTTP.get_response(url).body
       json_response = JSON.parse(http_response)
-      puts(json_response)
+      Vk.log(json_response)
       json_response['response']
     end
 
