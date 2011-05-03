@@ -1,3 +1,5 @@
+require 'active_support/core_ext/object/try'
+
 module Vk
   extend self
 
@@ -13,12 +15,14 @@ module Vk
     attr_accessor :app_id, :app_secret, :logger
   end
 
+  # Request to vk.com API
+  # @return [Vk::Request] Request object
   def request
     @request ||= Request.new
   end
 
   def log(text, severity = :debug)
-    Vk.logger && Vk.logger.send(severity, text)
+    Vk.logger.try(severity, text)
   end
 
   def dsl!
