@@ -2,6 +2,12 @@
 
 Vk is a wrapper for vk.com API
 
+* [Documentation](http://rubydoc.info/gems/vk)
+* [Source](http://github.com/alsemyonov/vk)
+* [Issues](http://github.com/alsemyonov/vk/issues)
+* [Wiki](http://github.com/alsemyonov/vk/wiki)
+* [Documentation for unreleased gem version](http://rubydoc.info/github/alsemyonov/vk)
+
 ## Installation
 
     $ gem install vk
