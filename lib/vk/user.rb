@@ -11,13 +11,15 @@ module Vk
         ids_to_load = ids - loaded_ids
         identity_map.values_at(*loaded_ids).tap do |results|
           if ids_to_load.any?
-            results << loader.get_profiles(ids - loaded_ids, options).map do |profile|
+            results << loader.get_profiles(ids_to_load, options).map do |profile|
               new(profile['uid'], data: profile)
             end
           end
         end
       end
     end
+
+    attr_accessor :posts_count
 
     def name
       "#{first_name} #{last_name}"
@@ -54,6 +56,17 @@ module Vk
 
     def to_s
       name
+    end
+
+    def wall(options = {})
+      count, *posts = loader.get_wall(id, options)
+      Vk::Post::Wall.new(id, count, posts)
+    end
+    memoize :wall
+    alias posts wall
+
+    def posts_count
+      wall.count
     end
 
     protected

@@ -10,6 +10,7 @@ module Vk
   autoload :User,     'vk/user'
   autoload :City,     'vk/city'
   autoload :Country,  'vk/country'
+  autoload :Post,     'vk/post'
 
   class << self
     attr_accessor :app_id, :app_secret, :logger
