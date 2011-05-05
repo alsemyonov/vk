@@ -38,7 +38,7 @@ View methods list at {Vk::DSL}.
 
 ### Usage with object oriented DSL
 
-Currently implemented classes: {Vk::User}, {Vk::City}, {Vk::Country}.
+Currently implemented classes: {Vk::User}, {Vk::City}, {Vk::Country}, {Vk::Post}.
 
     user = Vk::User.find 12345
     user                    # #<Vk::User:12345 @attributes={first_name: 'Ivan', last_name: 'Ivanov', uid: 12345}>
@@ -49,6 +49,7 @@ Currently implemented classes: {Vk::User}, {Vk::City}, {Vk::Country}.
     user.country            # #<Vk::Country:1 @attributes={name: 'Russia', cid: 1}>
     user.friends            # [#<Vk::User:1 @attributes={first_name: "Pavel", last_name: "Durov", uid: 1}>, ...]
     user.friends.first.city # #<Vk::City:1 @attributes={name: 'Moscow', cid: 1}>
+    user.posts.first        # #<Vk::Post:1_123 @attributes={text: 'Preved!11'}>
 
 ## License
 
