@@ -82,5 +82,13 @@ module Vk
     def get_wall(uid, options = {})
       request('wall.get', options.merge(owner_id: uid))
     end
+
+    def get_wall_statuses(posts)
+      request('wall.getById', posts: posts)
+    end
+
+    def get_wall_status(id)
+      get_wall_statuses(id)[0]
+    end
   end
 end
