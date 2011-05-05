@@ -22,6 +22,7 @@ module Vk
     def name
       "#{first_name} #{last_name}"
     end
+    memoize :name
 
     def city_id
       read_attribute(:city)
@@ -30,6 +31,7 @@ module Vk
     def city
       Vk::City.find(city_id)
     end
+    memoize :city
 
     def country_id
       read_attribute(:country)
@@ -38,20 +40,24 @@ module Vk
     def country
       Vk::Country.find(country_id)
     end
+    memoize :country
 
     def friend_ids
-      @friend_ids ||= loader.get_friends(uid)
+      loader.get_friends(uid)
     end
+    memoize :friend_ids
 
     def friends(options = {})
-      @friends ||= User.find_all(friend_ids, options)
+      User.find_all(friend_ids, options)
     end
+    memoize :friends
 
     def to_s
       name
     end
 
     protected
+
     def load_data(options = {})
       @attributes = @attributes.merge(loader.get_profile(id, options))
     end
