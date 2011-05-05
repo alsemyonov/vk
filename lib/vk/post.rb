@@ -31,6 +31,10 @@ module Vk
       end
     end
 
+    def id
+      @attributes[key_field]
+    end
+
     def post_id
       "#{to_id}_#{id}"
     end
@@ -60,6 +64,18 @@ module Vk
       Vk::Post.find(read_attribute(:copy_owner_id))
     end
     memoize :copy_post
+
+    def comments_count
+      read_attribute(:comments)['count']
+    end
+
+    def likes_count
+      read_attribute(:likes)['count']
+    end
+
+    def to_s
+      text
+    end
 
     protected
 

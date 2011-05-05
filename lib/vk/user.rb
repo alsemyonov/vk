@@ -11,7 +11,7 @@ module Vk
         ids_to_load = ids - loaded_ids
         identity_map.values_at(*loaded_ids).tap do |results|
           if ids_to_load.any?
-            results << loader.get_profiles(ids_to_load, options).map do |profile|
+            results += loader.get_profiles(ids_to_load, options).map do |profile|
               new(profile['uid'], data: profile)
             end
           end

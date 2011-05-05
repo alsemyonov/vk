@@ -80,6 +80,7 @@ module Vk
     # @option options [:owner, :others, :all] :filter (:all) what kind of statuses to request
     # @return [Array<Fixnum, *Hash>] count of statuses and each status in hash
     def get_wall(uid, options = {})
+      options[:filter] ||= :all
       request('wall.get', options.merge(owner_id: uid))
     end
 

@@ -63,7 +63,7 @@ module Vk
     end
 
     def id
-      @attributes[key_field]
+      @attributes[key_field].to_i
     end
 
     def read_attribute(name)
