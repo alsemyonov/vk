@@ -28,4 +28,9 @@ module Vk
   def dsl!
     Request.dsl!
   end
+
+  def log!
+    require 'logger'
+    self.logger = Logger.new STDOUT
+  end
 end
