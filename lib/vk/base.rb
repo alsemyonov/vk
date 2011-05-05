@@ -75,7 +75,9 @@ module Vk
 
     def method_missing(method, *args)
       if @attributes.key?(method)
-        @attributes[method.to_s]
+        @attributes[method]
+      elsif self.class.fields.include?(name.to_sym)
+        read_attribute(name)
       else
         super
       end
