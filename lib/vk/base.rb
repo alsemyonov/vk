@@ -3,11 +3,14 @@ require 'vk'
 require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/array/extract_options'
 require 'active_support/hash_with_indifferent_access'
+require 'active_support/memoizable'
 
 module Vk
   dsl! # require DSL methods in Vk::Request
 
   class Base
+    extend ActiveSupport::Memoizable
+
     class_attribute :identity_map, :loader, :key_field, :fields
     self.loader = Vk.request
 
@@ -26,6 +29,7 @@ module Vk
           end
         end
       end
+      alias [] find
 
       def method_missing(method, *args)
         if identity_map.respond_to?(method)
