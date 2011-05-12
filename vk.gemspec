@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency('activesupport', '~> 3.0')
-  s.add_dependency('json', '~> 1.5.1')
 
   s.add_development_dependency('rspec', '~> 2.5.0')
   s.add_development_dependency('yard', '~> 0.6.8')
