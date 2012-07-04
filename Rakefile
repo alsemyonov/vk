@@ -1,4 +1,4 @@
-require 'bundler'
+require 'bundler/setup'
 Bundler::GemHelper.install_tasks
 
 begin
@@ -26,3 +26,5 @@ rescue LoadError
     abort 'install yard to generate documentation ($ bundle install)'
   end
 end
+
+task default: :spec
