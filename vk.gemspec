@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('activesupport', '~> 3.0')
 
-  s.add_development_dependency('rspec', '~> 2.5.0')
-  s.add_development_dependency('yard', '~> 0.6.8')
+  s.add_development_dependency('rspec', '~> 2.10.0')
+  s.add_development_dependency('yard', '~> 0.8.2')
+  s.add_development_dependency('redcarpet', '~> 2.1.1')
 end
