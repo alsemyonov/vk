@@ -65,3 +65,7 @@ Currently implemented classes: {Vk::User}, {Vk::City}, {Vk::Country}, {Vk::Post}
 ## License
 
 MIT License. © [Alexander Semyonov](http://al.semyonov.us/), <al@semyonov.us>, 2011-2013
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alsemyonov/vk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
