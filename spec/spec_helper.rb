@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'vk'
+require 'webmock/rspec'
 
 Bundler.require(:development)
 
