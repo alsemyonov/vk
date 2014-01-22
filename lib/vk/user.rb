@@ -22,47 +22,47 @@ module Vk
     attr_accessor :posts_count
 
     def name
-      "#{first_name} #{last_name}"
+      @name ||= "#{first_name} #{last_name}"
     end
-    memoize :name
 
     def city_id
       read_attribute(:city)
     end
 
     def city
-      Vk::City.find(city_id)
+      @city ||= Vk::City.find(city_id)
     end
-    memoize :city
 
     def country_id
       read_attribute(:country)
     end
 
     def country
-      Vk::Country.find(country_id)
+      @country ||= Vk::Country.find(country_id)
     end
-    memoize :country
 
     def friend_ids
-      loader.get_friends(uid)
+      @friend_ids ||= loader.get_friends(uid)
     end
-    memoize :friend_ids
 
     def friends(options = {})
-      User.find_all(friend_ids, options)
+      @friends ||= {}
+      @friends[options] ||= User.find_all(friend_ids, options)
     end
-    memoize :friends
 
     def to_s
       name
     end
 
     def wall(options = {})
-      count, *posts = loader.get_wall(id, options)
-      Vk::Post::Wall.new(id, count, posts)
+      @wall ||= {}
+      @wall[options] ||=
+        begin
+          count, *posts = loader.get_wall(id, options)
+          Vk::Post::Wall.new(id, count, posts)
+        end
     end
-    memoize :wall
+
     alias posts wall
 
     def posts_count

@@ -36,34 +36,28 @@ module Vk
     end
 
     def post_id
-      "#{to_id}_#{id}"
+      @post_id ||= "#{to_id}_#{id}"
     end
-    memoize :post_id
 
     def to
-      Vk::User.find(read_attribute(:to_id))
+      @to ||= Vk::User.find(read_attribute(:to_id))
     end
-    memoize :to
 
     def from
-      Vk::User.find(read_attribute(:from_id))
+      @from ||= Vk::User.find(read_attribute(:from_id))
     end
-    memoize :from
 
     def date
-      Time.at(read_attribute(:date))
+      @date ||= Time.at(read_attribute(:date))
     end
-    memoize :date
 
     def copy_owner
-      Vk::User.find(read_attribute(:copy_owner_id))
+      @copy_owner ||= Vk::User.find(read_attribute(:copy_owner_id))
     end
-    memoize :copy_owner
 
     def copy_post
-      Vk::Post.find(read_attribute(:copy_owner_id))
+      @copy_post ||= Vk::Post.find(read_attribute(:copy_owner_id))
     end
-    memoize :copy_post
 
     def comments_count
       read_attribute(:comments)['count']

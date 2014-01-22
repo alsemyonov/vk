@@ -5,8 +5,6 @@ require 'delegate'
 module Vk
   class Post
     class Wall
-      extend ActiveSupport::Memoizable
-
       attr_accessor :uid, :count, :posts
 
       def initialize(uid, count, posts)
@@ -14,16 +12,14 @@ module Vk
       end
 
       def user
-        Vk::User.find(uid)
+        @user ||= Vk::User.find(uid)
       end
-      memoize :user
 
       def [](index)
         raise "Post #{index} is not exist"  if index > count + 1
         load_posts_to(index)                if index >= loaded_posts
-        if post = posts[index]
-          Vk::Post.find(Vk::Post.id_for(post), data: post)
-        end
+        post = posts[index]
+        Vk::Post.find(Vk::Post.id_for(post), data: post) if post
       end
 
       def first; self[0]; end

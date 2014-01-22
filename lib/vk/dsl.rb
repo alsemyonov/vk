@@ -51,15 +51,16 @@ module Vk
     end
 
     # Countries’ names
-    # @param [Array<Fixnum>, Fixnum] cids cities identifiers
+    # @param [Array<Fixnum>, Fixnum] country_ids cities identifiers
     # @return [Array<Hash>] hash with city identifier and it’s name
-    def get_countries(cids)
-      cids = Array(cids).join(',')
-      request('getCountries', cids: cids)
+    def get_countries(country_ids)
+      country_ids = Array(country_ids).join(',')
+      request('getCountries', cids: country_ids)
     end
 
-    def get_country(cid)
-      get_countries(cid)[0]
+    # @param [Fixnum] country_id
+    def get_country(country_id)
+      get_countries(country_id)[0]
     end
 
     # Friends information
