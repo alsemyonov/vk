@@ -11,6 +11,7 @@ module Vk
   autoload :City,     'vk/city'
   autoload :Country,  'vk/country'
   autoload :Post,     'vk/post'
+  autoload :Stats,    'vk/stats'
 
   class << self
     attr_accessor :app_id, :app_secret, :logger
