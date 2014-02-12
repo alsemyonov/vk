@@ -67,3 +67,5 @@ user.posts.first        # => #<Vk::Post:1_123 @attributes={text: 'Preved!11'}>
 ## License
 
 MIT License. © [Alexander Semyonov](http://al.semyonov.us/), <al@semyonov.us>, 2011-2014
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/alsemyonov/vk/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
