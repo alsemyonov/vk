@@ -12,11 +12,11 @@ module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Request
-    VERSION = '3.0'
-    SCHEME  = 'http'
+    VERSION = '5.7'
+    SCHEME  = 'https'
     HOST    = 'api.vk.com'
-    PATH    = '/api.php'
-    PORT    = 80
+    PATH    = '/method/'
+    PORT    = 443
 
     class << self
       # Generates auth_key for viewer
@@ -35,15 +35,20 @@ module Vk
       end
     end
 
+    def initialize(access_token = nil)
+      @access_token = access_token
+    end
+
+    attr_accessor :access_token
+
     def request(method_name, data = {})
       data.merge!(
         api_id: Vk.app_id,
-        format: :json,
-        method: method_name,
-        v:      VERSION
+        v: VERSION,
       )
+      data[:access_token] = access_token if access_token
       Vk.log(data)
-      url           = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}?#{data.to_query}&sig=#{signature(data)}")
+      url           = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}?#{data.to_query}")
       http_response = Net::HTTP.get_response(url).body
       json_response = JSON.parse(http_response)
       Vk.log(json_response)

@@ -13,7 +13,7 @@ module Vk
     # Profile information for provided uids or domain names
     # @param [Array<String>] uids array of users’ identifiers in numbers or domain names
     # @param [Hash] options the options to request profile information
-    # @option options [:uid, :first_name, :last_name, :nickname, :domain, :sex, :bdate, :birthdate, :city, :country, :timezone, :photo, :photo_medium, :photo_big, :has_mobile, :rate, :contacts, :education, :online] :fields ([:uid, :first_name, :last_name]) profile fields to requests
+    # @option options [:user_id, :first_name, :last_name, :nickname, :domain, :sex, :bdate, :birthdate, :city, :country, :timezone, :photo, :photo_medium, :photo_big, :has_mobile, :rate, :contacts, :education, :online] :fields ([:user_id, :first_name, :last_name]) profile fields to requests
     # @option options [:nom, :gen, :dat, :acc, :ins, :abl] :name_case (:nom) case of returned names
     # @return [Array<Hash>] array of user profile data
     def get_profiles(uids, options = {})
@@ -28,26 +28,48 @@ module Vk
     end
 
     def get_profile(uid, options = {})
-      get_profiles(uid, options)[0]
+      get_profiles(uid, options).try(:first) || {}
     end
 
-    ## Identifiers of groups in which user participates
-    ## @param [Integer] uid user’s identifier
-    ## @return [Array] array of group identifiers
-    #def get_groups(uid)
-      #request('getGroups', uid: uid)
-    #end
+    # Identifiers of groups in which user participates
+    # @param [Integer] user_id user’s identifier
+    # @param [Hash] options
+    # @option options [Boolean] :extended (0)
+    # @option options [<:admin, :editor, :moder, :groups, :publics, :events>] :filter
+    # @option options [<:city, :country, :place, :description, :wiki_page, :members_count, :counters, :start_date, :end_date, :can_post, :can_see_all_posts, :activity, :status, :contacts, :links, :fixed_post, :verified, :site, :can_create_topic>] :fields
+    # @option options [Fixnum] :offset
+    # @option options [Fixnum] :count
+    # @return [Array] array of group identifiers
+    def get_groups(user_id, options = {})
+      options[:user_id] = user_id
+      options[:extended] = !!options[:extended] ? 1 : 0 if options[:extended]
+      options[:filter] = options[:filter].map(&:to_s).join(',') if options[:filter]
+      options[:fields] = options[:fields].map(&:to_s).join(',') if options[:fields]
+      request('groups.get', options)
+    end
+
+    def get_group(group_id, options = {})
+      group_param = group_id.is_a?(Array) ? :group_ids : :group_id
+      options[group_param] = group_id
+      result = request('groups.getById', options)
+      if group_param == :group_id
+        result.first
+      else
+        result
+      end
+    end
 
     # Cities’ names
-    # @param [Array<Fixnum>, Fixnum] cids cities identifiers
+    # @param [Array<Fixnum>, Fixnum] city_ids cities identifiers
     # @return [Array<Hash>] hash with city identifier and it’s name
-    def get_cities(cids)
-      cids = Array(cids).join(',')
-      request('getCities', cids: cids)
+    def get_cities(city_ids)
+      city_ids = Array(city_ids).join(',')
+      request('getCities', cids: city_ids)
     end
 
+    # @return [Vk::City]
     def get_city(cid)
-      get_cities(cid)[0]
+      get_cities(cid).try(:first) || {}
     end
 
     # Countries’ names
@@ -66,7 +88,7 @@ module Vk
     # Friends information
     # @param [Fixnum] uid user identifier
     # @param [Hash] options
-    # @option options [Array<String>] :fields ([:uid, :first_name, :last_name]) what fields to request
+    # @option options [Array<String>] :fields ([:user_id, :first_name, :last_name]) what fields to request
     # @option options [Fixnum] :count how many friends to request
     # @option options [Fixnum] :offset offset of friends to request
     def get_friends(uid, options = {})

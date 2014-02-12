@@ -8,7 +8,12 @@ module Vk
   dsl! # require DSL methods in Vk::Request
 
   class Base
-    class_attribute :identity_map, :loader, :key_field, :fields
+    class_attribute :identity_map
+    # @return [Vk::Request]
+    class_attribute :loader
+    class_attribute :key_field
+    class_attribute :fields
+    self.fields = []
     self.loader = Vk.request
 
     class << self
@@ -38,6 +43,7 @@ module Vk
       end
 
       def inherited(subclass)
+        super(subclass)
         subclass.identity_map = {}
         subclass.fields = []
       end
@@ -56,29 +62,37 @@ module Vk
       end
     end
 
+    attr_reader :attributes
+
     def id=(id)
       @attributes[key_field] = id
     end
 
     def id
-      @attributes[key_field].to_i
+      @attributes[key_field]
     end
 
     def read_attribute(name)
-      if !@attributes.key?(name) && fields.include?(name.to_sym)
+      if !@attributes.key?(name) && self.class.fields.include?(name.to_sym)
         load_data(fields: name)
       end
       @attributes[name]
     end
 
     def method_missing(method, *args)
-      if @attributes.key?(method)
+      if method =~ /\?\Z/
+        respond_to_missing?(method) && @attributes[method]
+      elsif @attributes.key?(method)
         @attributes[method]
-      elsif self.class.fields.include?(name.to_sym)
-        read_attribute(name)
+      elsif self.class.fields.include?(method.to_sym)
+        read_attribute(method.to_s)
       else
         super
       end
+    end
+
+    def respond_to_missing?(method)
+      @attributes.key?(method) || self.class.fields.include?(method.to_sym)
     end
 
     def inspect

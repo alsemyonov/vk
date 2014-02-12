@@ -1,6 +1,6 @@
 require 'vk'
 require 'vk/base'
-require 'active_support/core_ext/class/attribute'
+require 'active_support/core_ext/module/attribute_accessors'
 
 module Vk
   module Stats
@@ -8,7 +8,7 @@ module Vk
 
     module_function
 
-    class_attribute :loader
+    mattr_accessor :loader
 
     self.loader = Vk.request
 
@@ -20,32 +20,43 @@ module Vk
     def get(options = {})
       options[:date_from] = options[:date_from].to_date.strftime(TIME_FORMAT) if options.key?(:date_from)
       options[:date_to] = options[:date_to].to_date.strftime(TIME_FORMAT) if options.key?(:date_to)
+      result = loader.request('stats.get', options)
+      result.map { |period| Period.new(period['day'], data: period) } if result
     end
 
     class Period < Vk::Base
-      self.key_field = :date
+      self.key_field = :day
       self.fields = [
-        :views, :visitors, :reach, :reach_subscribers, :sex, :age, :sex_age, :cities, :countries
+        :views, :visitors, :reach, :reach_subscribers, :subscribed, :unsubscribed, :sex, :age, :sex_age, :cities, :countries
       ]
 
+      def date
+        @date ||= Date.parse(read_attribute(:day))
+      end
+
       def sex
-        @sex ||= read_attribute(:sex).map { |sex| Sex.new(sex) }
+        @sex ||= (read_attribute(:sex) || []).map { |sex| Vk::Stats::Sex.new(nil, data: sex) if sex }.compact
       end
 
       def age
-        @age ||= read_attribute(:age).map { |age| Age.new(age) }
+        @age ||= (read_attribute(:age) || []).map { |age| Vk::Stats::Age.new(nil, data: age) if age }.compact
       end
 
       def sex_age
-        @sex_age ||= read_attribute(:sex_age).map { |sex_age| SexAge.new(sex_age) }
+        @sex_age ||= (read_attribute(:sex_age) || []).map { |sex_age| Vk::Stats::SexAge.new(nil, data: sex_age) if sex_age }.compact
       end
 
       def cities
-        @cities ||= read_attribute(:cities).map { |city| City.new(city) }
+        @cities ||= (read_attribute(:cities) || []).map { |city| Vk::Stats::City.new(nil, data: city) if city }.compact
       end
 
       def countries
-        @countries ||= read_attribute(:countries).map { |city| Country.new(city) }
+        @countries ||= (read_attribute(:countries) || []).map { |country| Vk::Stats::Country.new(nil, data: country) if country }.compact
+      end
+
+      private
+
+      def load_data(*)
       end
     end
 
