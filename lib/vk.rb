@@ -12,6 +12,7 @@ module Vk
   autoload :Country,  'vk/country'
   autoload :Post,     'vk/post'
   autoload :Stats,    'vk/stats'
+  autoload :Group,    'vk/group'
 
   class << self
     attr_accessor :app_id, :app_secret, :logger
@@ -19,8 +20,8 @@ module Vk
 
   # Request to vk.com API
   # @return [Vk::Request] Request object
-  def request
-    @request ||= Request.new
+  def request(access_token = nil)
+    @request ||= Request.new(access_token)
   end
 
   def log(text, severity = :debug)
