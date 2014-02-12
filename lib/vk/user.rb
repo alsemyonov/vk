@@ -69,6 +69,26 @@ module Vk
       wall.count
     end
 
+    # @param [Hash] options
+    # @see Vk::Request.get_groups
+    # @return [Vk::Group, nil]
+    def groups(options = {})
+      @groups ||= {}
+      options[:extended] = true
+      index = options.hash
+      @groups[index] ||=
+        begin
+          result = loader.get_groups(id, options)
+          return unless result
+          result['items'] ||= []
+          result['items'] = result['items'].map do |group|
+            Vk::Group.new(group['id'], data: group)
+          end
+          result
+        end
+      @groups[index]['items']
+    end
+
     protected
 
     def load_data(options = {})
