@@ -1,7 +1,7 @@
 require 'vk/base'
 
 module Vk
-  class Country < Base
+  class Street < Base
     self.key_field = :id
     self.fields = [:id, :title]
 
@@ -12,7 +12,7 @@ module Vk
     protected
 
     def load_data(options = {})
-      @attributes = @attributes.merge(loader.get_country_by_id(id))
+      @attributes = @attributes.merge(loader.get_street_by_id(id))
     end
   end
 end

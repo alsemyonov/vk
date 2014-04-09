@@ -1,8 +1,11 @@
 # coding: utf-8
 require 'vk'
+require 'vk/dsl/database'
 
 module Vk
   module DSL
+    include Database
+
     # Have user installed app?
     # @param  [String] uid user’s identifier
     # @return [Boolean]             does user installed app
@@ -57,32 +60,6 @@ module Vk
       else
         result
       end
-    end
-
-    # Cities’ names
-    # @param [Array<Fixnum>, Fixnum] city_ids cities identifiers
-    # @return [Array<Hash>] hash with city identifier and it’s name
-    def get_cities(city_ids)
-      city_ids = Array(city_ids).join(',')
-      request('getCities', cids: city_ids)
-    end
-
-    # @return [Vk::City]
-    def get_city(cid)
-      get_cities(cid).try(:first) || {}
-    end
-
-    # Countries’ names
-    # @param [Array<Fixnum>, Fixnum] country_ids cities identifiers
-    # @return [Array<Hash>] hash with city identifier and it’s name
-    def get_countries(country_ids)
-      country_ids = Array(country_ids).join(',')
-      request('getCountries', cids: country_ids)
-    end
-
-    # @param [Fixnum] country_id
-    def get_country(country_id)
-      get_countries(country_id)[0]
     end
 
     # Friends information

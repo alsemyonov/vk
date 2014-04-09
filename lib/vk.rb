@@ -1,10 +1,12 @@
 require 'active_support/core_ext/object/try'
+require 'vk/exceptions'
 
 module Vk
   extend self
 
   autoload :DSL,      'vk/dsl'
   autoload :Request,  'vk/request'
+  autoload :Result,   'vk/result'
 
   autoload :Base,     'vk/base'
   autoload :User,     'vk/user'

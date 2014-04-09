@@ -52,6 +52,11 @@ module Vk
     def initialize(id, options = {})
       @attributes = ActiveSupport::HashWithIndifferentAccess.new
 
+      if id.is_a?(Hash)
+        options[:data] = id
+        id = options[:data][key_field.to_s]
+      end
+
       self.id = id
       self.class.identity_map[id] = self
 
@@ -102,7 +107,7 @@ module Vk
     protected
 
     def load_data(options = {})
-      raise 'Not implemented. Use subclasses'
+      # raise 'Not implemented. Use subclasses'
     end
   end
 end

@@ -35,23 +35,33 @@ module Vk
       end
 
       def sex
-        @sex ||= (read_attribute(:sex) || []).map { |sex| Vk::Stats::Sex.new(nil, data: sex) if sex }.compact
+        @sex ||= (read_attribute(:sex) || []).map do |sex|
+          Vk::Stats::Sex.new(nil, data: sex) if sex
+        end.compact
       end
 
       def age
-        @age ||= (read_attribute(:age) || []).map { |age| Vk::Stats::Age.new(nil, data: age) if age }.compact
+        @age ||= (read_attribute(:age) || []).map do |age|
+          Vk::Stats::Age.new(nil, data: age) if age
+        end.compact
       end
 
       def sex_age
-        @sex_age ||= (read_attribute(:sex_age) || []).map { |sex_age| Vk::Stats::SexAge.new(nil, data: sex_age) if sex_age }.compact
+        @sex_age ||= (read_attribute(:sex_age) || []).map do |sex_age|
+          Vk::Stats::SexAge.new(nil, data: sex_age) if sex_age
+        end.compact
       end
 
       def cities
-        @cities ||= (read_attribute(:cities) || []).map { |city| Vk::Stats::City.new(nil, data: city) if city }.compact
+        @cities ||= (read_attribute(:cities) || []).map do |city|
+          Vk::Stats::City.new(nil, data: city) if city
+        end.compact
       end
 
       def countries
-        @countries ||= (read_attribute(:countries) || []).map { |country| Vk::Stats::Country.new(nil, data: country) if country }.compact
+        @countries ||= (read_attribute(:countries) || []).map do |country|
+          Vk::Stats::Country.new(nil, data: country) if country
+        end.compact
       end
 
       private
