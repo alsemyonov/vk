@@ -11,7 +11,7 @@ require 'json'
 module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
-  class Request
+  class Client
     VERSION = '5.19'
     SCHEME = 'https'
     HOST = 'api.vk.com'
@@ -50,11 +50,11 @@ module Vk
         v: VERSION,
       )
       data[:access_token] = access_token if access_token
-      Vk.log(data)
+      Vk.logger.info(data)
       url = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}?#{data.to_query}")
       http_response = Net::HTTP.get_response(url).body
       json_response = JSON.parse(http_response)
-      Vk.log(json_response)
+      Vk.logger.debug(json_response)
       json_response['response']
     end
 

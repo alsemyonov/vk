@@ -26,6 +26,8 @@ module Vk
         end
       end
 
+      # @param [String] country_id
+      # @return [Vk::Country]
       def get_country_by_id(country_id)
         get_countries_by_id(country_id).first
       end
@@ -57,7 +59,6 @@ module Vk
         get_streets_by_id(street_id).first
       end
       alias get_street get_street_by_id
-
 
       # Cities’ names
       # @param [Array<Fixnum>, Fixnum] city_ids cities identifiers

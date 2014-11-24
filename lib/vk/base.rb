@@ -2,6 +2,7 @@ require 'vk'
 
 require 'active_support/core_ext/class/attribute'
 require 'active_support/core_ext/array/extract_options'
+require 'active_support/core_ext/hash/indifferent_access'
 require 'active_support/hash_with_indifferent_access'
 
 module Vk
@@ -15,38 +16,37 @@ module Vk
     class_attribute :fields
     self.fields = []
     self.loader = Vk.request
+    self.key_field = :id
 
-    class << self
-      # Find object in identity map or initialize object
-      def find(*ids)
-        options = ids.extract_options!
-        if ids.count == 1
-          id = ids.first.to_i
-          identity_map[id] ||= new(id, options)
-        elsif respond_to?(:find_all)
-          find_all(ids, options)
-        else
-          ids.map do |id|
-            find(id, options)
-          end
+    # Find object in identity map or initialize object
+    def self.find(*ids)
+      options = ids.extract_options!
+      if ids.count == 1
+        id = ids.first.to_i
+        identity_map[id] ||= new(id, options)
+      elsif respond_to?(:find_all)
+        find_all(ids, options)
+      else
+        ids.map do |id|
+          find(id, options)
         end
       end
+    end
 
-      alias [] find
+    instance_eval { alias [] find }
 
-      def method_missing(method, *args)
-        if identity_map.respond_to?(method)
-          identity_map.send(method, *args)
-        else
-          super
-        end
+    def self.method_missing(method, *args)
+      if identity_map.respond_to?(method)
+        identity_map.send(method, *args)
+      else
+        super
       end
+    end
 
-      def inherited(subclass)
-        super(subclass)
-        subclass.identity_map = {}
-        subclass.fields = []
-      end
+    def self.inherited(subclass)
+      super(subclass)
+      subclass.identity_map = {}
+      subclass.fields = []
     end
 
     def initialize(id, options = {})
@@ -61,7 +61,7 @@ module Vk
       self.class.identity_map[id] = self
 
       if options.key? :data
-        @attributes.merge!(options[:data])
+        @attributes.merge!(options[:data].with_indifferent_access)
       else
         load_data(options)
       end
