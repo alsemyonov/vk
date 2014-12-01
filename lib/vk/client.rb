@@ -53,6 +53,7 @@ module Vk
       Vk.logger.info(data)
       url = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}?#{data.to_query}")
       http_response = Net::HTTP.get_response(url).body
+      return unless http_response.present?
       json_response = JSON.parse(http_response)
       Vk.logger.debug(json_response)
       json_response['response']
