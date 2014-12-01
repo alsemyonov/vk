@@ -34,7 +34,7 @@ module Vk
       @items.each do |item|
         block.call(item)
       end
-      while amount < count
+      while amount && count && amount < count
         increase_offset!
         load_items(&block)
       end
@@ -70,6 +70,7 @@ module Vk
     def load_items(&block)
       raise Vk::TooMuchArguments.new('database.getCountries', 'count', 1000) if @options[:count].try(:>, 1000)
       data = @request.request(@method, @options)
+      return unless data
       @count = data['count']
       data['items'].each do |item|
         item = @items_class.new(item.merge(@merged_attributes))
