@@ -20,7 +20,7 @@ module Vk
     def get(options = {})
       options[:date_from] = options[:date_from].to_date.strftime(TIME_FORMAT) if options.key?(:date_from)
       options[:date_to] = options[:date_to].to_date.strftime(TIME_FORMAT) if options.key?(:date_to)
-      result = loader.client('stats.get', options)
+      result = loader.request('stats.get', options)
       result.map { |period| Period.new(period['day'], data: period) } if result
     end
 
