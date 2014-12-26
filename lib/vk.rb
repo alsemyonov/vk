@@ -2,8 +2,9 @@ require 'active_support/core_ext/object/try'
 require 'vk/exceptions'
 
 module Vk
-  autoload :DSL, 'vk/dsl'
   autoload :Client, 'vk/client'
+  autoload :DSL, 'vk/dsl'
+  autoload :Error, 'vk/error'
   autoload :Result, 'vk/result'
 
   autoload :Base, 'vk/base'
@@ -38,8 +39,8 @@ module Vk
 
   # Request to vk.com API
   # @return [Vk::Client] Request object
-  def request(access_token = nil)
-    @request ||= Client.new(access_token)
+  def client(access_token = nil)
+    @client ||= Client.new(access_token)
   end
 
   def log(text, severity = :debug)

@@ -15,7 +15,7 @@ module Vk
     class_attribute :key_field
     class_attribute :fields
     self.fields = []
-    self.loader = Vk.request
+    self.loader = Vk.client
     self.key_field = :id
 
     # Find object in identity map or initialize object
@@ -73,8 +73,9 @@ module Vk
       @attributes[key_field] = id
     end
 
+    # @return [String]
     def id
-      @attributes[key_field]
+      @attributes[key_field].to_s
     end
 
     def read_attribute(name)
@@ -98,6 +99,14 @@ module Vk
 
     def respond_to_missing?(method)
       @attributes.key?(method) || self.class.fields.include?(method.to_sym)
+    end
+
+    def logger
+      Vk.logger
+    end
+
+    def to_hash
+      attributes.to_hash
     end
 
     def inspect

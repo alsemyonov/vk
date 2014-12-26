@@ -31,7 +31,7 @@ module Vk
 
     protected
 
-    def load_data(options = {})
+    def load_data(options = {fields: self.class.fields})
       @attributes = @attributes.merge(loader.get_group_by_id(id, options)) unless @attributes.size > 1
     end
   end

@@ -12,7 +12,7 @@ module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Client
-    VERSION = '5.19'
+    VERSION = '5.27'
     SCHEME = 'https'
     HOST = 'api.vk.com'
     PATH = '/method/'
@@ -50,12 +50,17 @@ module Vk
         v: VERSION,
       )
       data[:access_token] = access_token if access_token
-      Vk.logger.info(data)
+      Vk.logger.info("#{method_name}(#{data.inspect})")
       url = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}?#{data.to_query}")
       http_response = Net::HTTP.get_response(url).body
       return unless http_response.present?
       json_response = JSON.parse(http_response)
       Vk.logger.debug(json_response)
+      if json_response['error']
+        Vk.logger.error(json_response['error']['error_msg'])
+        Vk.logger.debug(json_response)
+        raise Vk::Error.new(json_response)
+      end
       json_response['response']
     end
 

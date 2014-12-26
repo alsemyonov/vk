@@ -7,7 +7,7 @@ module Vk
     def initialize(method, items_class, options = {}, merged_attributes = {})
       @items = []
       @amount = 0
-      @request = options.delete(:request) { Vk.request }
+      @client = options.delete(:client) { Vk.client }
       @items_class = items_class
       @method = method
       @options = options
@@ -57,6 +57,8 @@ module Vk
       end
     end
 
+    # @param [String] name
+    # @param [Boolean] include_all
     def respond_to_missing?(name, include_all)
       @items_class.respond_to?(name, include_all)
     end
@@ -68,8 +70,8 @@ module Vk
     end
 
     def load_items(&block)
-      raise Vk::TooMuchArguments.new('database.getCountries', 'count', 1000) if @options[:count].try(:>, 1000)
-      data = @request.request(@method, @options)
+      raise Vk::TooMuchArguments.new(@method, 'count', 1000) if @options[:count].try(:>, 1000)
+      data = @client.request(@method, @options)
       return unless data
       @count = data['count']
       data['items'].each do |item|

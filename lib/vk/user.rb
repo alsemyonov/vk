@@ -2,8 +2,8 @@ require 'vk/base'
 
 module Vk
   class User < Base
-    self.key_field = :uid
-    self.fields = [:uid, :first_name, :last_name, :nickname, :domain, :sex, :bdate, :birthdate, :city, :country, :timezone, :photo, :photo_medium, :photo_big, :has_mobile, :rate, :contacts, :education, :online]
+    self.key_field = :id
+    self.fields = %i(sex bdate city country photo_50 photo_100 photo_200_orig photo_200 photo_400_orig photo_max photo_max_orig photo_id online online_mobile domain has_mobile contacts connections site education universities schools can_post can_see_all_posts can_see_audio can_write_private_message status last_seen common_count relation relatives counters screen_name maiden_name timezone occupation activities interests music movies tv books games about quotes personal)
 
     class << self
       def find_all(ids, options = {})
@@ -11,7 +11,7 @@ module Vk
         ids_to_load = ids - loaded_ids
         identity_map.values_at(*loaded_ids).tap do |results|
           if ids_to_load.any?
-            results += loader.get_profiles(ids_to_load, options).map do |profile|
+            results += loader.get_users(ids_to_load, options).map do |profile|
               new(profile['uid'], data: profile)
             end
           end
@@ -71,28 +71,20 @@ module Vk
 
     # @param [Hash] options
     # @see Vk::Request.get_groups
-    # @return [Vk::Group, nil]
+    # @return [<Vk::Group>]
     def groups(options = {})
       @groups ||= {}
       options[:extended] = true
       index = options.hash
-      @groups[index] ||=
-        begin
-          result = loader.get_groups(id, options)
-          return unless result
-          result['items'] ||= []
-          result['items'] = result['items'].map do |group|
-            Vk::Group.new(group['id'], data: group)
-          end
-          result
-        end
-      @groups[index]['items']
+      @groups[index] ||= loader.get_groups(id, options)
+      logger.debug(@groups[index])
+      @groups[index].all
     end
 
     protected
 
-    def load_data(options = {})
-      @attributes = @attributes.merge(loader.get_profile(id, options))
+    def load_data(options = { fields: self.class.fields })
+      @attributes = @attributes.merge(loader.get_user(id, options))
     end
   end
 end

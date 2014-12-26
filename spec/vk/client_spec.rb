@@ -11,8 +11,8 @@ describe Vk::Client do
   end
 
   describe 'instance' do
-    let(:request) { Vk::Client.new }
-    subject { request }
+    let(:client) { Vk::Client.new }
+    subject { client }
 
     it { should respond_to(:request) }
   end
