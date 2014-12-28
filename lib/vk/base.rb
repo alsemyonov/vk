@@ -97,8 +97,8 @@ module Vk
       end
     end
 
-    def respond_to_missing?(method)
-      @attributes.key?(method) || self.class.fields.include?(method.to_sym)
+    def respond_to_missing?(method, include_all = false)
+      @attributes.key?(method) || self.class.fields.include?(method.to_sym) || super
     end
 
     def logger

@@ -13,6 +13,10 @@ module Vk
       title.to_s
     end
 
+    def photos(options = {})
+      loader.get_photos(owner_id, id, options)
+    end
+
     protected
 
     def load_data(options = {})

@@ -26,7 +26,7 @@ module Vk
     end
 
     def albums
-      @albums ||= loader.get_albums("-#{id}")
+      @albums ||= loader.get_albums("-#{id}").all
     end
 
     protected
