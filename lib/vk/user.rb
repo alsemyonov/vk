@@ -78,6 +78,16 @@ module Vk
         end
     end
 
+    # @return [<Vk::Photo>]
+    def profile_photos
+      @profile_photos ||= loader.get_photos(id, 'profile').all
+    end
+
+    # @return [Boolean]
+    def deactivated?
+      read_attribute(:deactivated)
+    end
+
     # @return [String]
     def to_s
       name

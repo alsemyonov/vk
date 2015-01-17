@@ -13,7 +13,7 @@ module Vk
     end
 
     def to_s
-      title.to_s
+      text.to_s
     end
 
     # @return [75, 130, 604, 807, 1280, 2560] maximum available picture size

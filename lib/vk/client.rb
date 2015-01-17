@@ -64,7 +64,6 @@ module Vk
       json_response['response']
     end
 
-
     def method_missing(method_name, options = {})
       request(method_name, options)
     end
