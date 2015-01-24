@@ -17,12 +17,12 @@ module Vk
 
     # @return [Time]
     def start_at
-      Time.at(start_date)
+      Time.at(start_date) if start_date
     end
 
     # @return [Time]
     def finish_at
-      Time.at(finish_date)
+      Time.at(finish_date) if finish_date
     end
 
     def albums
