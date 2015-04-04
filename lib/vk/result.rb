@@ -42,7 +42,7 @@ module Vk
 
     # @return [<Vk::Base>]
     def all
-      while amount < count
+      while amount && count && amount < count
         increase_offset!
         load_items
       end
