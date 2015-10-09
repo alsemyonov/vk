@@ -12,7 +12,7 @@ module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Client
-    VERSION = '5.27'
+    VERSION = '5.37'
     SCHEME = 'https'
     HOST = 'api.vk.com'
     PATH = '/method/'

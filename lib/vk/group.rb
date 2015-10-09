@@ -29,6 +29,10 @@ module Vk
       @albums ||= loader.get_albums("-#{id}").all
     end
 
+    def get_wall(options = {})
+      loader.get_wall("-#{id}", options)
+    end
+
     protected
 
     def load_data(options = {fields: self.class.fields})

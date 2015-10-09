@@ -12,7 +12,8 @@ module Vk
       # @return [Array<Fixnum, *Hash>] count of statuses and each status in hash
       def get_wall(user_id, options = {})
         options[:filter] ||= :all
-        request('wall.get', options.merge(owner_id: user_id))
+        options[:owner_id] = user_id
+        Vk::Result.new('groups.get', Vk::Post, options)
       end
 
       def get_wall_statuses(posts)
