@@ -2,6 +2,17 @@ require 'vk/base'
 
 module Vk
   class User < Base
+    RELATION_MAPPING = {
+      0 => nil,
+      1 => :single,
+      2 => :friendship,
+      3 => :plight,
+      4 => :married,
+      5 => :complicated,
+      6 => :looking,
+      7 => :love
+    }
+
     self.key_field = :id
     self.fields = %i(id first_name last_name deactivated hidden sex bdate city country photo_50 photo_100 photo_200_orig photo_200 photo_400_orig photo_max photo_max_orig photo_id online online_mobile domain has_mobile contacts connections site education universities schools can_post can_see_all_posts can_see_audio can_write_private_message status last_seen common_count relation relatives counters screen_name maiden_name timezone occupation activities interests music movies tv books games about quotes personal)
 
@@ -86,6 +97,16 @@ module Vk
     # @return [Boolean]
     def deactivated?
       read_attribute(:deactivated)
+    end
+
+    def relation_type
+      RELATION_MAPPING[relation]
+    end
+
+    # @return [Vk::User]
+    def relation_partner
+      partner = read_attribute(:relation_partner)
+      Vk::User.new(partner) if partner
     end
 
     # @return [String]
