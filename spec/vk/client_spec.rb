@@ -4,16 +4,16 @@ describe Vk::Client do
   describe 'class' do
     subject { Vk::Client }
 
-    it { should respond_to(:auth_key) }
-    it { should respond_to(:authenticated?) }
-    it { Vk::Client.auth_key(VK_VIEWER_ID).should == VK_AUTH_KEY }
-    it { Vk::Client.authenticated?(VK_VIEWER_ID, VK_AUTH_KEY).should be true }
+    it { is_expected.to respond_to(:auth_key) }
+    it { is_expected.to respond_to(:authenticated?) }
+    it { expect(Vk::Client.auth_key(VK_VIEWER_ID)).to eq(VK_AUTH_KEY) }
+    it { expect(Vk::Client.authenticated?(VK_VIEWER_ID, VK_AUTH_KEY)).to be true }
   end
 
   describe 'instance' do
     let(:client) { Vk::Client.new }
     subject { client }
 
-    it { should respond_to(:request) }
+    it { is_expected.to respond_to(:request) }
   end
 end
