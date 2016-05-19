@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Alexander Semyonov']
   s.email       = %w(al@semyonov.us)
   s.homepage    = 'http://github.com/alsemyonov/vk'
-  s.summary     = %q{Simple wrapper for vk.com API}
+  s.summary     = %q{Object-oriented wrapper for vk.com API}
   s.description = %q{Wrapper for calling vk.com API from vk.com application servers and sites using vk.com API}
 
   s.rubyforge_project = 'vk'
