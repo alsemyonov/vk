@@ -5,3 +5,5 @@ pkg/*
 doc
 .ruby-version
 .env
+.env.*
+/backups
