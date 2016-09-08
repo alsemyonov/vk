@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'bundler/setup'
+begin
+  require 'dotenv'
+  Dotenv.load('.env')
+rescue LoadError
+end
+require 'vk'
+require 'vk/dsl'
+
+require 'pry'
+begin
+  require 'pry-byebug'
+rescue LoadError
+  STDERR.puts 'Byebug is enabled only in Ruby 2'
+end
+require 'pp'
+
+SPEC_ROOT = File.expand_path('..', __FILE__)
+
+Dir[File.join(SPEC_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
+
+Vk.app_id = ENV['VK_APP_ID']
+Vk.app_secret = ENV['VK_APP_SECRET']
+Vk.dsl!
+Vk.log!
+
+client = Vk.client
+binding.pry
+client

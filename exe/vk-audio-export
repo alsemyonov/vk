@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'vk'
+require 'vk/dsl'
+begin
+  require 'dotenv'
+  Dotenv.load('.env') if File.exist?('.env')
+rescue LoadError
+end
+
+Vk.app_id = ENV['VK_APP_ID']
+Vk.app_secret = ENV['VK_APP_SECRET']
+
+client = Vk::Client.authenticated!
+Vk.client.access_token = client.access_token
+user = client.get_me
+puts user.name
+puts 'Audios'
+user.audios.each do |audio|
+  puts audio.artist, audio.title
+end
+puts 'Albums'
+user.audio_albums.each do |album|
+  puts album.title
+end

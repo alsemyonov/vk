@@ -2,7 +2,6 @@ require 'vk/base'
 
 module Vk
   class Region < Base
-    self.key_field = :id
     self.fields = [:id, :title, :country_id]
 
     def country

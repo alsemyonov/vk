@@ -2,7 +2,6 @@ require 'vk/base'
 
 module Vk
   class Street < Base
-    self.key_field = :id
     self.fields = [:id, :title]
 
     def to_s

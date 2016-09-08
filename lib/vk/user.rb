@@ -109,6 +109,16 @@ module Vk
       Vk::User.new(partner) if partner
     end
 
+    # @return [<Vk::Audio::Album>]
+    def audio_albums
+      @audio_albums ||= loader.get_audio_albums(id).all
+    end
+
+    # @return [<Vk::Audio>]
+    def audios
+      @audios ||= loader.get_audios(id).all
+    end
+
     # @return [String]
     def to_s
       name
@@ -139,7 +149,6 @@ module Vk
       options[:extended] = true
       index = options.hash
       @groups[index] ||= loader.get_groups(id, options)
-      logger.debug(@groups[index])
       @groups[index].all
     end
 

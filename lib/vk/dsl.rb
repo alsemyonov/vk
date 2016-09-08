@@ -6,6 +6,7 @@ module Vk
   end
 end
 
+require 'vk/dsl/audio'
 require 'vk/dsl/database'
 require 'vk/dsl/friends'
 require 'vk/dsl/groups'
@@ -15,6 +16,7 @@ require 'vk/dsl/newsfeed'
 require 'vk/dsl/users'
 
 module Vk::DSL
+  include Audio
   include Database
   include Friends
   include Groups

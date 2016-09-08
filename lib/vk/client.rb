@@ -6,13 +6,13 @@ require 'uri'
 require 'net/http'
 
 require 'active_support/core_ext/object/to_query'
+require 'active_support/core_ext/object/blank'
 require 'json'
 
 module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Client
-    VERSION = '5.37'
     SCHEME = 'https'
     HOST = 'api.vk.com'
     PATH = '/method/'
@@ -33,8 +33,39 @@ module Vk
       include Vk::DSL
     end
 
-    def initialize(access_token = nil)
-      @access_token = access_token
+    # @return [Vk::Client]
+    def self.authenticated!
+      require 'vk/access'
+      return new(ENV['VK_ACCESS_TOKEN']) if ENV['VK_ACCESS_TOKEN']
+      require 'oauth2'
+      client = OAuth2::Client.new(
+        Vk.app_id, Vk.app_secret,
+        site: 'https://api.vk.com',
+        authorize_url: 'https://oauth.vk.com/authorize',
+        token_url: 'https://oauth.vk.com/access_token',
+      )
+      url = client.auth_code.authorize_url(
+        redirect_uri: 'https://oauth.vk.com/blank.html',
+        display: 'page',
+        scope: Vk::Access::SCOPES.values.inject(0, :+)
+      )
+      puts "Open: #{url}"
+      auth_code = gets.chomp
+
+      token = client.auth_code.get_token(
+        auth_code,
+        redirect_uri: 'https://oauth.vk.com/blank.html'
+      ) # => OAuth2::Response
+      fail 'No token discovered' unless token.try(:token)
+      puts "export VK_ACCESS_TOKEN=#{token.token}"
+      Vk.client.access_token ||= token.token
+      ENV['VK_ACCESS_TOKEN'] ||= token.token
+      new
+    end
+
+    # @param [#to_s] access_token
+    def initialize(access_token = ENV['VK_ACCESS_TOKEN'])
+      @access_token = access_token.to_s
     end
 
     def dsl!
@@ -42,17 +73,14 @@ module Vk
       self
     end
 
+    # @return [String]
     attr_accessor :access_token
 
     def request(method_name, data = {})
-      data.merge!(
-        api_id: Vk.app_id,
-        v: VERSION,
-      )
-      data[:access_token] = access_token if access_token
-      Vk.logger.info("#{method_name}(#{data.inspect})")
-      url = URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}")
-      http_response = Net::HTTP.post_form(url, data).body
+      data = data.merge(app_id: Vk.app_id, v: Vk::VK_API)
+      data = data.merge(access_token: access_token) if access_token.present?
+      Vk.logger.info("vk.#{method_name}(#{data.inspect})")
+      http_response = Net::HTTP.post_form(url_for_method(method_name), data).body
       return unless http_response.present?
       json_response = JSON.parse(http_response)
       if json_response['error']
@@ -64,6 +92,11 @@ module Vk
       json_response['response']
     end
 
+    # @param [URL::HTTP] method_name
+    def url_for_method(method_name)
+      URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}")
+    end
+
     def method_missing(method_name, options = {})
       request(method_name, options)
     end
@@ -71,7 +104,9 @@ module Vk
     private
 
     def signature(data)
-      signature = data.keys.sort.inject('') { |result, key| result << "#{key}=#{data[key]}" } << Vk.app_secret
+      signature = data.keys.sort.inject('') do |result, key|
+        result << "#{key}=#{data[key]}"
+      end << Vk.app_secret
       Digest::MD5.hexdigest(signature)
     end
   end

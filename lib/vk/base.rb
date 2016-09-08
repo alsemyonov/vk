@@ -9,16 +9,20 @@ module Vk
   dsl! # require DSL methods in Vk::Request
 
   class Base
+    # @return [{Integer => self}]
     class_attribute :identity_map
-    # @return [Vk::Request]
+
+    # @return [Vk::Client]
     class_attribute :loader
+
+    # @return [Symbol]
     class_attribute :key_field
+
+    # @return [<Symbol>]
     class_attribute :fields
-    self.fields = []
-    self.loader = Vk.client
-    self.key_field = :id
 
     # Find object in identity map or initialize object
+    # @param [self, <self>] ids
     def self.find(*ids)
       options = ids.extract_options!
       if ids.count == 1
@@ -47,6 +51,9 @@ module Vk
       super(subclass)
       subclass.identity_map = {}
       subclass.fields = []
+      subclass.key_field = :id
+      subclass.fields = []
+      subclass.loader = Vk.client
     end
 
     def initialize(id, options = {})

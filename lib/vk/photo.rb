@@ -2,7 +2,6 @@ require 'vk/base'
 
 module Vk
   class Photo < Base
-    self.key_field = :id
     self.fields = [
       :id, :album_id, :owner_id, :user_id, :photo_75, :photo_130, :photo_604, :photo_807, :photo_1280, :photo_2560,
       :width, :height, :text, :date

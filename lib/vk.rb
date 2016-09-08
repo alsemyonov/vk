@@ -1,5 +1,6 @@
 require 'active_support/core_ext/object/try'
 require 'vk/exceptions'
+require 'vk/version'
 
 module Vk
   autoload :Client, 'vk/client'
@@ -17,7 +18,10 @@ module Vk
   autoload :Album, 'vk/album'
 
   class << self
-    attr_accessor :app_id, :app_secret
+    # @return [String]
+    attr_accessor :app_id
+    # @return [String]
+    attr_accessor :app_secret
   end
 
   # @return [Logger]
@@ -39,14 +43,11 @@ module Vk
 
   # Request to vk.com API
   # @return [Vk::Client] Request object
-  def client(access_token = nil)
+  def client(access_token = ENV['VK_ACCESS_TOKEN'])
     @client ||= Client.new(access_token)
   end
 
-  def log(text, severity = :debug)
-    Vk.logger.try(severity, text)
-  end
-
+  # @return [Vk::Client]
   def dsl!
     Client.dsl!
   end

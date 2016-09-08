@@ -3,10 +3,14 @@ require 'vk/base'
 module Vk
   class Album < Base
     self.key_field = :id
-    self.fields = [
-      :id, :thumb_id, :owner_id, :title, :description,
-      :created, :updated, :size, :can_upload, :privacy_view, :privacy_comment,
-      :thumb_src
+    self.fields = %i[
+      id
+      thumb_id
+      owner_id
+      title description
+      created updated
+      size can_upload privacy_view privacy_comment
+      thumb_src
     ]
 
     def to_s

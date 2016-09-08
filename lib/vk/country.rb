@@ -2,11 +2,16 @@ require 'vk/base'
 
 module Vk
   class Country < Base
-    self.key_field = :id
     self.fields = [:id, :title]
 
+    # @return [<Vk::Region>]
+    def regions
+      @regions ||= loader.get_regions(id).all
+    end
+
+    # @return [String]
     def to_s
-      title
+      title.to_s
     end
 
     protected

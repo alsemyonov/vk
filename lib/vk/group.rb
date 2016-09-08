@@ -2,7 +2,6 @@ require 'vk/base'
 
 module Vk
   class Group < Base
-    self.key_field = :id
     self.fields = [
       :id, :name, :screen_name, :is_closed, :type, :is_admin, :admin_level, :is_member,
       :photo_50, :photo_100, :photo_200,
@@ -25,8 +24,14 @@ module Vk
       Time.at(finish_date) if finish_date
     end
 
+    # @return [Vk::Album]
     def albums
       @albums ||= loader.get_albums("-#{id}").all
+    end
+
+    # @return [Vk::Audio::Album]
+    def audio_albums
+      @audio_albums ||= loader.get_audio_albums("-#{id}").all
     end
 
     def get_wall(options = {})

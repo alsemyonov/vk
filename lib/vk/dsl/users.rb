@@ -1,4 +1,5 @@
 require 'vk/exceptions'
+require 'active_support/core_ext/array/wrap'
 
 module Vk
   module DSL
@@ -12,7 +13,9 @@ module Vk
 
       def get_users(user_ids, options = {})
         options[:user_ids] = Array.wrap(user_ids).join(',')
-        (request('users.get', options) || []).map { |user| Vk::User.new(user) }
+        (request('users.get', options) || []).map do |user|
+          Vk::User.new(user)
+        end
       end
 
       # @param [String] user_id
@@ -20,6 +23,11 @@ module Vk
       # @return [Vk::User]
       def get_user(user_id, options = {})
         get_users(user_id, options).first
+      end
+
+      # @return [Vk::User]
+      def get_me
+        @me ||= Vk::User.new(request('users.get').first)
       end
     end
   end

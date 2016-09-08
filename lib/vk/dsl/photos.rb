@@ -10,10 +10,10 @@ module Vk
       # @return [Vk::Result<Vk::Album>]
       def get_albums(owner_id, options = {})
         options[:owner_id] = owner_id
-        options[:need_system] = !!options[:need_system] ? 1 : 0 if options[:need_system]
-        options[:photo_sizes] = !!options[:photo_sizes] ? 1 : 0 if options[:photo_sizes]
-        options[:need_covers] = !!options[:need_covers] ? 1 : 0 if options[:need_covers]
-        options[:album_ids] = Array(options[:album_ids]).map(&:to_s).join(',') if options[:album_ids]
+        options[:need_system] = !!options[:need_system] ? 1 : 0 if options.key?(:need_system)
+        options[:photo_sizes] = !!options[:photo_sizes] ? 1 : 0 if options.key?(:photo_sizes)
+        options[:need_covers] = !!options[:need_covers] ? 1 : 0 if options.key?(:need_covers)
+        options[:album_ids] = Array(options[:album_ids]).map(&:to_s).join(',') if options.key?(:album_ids)
         require 'vk/album'
         Vk::Result.new('photos.getAlbums', Vk::Album, options)
       end
