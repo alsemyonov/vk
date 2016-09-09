@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'vk'
+require 'vk/prompt'
 
 require 'digest/md5'
 require 'uri'
@@ -13,6 +14,8 @@ module Vk
   # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Client
+    include Vk::PromptExtension
+
     SCHEME = 'https'
     HOST = 'api.vk.com'
     PATH = '/method/'
@@ -38,29 +41,21 @@ module Vk
       require 'vk/access'
       return new(ENV['VK_ACCESS_TOKEN']) if ENV['VK_ACCESS_TOKEN']
       require 'oauth2'
-      client = OAuth2::Client.new(
-        Vk.app_id, Vk.app_secret,
-        site: 'https://api.vk.com',
-        authorize_url: 'https://oauth.vk.com/authorize',
-        token_url: 'https://oauth.vk.com/access_token',
-      )
-      url = client.auth_code.authorize_url(
-        redirect_uri: 'https://oauth.vk.com/blank.html',
-        display: 'page',
-        scope: Vk::Access::SCOPES.values.inject(0, :+)
-      )
-      puts "Open: #{url}"
-      auth_code = gets.chomp
-
-      token = client.auth_code.get_token(
-        auth_code,
-        redirect_uri: 'https://oauth.vk.com/blank.html'
-      ) # => OAuth2::Response
+      token = oauth_client.get_access_token # => OAuth2::AccessToken
       fail 'No token discovered' unless token.try(:token)
-      puts "export VK_ACCESS_TOKEN=#{token.token}"
+      prompt.say 'Please run following command now to prevent asking for codes again:'
+      prompt.say
+      prompt.say "    export VK_ACCESS_TOKEN=#{token.token}"
+      prompt.say
       Vk.client.access_token ||= token.token
       ENV['VK_ACCESS_TOKEN'] ||= token.token
       new
+    end
+
+    # @return [OAuth2::Client]
+    def self.oauth_client
+      require 'vk/client/oauth2'
+      @oauth_client ||= Vk::Client::OAuth2.new
     end
 
     # @param [#to_s] access_token
@@ -95,10 +90,6 @@ module Vk
     # @param [URL::HTTP] method_name
     def url_for_method(method_name)
       URI.parse("#{SCHEME}://#{HOST}:#{PORT}#{PATH}#{method_name}")
-    end
-
-    def method_missing(method_name, options = {})
-      request(method_name, options)
     end
 
     private
