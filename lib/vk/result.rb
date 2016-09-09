@@ -74,6 +74,7 @@ module Vk
       data = @client.request(@method, @options)
       return unless data
       @count = data['count']
+      sleep 0.5
       data['items'].each do |item|
         item = @items_class.new(item.merge(@merged_attributes))
         @items << item
