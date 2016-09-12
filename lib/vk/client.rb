@@ -49,7 +49,7 @@ module Vk
       prompt.say
       Vk.client.access_token ||= token.token
       ENV['VK_ACCESS_TOKEN'] ||= token.token
-      new
+      Vk.client
     end
 
     # @return [OAuth2::Client]
