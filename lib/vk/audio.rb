@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/base'
 
 module Vk
@@ -23,8 +24,8 @@ module Vk
       17 => 'Indie Pop',
       19 => 'Speech',
       22 => 'Electropop & Disco',
-      18 => 'Other',
-    }
+      18 => 'Other'
+    }.freeze
 
     self.fields = %i(
       id
@@ -38,7 +39,7 @@ module Vk
       url
       date
       no_search
-     )
+    )
 
     # @return [Vk::Audio::Album]
     def album

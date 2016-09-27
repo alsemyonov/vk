@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Vk
   class Result
     include Enumerable
@@ -32,7 +33,7 @@ module Vk
 
     def each(&block)
       @items.each do |item|
-        block.call(item)
+        yield(item)
       end
       while amount && count && amount < count
         increase_offset!
@@ -69,7 +70,7 @@ module Vk
       @options[:offset] = amount
     end
 
-    def load_items(&block)
+    def load_items
       raise Vk::TooMuchArguments.new(@method, 'count', 1000) if @options[:count].try(:>, 1000)
       data = @client.request(@method, @options)
       return unless data
@@ -78,7 +79,7 @@ module Vk
       data['items'].each do |item|
         item = @items_class.new(item.merge(@merged_attributes))
         @items << item
-        block.call(item) if block_given?
+        yield(item) if block_given?
       end
     end
   end

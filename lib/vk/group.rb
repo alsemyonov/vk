@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/base'
 
 module Vk
@@ -5,7 +6,7 @@ module Vk
     self.fields = [
       :id, :name, :screen_name, :is_closed, :type, :is_admin, :admin_level, :is_member,
       :photo_50, :photo_100, :photo_200,
-      :city, :country, :place,  :description, :wiki_page, :members_count, :counters,
+      :city, :country, :place, :description, :wiki_page, :members_count, :counters,
       :start_date, :finish_date, :can_post, :can_see_all_posts, :activity, :status,
       :contacts, :links, :fixed_post, :verified, :site
     ]
@@ -40,7 +41,7 @@ module Vk
 
     protected
 
-    def load_data(options = {fields: self.class.fields})
+    def load_data(options = { fields: self.class.fields })
       @attributes = @attributes.merge(loader.get_group_by_id(id, options)) unless @attributes.size > 1
     end
   end

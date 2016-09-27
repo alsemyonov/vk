@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/base'
 
 module Vk
@@ -11,7 +12,7 @@ module Vk
       5 => :complicated,
       6 => :looking,
       7 => :love
-    }
+    }.freeze
 
     self.key_field = :id
     self.fields = %i(id first_name last_name deactivated hidden sex bdate city country photo_50 photo_100 photo_200_orig photo_200 photo_400_orig photo_max photo_max_orig photo_id online online_mobile domain has_mobile contacts connections site education universities schools can_post can_see_all_posts can_see_audio can_write_private_message status last_seen common_count relation relatives counters screen_name maiden_name timezone occupation activities interests music movies tv books games about quotes personal)
@@ -74,7 +75,7 @@ module Vk
     end
 
     # @return [<Fixnum>]
-    def friend_ids(options = {})
+    def friend_ids(_options = {})
       @friend_ids ||= loader.get_friends(id, options = {})
     end
 

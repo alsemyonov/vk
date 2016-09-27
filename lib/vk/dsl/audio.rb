@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/exceptions'
 require 'vk/audio'
 
@@ -8,14 +9,14 @@ module Vk
         popularity: 2,
         duration: 1,
         date: 0
-      }
+      }.freeze
 
       # @param [Integer] owner_id user’s identifier
       # @param [Hash] options
       # @option options [Fixnum] :offset
       # @option options [Fixnum] :count
       def get_audios(owner_id, options = {})
-        fail NotImplementedError, ':need_user is not supported for audio.get method' if options.key?(:need_user)
+        raise NotImplementedError, ':need_user is not supported for audio.get method' if options.key?(:need_user)
         Vk::Result.new('audio.get', Vk::Audio, options.merge(owner_id: owner_id))
       end
 
@@ -30,7 +31,7 @@ module Vk
       # @param [Fixnum] lyrics_id
       # @return [Vk::Audio::Lyrics]
       def get_lyrics(lyrics_id)
-        Vk::Audio::Lyrics.new(request('audio.getLyrics', {lyrics_id: lyrics_id}))
+        Vk::Audio::Lyrics.new(request('audio.getLyrics', lyrics_id: lyrics_id))
       end
 
       # @param [String] q

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/post'
 
 require 'delegate'
@@ -8,7 +9,9 @@ module Vk
       attr_accessor :uid, :count, :posts
 
       def initialize(uid, count, posts)
-        self.uid, self.count, self.posts = uid, count, posts
+        self.uid = uid
+        self.count = count
+        self.posts = posts
       end
 
       def user
@@ -22,12 +25,14 @@ module Vk
         Vk::Post.find(Vk::Post.id_for(post), data: post) if post
       end
 
-      def first; self[0]; end
+      def first
+        self[0]
+      end
 
-      def each(&block)
+      def each
         load_all_posts
         0.upto(count) do |index|
-          block.call(self[index])
+          yield(self[index])
         end
       end
 

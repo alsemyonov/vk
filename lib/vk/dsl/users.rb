@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/exceptions'
 require 'active_support/core_ext/array/wrap'
 

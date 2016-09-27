@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 require 'vk'
 require 'vk/prompt'
 
@@ -42,7 +43,7 @@ module Vk
       return new(ENV['VK_ACCESS_TOKEN']) if ENV['VK_ACCESS_TOKEN']
       require 'oauth2'
       token = oauth_client.get_access_token # => OAuth2::AccessToken
-      fail 'No token discovered' unless token.try(:token)
+      raise 'No token discovered' unless token.try(:token)
       prompt.say 'Please run following command now to prevent asking for codes again:'
       prompt.say
       prompt.say "    export VK_ACCESS_TOKEN=#{token.token}"
@@ -81,7 +82,7 @@ module Vk
       if json_response['error']
         Vk.logger.error(json_response['error']['error_msg'])
         Vk.logger.debug(json_response)
-        raise Vk::Error.new(json_response)
+        raise Vk::Error, json_response
       end
       Vk.logger.debug(json_response)
       json_response['response']

@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'vk/version'
 
 Gem::Specification.new do |s|
@@ -9,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors = ['Alexander Semyonov']
   s.email = %w(al@semyonov.us)
   s.homepage = 'http://github.com/alsemyonov/vk'
-  s.summary = %q{Object-oriented wrapper for vk.com API}
-  s.description = %q{Wrapper for calling vk.com API from vk.com application servers and sites using vk.com API}
+  s.summary = 'Object-oriented wrapper for vk.com API'
+  s.description = 'Wrapper for calling vk.com API from vk.com application servers and sites using vk.com API'
 
   s.rubyforge_project = 'vk'
 
@@ -19,12 +20,15 @@ Gem::Specification.new do |s|
   s.executables = `git ls-files -- exe/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = %w(lib)
 
-  s.add_dependency('activesupport', '>= 4.2.2')
-  s.add_dependency('oauth2')
+  s.add_runtime_dependency('activesupport', '>= 4.2.2')
+  s.add_runtime_dependency('oauth2')
+  s.add_runtime_dependency('dry-types')
+  s.add_runtime_dependency('dry-struct')
 
   s.add_development_dependency('rake')
   s.add_development_dependency('rspec', '~> 2.99')
   s.add_development_dependency('yard')
+  s.add_development_dependency('rubocop')
   s.add_development_dependency('redcarpet')
   s.add_development_dependency('webmock')
   s.add_development_dependency('yard-redcarpet-ext')

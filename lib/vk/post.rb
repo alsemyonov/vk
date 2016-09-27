@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/base'
 
 module Vk
@@ -73,7 +74,7 @@ module Vk
 
     protected
 
-    def load_data(options = {})
+    def load_data(_options = {})
       @attributes = @attributes.merge(loader.get_wall_status(id))
     end
   end

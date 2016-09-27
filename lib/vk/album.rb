@@ -1,9 +1,10 @@
+# frozen_string_literal: true
 require 'vk/base'
 
 module Vk
   class Album < Base
     self.key_field = :id
-    self.fields = %i[
+    self.fields = %i(
       id
       thumb_id
       owner_id
@@ -11,7 +12,7 @@ module Vk
       created updated
       size can_upload privacy_view privacy_comment
       thumb_src
-    ]
+    )
 
     def to_s
       title.to_s

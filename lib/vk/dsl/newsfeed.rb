@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk/exceptions'
 
 module Vk
@@ -9,7 +10,7 @@ module Vk
         can_post can_see_all_posts can_see_audio can_write_private_message status last_seen common_count
         relation relatives screen_name maiden_name timezone occupation activities interests music movies tv books games
         about quotes
-      )
+      ).freeze
 
       class SearchItem < Vk::Base
         self.fields = ([
@@ -47,15 +48,15 @@ module Vk
 
         def find_group_or_user(user_or_group_id)
           user_or_group_id = user_or_group_id.to_i
-          return if user_or_group_id == 0
+          return if user_or_group_id.zero?
           if search_result
-            if user_or_group_id < 0
+            if user_or_group_id.negative?
               search_result.groups.detect { |group| group.id == -user_or_group_id }
             else
               search_result.profiles.detect { |user| user.id == user_or_group_id }
             end
           else
-            if user_or_group_id < 0
+            if user_or_group_id.negative?
               Vk::Group.new(-user_or_group_id)
             else
               Vk::User.new(user_or_group_id)
@@ -111,7 +112,6 @@ module Vk
           self.class.new(@client, options.merge(start_from: next_from))
         end
       end
-
 
       # Friends information
       # @param [Hash] options

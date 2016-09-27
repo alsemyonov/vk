@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'vk'
 require 'vk/prompt'
 require 'oauth2'
@@ -9,7 +10,7 @@ module Vk
         site: 'https://api.vk.com',
         authorize_url: 'https://oauth.vk.com/authorize',
         token_url: 'https://oauth.vk.com/access_token'
-      }
+      }.freeze
 
       include Vk::PromptExtension
 
