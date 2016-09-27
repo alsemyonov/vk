@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+require 'bundler/setup'
+begin
+  require 'dotenv'
+  Dotenv.load('.env')
+rescue LoadError
+end
+require 'vk'
+require 'vk/dsl'
+
+require 'pry'
+begin
+  require 'pry-byebug'
+rescue LoadError
+  STDERR.puts 'Byebug is enabled only in Ruby 2'
+end
+require 'pp'
+
+require 'vk/schema'
+
+generator = Vk::Schema::Generator.new
+generator.call

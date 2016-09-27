@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+require 'spec_helper'
+require '<%= definition.require %>'
+
+RSpec.describe Vk::Schema::Types::<%= definition.type_name %> do
+  subject { described_class }
+  it { is_expected.to respond_to :[] }
+end
