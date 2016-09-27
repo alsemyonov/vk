@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+require 'vk/schema/types'
+
+module Vk
+  class Schema
+    module Types
+      # <%= definition.description %>
+      <%= definition.type_name %> = <%= definition.type_definition %>
+    end
+  end
+end

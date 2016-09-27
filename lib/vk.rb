@@ -19,6 +19,8 @@ module Vk
   autoload :Group, 'vk/group'
   autoload :Album, 'vk/album'
 
+  autoload :Schema, 'vk/schema'
+
   class << self
     # @return [String]
     attr_accessor :app_id

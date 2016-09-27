@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+require 'vk/schema/model'
+
+module Vk
+  class Schema
+    class Model < Dry::Struct
+      module <%= definition.namespace %>
+        # <%= definition.description %>
+        class <%= definition.type_name %> < <%= definition.parent %>
+        <%- definition.attributes.each do |attribute| -%>
+          # @return [<%= attribute.returned_type %>] <%= attribute.description %>
+          attribute <%= attribute.attribute_name %>, <%= attribute.type %>
+        <%- end -%>
+        end
+      end
+    end
+  end
+end

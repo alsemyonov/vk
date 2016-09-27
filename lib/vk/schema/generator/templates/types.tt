@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+require 'vk/schema'
+require 'dry-types'
+
+module Vk
+  class Schema
+    module Types
+      include Dry::Types.module
+
+      <%- schema.types.each do |type| -%>
+      autoload :<%= type.type_name %>, '<%= type.require %>'
+      <%- end -%>
+    end
+  end
+end
