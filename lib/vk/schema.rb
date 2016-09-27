@@ -9,6 +9,7 @@ module Vk
     autoload :Types, 'vk/schema/types'
 
     autoload :Objects, 'vk/schema/objects'
+    autoload :Methods, 'vk/schema/methods'
 
     def initialize(schema:)
       @json = JSON.parse(File.read(schema))

@@ -3,7 +3,6 @@
 require 'vk'
 
 module Vk
-  # Class for requesting vk.com api data
   # @author Alexander Semyonov
   class Error < StandardError
     def initialize(msg, details = {})

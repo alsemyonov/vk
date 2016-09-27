@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+require 'vk/schema'
+
+module Vk
+  class Schema
+    module Errors
+      class Error < StandardError
+      end
+
+      class APIError < Error
+      end
+
+      <%- schema.errors.each do |error| -%>
+      class <%= error.type_name %> < APIError
+        def initialize(msg = '<%= error.description %>')
+          super
+        end
+
+        def code
+          <%= error.code %>
+        end
+      end
+      <%- end -%>
+
+      MAP = {
+      <%- schema.errors.each do |error| -%>
+        <%= error.code %> => <%= error.type_name %>,
+      <%- end -%>
+      }.freeze
+    end
+  end
+end

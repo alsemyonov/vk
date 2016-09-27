@@ -9,6 +9,7 @@ module Vk
   class Schema
     class Generator
       autoload :Common, 'vk/schema/generator/common'
+      autoload :Errors, 'vk/schema/generator/errors'
       autoload :Model, 'vk/schema/generator/model'
       autoload :Models, 'vk/schema/generator/models'
       autoload :Type, 'vk/schema/generator/type'
@@ -23,6 +24,11 @@ module Vk
         @objects_schema ||= Schema::Objects.new
       end
 
+      # @return [Schema::Objects]
+      def methods_schema
+        @methods_schema ||= Schema::Methods.new
+      end
+
       def call
         objects_schema.types.each do |type|
           Generator::Type.start([type])
@@ -32,9 +38,10 @@ module Vk
           Generator::Model.start([object])
         end
         Generator::Models.start([objects_schema])
+        Generator::Errors.start([methods_schema])
         system(
           'bin/rubocop -a lib/vk/schema/model lib/vk/schema/models.rb ' \
-            'lib/vk/schema/types lib/vk/schema/types.rb'
+            'lib/vk/schema/types lib/vk/schema/types.rb lib/vk/schema/errors.rb'
         )
       end
 

@@ -6,6 +6,7 @@ module Vk
   class Schema
     class Definition
       autoload :Attribute, 'vk/schema/definition/attribute'
+      autoload :Error, 'vk/schema/definition/error'
       autoload :Method, 'vk/schema/definition/method'
       autoload :Object, 'vk/schema/definition/object'
       autoload :Response, 'vk/schema/definition/response'
