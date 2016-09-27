@@ -28,7 +28,7 @@ Vk.app_secret = 'secret'
 
 ### Basic usage
 
-Simple request. Docs ad {Vk::Request}
+Simple request. Docs ad {Vk::Client}
 
 ```ruby
 vk = Vk.request
