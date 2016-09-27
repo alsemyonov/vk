@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+require 'vk/api/objects'
+require 'vk/schema/namespace'
+
+module Vk
+  module API
+    class <%= definition.namespace %> < Vk::Schema::Namespace
+      # <%= definition.description %>
+      class <%= definition.type_name %> < <%= definition.parent %>
+      <%- definition.attributes.each do |attribute| -%>
+        # @return [<%= attribute.returned_type %>] <%= attribute.description %>
+        attribute <%= attribute.attribute_name %>, <%= attribute.type %>
+      <%- end -%>
+      end
+    end
+  end
+end

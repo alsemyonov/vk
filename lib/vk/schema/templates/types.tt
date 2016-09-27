@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+require 'vk/schema'
+require 'dry-types'
+require 'vk/schema/namespace'
+
+module Vk
+  module API
+    module Types
+      include Dry::Types.module
+    end
+    <%- schema.namespaced_types.each do |namespace, types| -%>
+    class <%= namespace %> < Vk::Schema::Namespace
+      <%- types.each do |type| -%>
+      autoload :<%= type.type_name %>, '<%= type.require %>'
+      <%- end -%>
+    end
+    <%- end -%>
+  end
+end

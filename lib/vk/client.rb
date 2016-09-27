@@ -13,7 +13,7 @@ require 'json'
 
 module Vk
   # Class for requesting vk.com api data
-  # @author Alexander Semyonov
+  # @author Alex Semyonov
   class Client
     include Vk::PromptExtension
 
@@ -59,17 +59,18 @@ module Vk
       @access_token = access_token.to_s
     end
 
-    def dsl!
-      self.class.dsl!
-      self
-    end
-
     # @return [String]
     attr_accessor :access_token
 
+    # @param [String] method_name
+    # @param [Hash, #to_hash] data
     def request(method_name, data = {})
+      data = data.to_hash
       data = data.merge(app_id: Vk.app_id, v: Vk::VK_API)
       data = data.merge(access_token: access_token) if access_token.present?
+      data.each do |argument, value|
+        data[argument] = value.join(',') if value.is_a?(Array)
+      end
       Vk.logger.info("vk.#{method_name}(#{data.inspect})")
       http_response = Net::HTTP.post_form(url_for_method(method_name), data).body
       return unless http_response.present?
@@ -80,7 +81,7 @@ module Vk
         raise Vk::Error, json_response
       end
       Vk.logger.debug(json_response)
-      json_response['response']
+      json_response
     end
 
     # @param [URL::HTTP] method_name
@@ -98,3 +99,5 @@ module Vk
     end
   end
 end
+
+require 'vk/api/client'

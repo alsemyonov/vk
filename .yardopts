@@ -1,4 +1,4 @@
---title 'Vk gem — vk.com API wrapper'
+--title 'vk — Vk.com API Client'
 lib/**/*.rb
 -
-README.markdown
+README.md

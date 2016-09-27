@@ -3,10 +3,8 @@
 require 'vk'
 
 module Vk
-  # Class for requesting vk.com api data
-  # @author Alexander Semyonov
-  class Error < StandardError
-  end
+  Error = Class.new(StandardError)
+  UndefinedMethodError = Class.new(Error)
 
   class TooMuchArguments < Error
     # @param [String] method

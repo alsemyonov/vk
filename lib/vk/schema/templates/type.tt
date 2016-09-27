@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+require 'vk/api/types'
+
+module Vk
+  module API
+    class <%= definition.namespace %> < Vk::Schema::Namespace
+      # <%= definition.description %>
+      <%= definition.type_name %> = <%= definition.type_definition %>
+    end
+  end
+end

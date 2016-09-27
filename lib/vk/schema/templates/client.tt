@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+require 'vk/client'
+require 'vk/api/methods'
+
+module Vk
+  class Client
+    # @!group DSL
+
+    <%- schema.namespaces.each do |namespace| -%>
+    # @return [Vk::API::<%= namespace.camelcase %>]
+    def <%= namespace %>
+      # require "vk/api/<%= namespace %>"
+      @<%= namespace %> ||= Vk::API::<%= namespace.camelcase %>.new('<%= namespace %>', self)
+    end
+    <%- end -%>
+  end
+end

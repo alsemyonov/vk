@@ -10,6 +10,7 @@ module Vk
   autoload :Error, 'vk/error'
   autoload :Prompt, 'vk/prompt'
   autoload :Result, 'vk/result'
+  autoload :Schema, 'vk/schema'
 
   class << self
     # @return [String]

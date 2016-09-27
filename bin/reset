@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+rm -rf lib/vk/api spec/vk/api
+git reset HEAD -- lib/vk/api spec/vk/api
+git checkout lib/vk/api spec/vk/api

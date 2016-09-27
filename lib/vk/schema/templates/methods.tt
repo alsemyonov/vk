@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+require 'vk/api'
+require 'vk/schema/method'
+require 'vk/schema/namespace'
+
+module Vk
+  module API
+    <%- schema.namespaced_methods.each do |namespace, methods| -%>
+    class <%= namespace %> < Vk::Schema::Namespace
+      module Methods
+        <%- methods.each do |method| -%>
+        autoload :<%= method.type_name %>, '<%= method.require %>'
+        <%- end -%>
+      end
+
+      # @!group DSL
+
+      <%- methods.each do |method| -%>
+      # @param [Hash] arguments
+      <%- method.attributes.each do |attribute| -%>
+      # @option arguments [<%= attribute.returned_type %>] <%= attribute.attribute_name %> <%= attribute.description %>
+      <%- end -%>
+      # @see Vk::API::<%= method.namespace %>::Methods::<%= method.type_name %>
+      # @return [<%= method.response_class %>] <%= method.description %>
+      def <%= method.name %>(arguments = {})
+        require "<%= method.require %>"
+        method = Methods::<%= method.type_name %>.new(arguments)
+        response = method.call(@client)
+        require "<%= method.require.gsub(/methods/, 'responses') %>_response"
+        Responses::<%= method.type_name %>Response.new(response.deep_symbolize_keys)
+      end
+      <%- end -%>
+    end
+    <%- end -%>
+  end
+end

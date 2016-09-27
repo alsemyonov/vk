@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+require 'vk/api/methods'
+
+module Vk
+  module API
+    class <%= definition.namespace %> < Vk::Schema::Namespace
+      module Methods
+        # <%= definition.description %>
+        class <%= definition.type_name %> < Schema::Method
+          # @!group Properties
+
+          self.open = <%= definition.open %>
+          self.method = <%= definition.method %>
+
+          # @method initialize(arguments)
+          #   @param [Hash] arguments
+          <%- definition.attributes.each do |attribute| -%>
+          #   @option arguments [<%= attribute.returned_type %>] <%= attribute.attribute_name %> <%= attribute.description %>
+          <%- end -%>
+          #   @return [<%= definition.namespace %>::Methods::<%= definition.type_name %>]
+
+          # @!group Arguments
+
+          <%- definition.attributes.each do |attribute| -%>
+          # @return [<%= attribute.returned_type %>] <%= attribute.description %>
+          attribute <%= attribute.attribute_name %>, <%= attribute.type %>
+          <%- end -%>
+        end
+      end
+    end
+  end
+end

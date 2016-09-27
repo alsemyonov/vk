@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+require 'vk/api'
+require 'vk/error'
+
+module Vk
+  module API
+    module Errors
+      class Error < Vk::Error
+      end
+
+      <%- schema.errors.each do |error| -%>
+      class <%= error.type_name %> < Error
+        def initialize(msg = '<%= error.description %>')
+          super
+        end
+
+        def code
+          <%= error.code %>
+        end
+      end
+
+      <%- end -%>
+      MAP = {
+      <%= schema.errors.map { |error| "#{error.code} => #{error.type_name}" }.join(",\n        ") -%>
+      }.freeze
+    end
+  end
+end

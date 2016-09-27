@@ -1,0 +1,18 @@
+# frozen_string_literal: true
+require 'vk/api'
+require 'vk/schema/method'
+require 'vk/schema/namespace'
+
+module Vk
+  module API
+    <%- schema.namespaced_methods.each do |namespace, types| -%>
+    class <%= namespace %> < Vk::Schema::Namespace
+      module Responses
+        <%- types.each do |type| -%>
+        autoload :<%= type.type_name %>, '<%= type.require %>'
+        <%- end -%>
+      end
+    end
+    <%- end -%>
+  end
+end
