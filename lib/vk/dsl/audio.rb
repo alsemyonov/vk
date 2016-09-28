@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'vk/exceptions'
+require 'vk/error'
 require 'vk/audio'
 
 module Vk

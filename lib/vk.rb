@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'active_support/core_ext/object/try'
-require 'vk/exceptions'
+require 'vk/error'
 require 'vk/version'
 
 # Module enclosing vk.com API client & related objects
