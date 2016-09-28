@@ -32,11 +32,6 @@ module Vk
       auth_key == self.auth_key(viewer_id)
     end
 
-    def self.dsl!
-      require 'vk/dsl'
-      include Vk::DSL
-    end
-
     # @return [Vk::Client]
     def self.authenticated!
       require 'vk/access'

@@ -5,19 +5,11 @@ require 'vk/version'
 
 # Module enclosing vk.com API client & related objects
 module Vk
+  autoload :Access, 'vk/access'
   autoload :Client, 'vk/client'
-  autoload :DSL, 'vk/dsl'
   autoload :Error, 'vk/error'
+  autoload :Prompt, 'vk/prompt'
   autoload :Result, 'vk/result'
-
-  autoload :Base, 'vk/base'
-  autoload :User, 'vk/user'
-  autoload :City, 'vk/city'
-  autoload :Country, 'vk/country'
-  autoload :Post, 'vk/post'
-  autoload :Stats, 'vk/stats'
-  autoload :Group, 'vk/group'
-  autoload :Album, 'vk/album'
 
   class << self
     # @return [String]
@@ -49,15 +41,8 @@ module Vk
     @client ||= Client.new(access_token)
   end
 
-  # @return [Vk::Client]
-  def dsl!
-    Client.dsl!
-  end
-
   def log!
     require 'logger'
     self.logger = Logger.new STDOUT
   end
-
-  dsl!
 end
