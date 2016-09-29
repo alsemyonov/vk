@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 require 'bundler/setup'
-require 'codeclimate-test-reporter'
 require 'simplecov'
 require 'vk'
 
