@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 require 'bundler/setup'
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
 require 'vk'
 require 'webmock/rspec'
 
