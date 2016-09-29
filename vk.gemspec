@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/alsemyonov/vk'
   s.summary = 'Vk.com API Client'
   s.description = 'Object-oriented Vk.com client based on JSON Schema & dry-types'
+  s.license = 'MIT'
 
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
