@@ -2,7 +2,6 @@
 require 'vk/schema'
 require 'json'
 require 'pathname'
-require 'logger'
 
 module Vk
   class Schema
@@ -33,13 +32,6 @@ module Vk
         Generator::Methods.start([schema], options)
         Generator::Client.start([schema], options)
         system('bin/rubocop -a lib/vk/api')
-      end
-
-      private
-
-      # @return [Logger]
-      def logger
-        @logger ||= Logger.new(STDOUT)
       end
     end
   end

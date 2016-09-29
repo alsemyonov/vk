@@ -14,4 +14,3 @@ require 'vk'
 
 Vk.app_id = ENV['VK_APP_ID']
 Vk.app_secret = ENV['VK_APP_SECRET']
-Vk.log!

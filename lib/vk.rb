@@ -8,6 +8,7 @@ module Vk
   autoload :Access, 'vk/access'
   autoload :Client, 'vk/client'
   autoload :Error, 'vk/error'
+  autoload :Logging, 'vk/logging'
   autoload :Prompt, 'vk/prompt'
   autoload :Result, 'vk/result'
   autoload :Schema, 'vk/schema'
@@ -19,31 +20,13 @@ module Vk
     attr_accessor :app_secret
   end
 
-  # @return [Logger]
-  def self.logger
-    @logger ||=
-      begin
-        require 'logger'
-        Logger.new(STDOUT)
-      end
-  end
-
-  # @param [Logger] logger
-  # @return [Logger]
-  def self.logger=(logger)
-    @logger = logger
-  end
+  extend Logging
+  include Logging
 
   module_function
 
-  # Request to vk.com API
-  # @return [Vk::Client] Request object
+  # @return [Vk::Client] API Client
   def client(access_token = ENV['VK_ACCESS_TOKEN'])
     @client ||= Client.new(access_token)
-  end
-
-  def log!
-    require 'logger'
-    self.logger = Logger.new STDOUT
   end
 end

@@ -16,6 +16,8 @@ module Vk
   # @author Alex Semyonov
   class Client
     include Vk::PromptExtension
+    extend Logging
+    include Logging
 
     SCHEME = 'https'
     HOST = 'api.vk.com'
@@ -71,16 +73,16 @@ module Vk
       data.each do |argument, value|
         data[argument] = value.join(',') if value.is_a?(Array)
       end
-      Vk.logger.info("vk.#{method_name}(#{data.inspect})")
+      logger.info("vk.#{method_name}(#{data.inspect})")
       http_response = Net::HTTP.post_form(url_for_method(method_name), data).body
       return unless http_response.present?
       json_response = JSON.parse(http_response)
       if json_response['error']
-        Vk.logger.error(json_response['error']['error_msg'])
-        Vk.logger.debug(json_response)
+        logger.error(json_response['error']['error_msg'])
+        logger.debug(json_response)
         raise Vk::Error, json_response
       end
-      Vk.logger.debug(json_response)
+      logger.debug(json_response)
       json_response
     end
 
