@@ -6,7 +6,7 @@ module Vk
   Error = Class.new(StandardError)
   UndefinedMethodError = Class.new(Error)
 
-  class TooMuchArguments < Error
+  class TooManyArgumentsError < Error
     # @param [String] method
     # @param [String] argument
     # @param [Integer] count

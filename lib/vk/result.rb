@@ -71,7 +71,7 @@ module Vk
     end
 
     def load_items
-      raise Vk::TooMuchArguments.new(@method, 'count', 1000) if @options[:count].try(:>, 1000)
+      raise Vk::TooManyArgumentsError.new(@method, 'count', 1000) if @options[:count].try(:>, 1000)
       data = @client.request(@method, @options)
       return unless data
       @count = data['count']
