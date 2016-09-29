@@ -5,7 +5,7 @@ Vk is a wrapper for vk.com API
 ## Project links
 
 * [Sources](https://github.com/alsemyonov/vk)
-* [Documentation](http://rubydoc.info/gems/vk)
+* [Documentation](http://www.rubydoc.info/gems/vk) ([edge](http://www.rubydoc.info/github/alsemyonov/vk))
 * [Issue Tracker](https://github.com/alsemyonov/vk/issues)
 * [Wiki](https://github.com/alsemyonov/vk/wiki)
 * [![Code Climate](https://codeclimate.com/github/alsemyonov/vk/badges/gpa.svg)](https://codeclimate.com/github/alsemyonov/vk)
@@ -54,7 +54,7 @@ p profiles.response # => [
 
 ### Usage with object oriented DSL
 
-Currently implemented classes: {Vk::API::Users::User}, {Vk::API::Database::City}, {Vk::API::Database::City}, {Vk::API::Wall::Wallpost} and many more. See `Vk::Schema::Objects` subclasses [at rubydoc.info](http://www.rubydoc.info/gems/vk/Vk/Schema/Object.html).
+Currently implemented classes: {Vk::API::Users::User}, {Vk::API::Database::City}, {Vk::API::Database::City}, {Vk::API::Wall::Wallpost} and many more. See `Vk::Schema::Object` subclasses [at rubydoc.info](http://www.rubydoc.info/gems/vk/Vk/Schema/Object.html).
 
 ```ruby
 user = Vk.client.users.get(user_ids: 34160, fields: %w(
