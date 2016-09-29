@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'bundler/setup'
 require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
+require 'simplecov'
 require 'vk'
 
 Bundler.require(:development)

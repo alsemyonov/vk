@@ -25,12 +25,13 @@ module Vk
       end
 
       def call
-        Generator::Types.start([schema])
-        Generator::Errors.start([schema])
-        Generator::Objects.start([schema])
-        Generator::Responses.start([schema])
-        Generator::Methods.start([schema])
-        Generator::Client.start([schema])
+        options = {}
+        Generator::Types.start([schema], options)
+        Generator::Errors.start([schema], options)
+        Generator::Objects.start([schema], options)
+        Generator::Responses.start([schema], options)
+        Generator::Methods.start([schema], options)
+        Generator::Client.start([schema], options)
         system('bin/rubocop -a lib/vk/api')
       end
 
