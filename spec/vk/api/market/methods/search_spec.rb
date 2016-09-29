@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+require 'spec_helper'
+require 'vk/api/market/methods/search'
+
+RSpec.describe Vk::API::Market::Methods::Search do
+  subject(:model) { described_class }
+  it { is_expected.to be < Dry::Struct }
+  it { is_expected.to be < Vk::Schema::Method }
+
+  describe 'attributes' do
+    subject(:attributes) { model.instance_methods(false) }
+
+    it { is_expected.to include :owner_id }
+    it { is_expected.to include :q }
+    it { is_expected.to include :price_from }
+    it { is_expected.to include :price_to }
+    it { is_expected.to include :tags }
+    it { is_expected.to include :rev }
+    it { is_expected.to include :offset }
+    it { is_expected.to include :count }
+    it { is_expected.to include :extended }
+  end
+end
