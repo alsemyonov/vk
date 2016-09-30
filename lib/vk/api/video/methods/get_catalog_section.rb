@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] 'id' value returned with a block by the '' method.
-          attribute :section_id, API::Types::Coercible::String.optional
+          attribute :section_id, API::Types::Coercible::String
           # @return [String] 'next' value returned with a block by the '' method.
-          attribute :from, API::Types::Coercible::String.optional
+          attribute :from, API::Types::Coercible::String
           # @return [Integer] number of blocks to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of a user to save the data
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [Integer] there are 2 default activities: ; * 1 – level. Works similar to ;; * 2 – points, saves points amount; Any other value is for saving completed missions
-          attribute :activity_id, API::Types::Coercible::Int.optional
+          attribute :activity_id, API::Types::Coercible::Int
           # @return [Integer] depends on activity_id:; * 1 – number, current level number;; * 2 – number, current user's points amount; ; Any other value is ignored
-          attribute :value, API::Types::Coercible::Int.optional
+          attribute :value, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

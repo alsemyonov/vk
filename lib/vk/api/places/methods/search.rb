@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] City ID.
-          attribute :city, API::Types::Coercible::Int.optional
+          attribute :city, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical latitude of the initial search point, in degrees (from '-90' to '90').
-          attribute :latitude, API::Types::Coercible::Int.optional
+          attribute :latitude, API::Types::Coercible::Int
           # @return [Number] Geographical longitude of the initial search point, in degrees (from '-180' to '180').
-          attribute :longitude, API::Types::Coercible::Int.optional
+          attribute :longitude, API::Types::Coercible::Int
           # @return [Integer] Radius of the search zone:; '1' — 100 m. (default); '2' — 800 m.; '3' — 6 km.; '4' — 50 km.
-          attribute :radius, API::Types::Coercible::Int.optional
+          attribute :radius, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of locations.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of locations to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

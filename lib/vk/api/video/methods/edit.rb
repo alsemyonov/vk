@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Video ID.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [String] New video title.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] New video description.
-          attribute :desc, API::Types::Coercible::String.optional
+          attribute :desc, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Privacy settings in a .; Privacy setting is available for videos uploaded to own profile by user.
-          attribute :privacy_view, API::Types::Coercible::Array.optional
+          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] Privacy settings for comments in a .
-          attribute :privacy_comment, API::Types::Coercible::Array.optional
+          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] Disable comments for the group video.
-          attribute :no_comments, API::Types::Bool.optional
+          attribute :no_comments, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — to repeat the playback of the video; '0' — to play the video once;
-          attribute :repeat, API::Types::Bool.optional
+          attribute :repeat, API::Types::Bool.optional.default(nil)
         end
       end
     end

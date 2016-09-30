@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Checked < Vk::Schema::Object
         # @return [String] Information whether user can start the lead
-        attribute :result, API::Types::Coercible::String.optional
+        attribute :result, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Reason why user can't start the lead
-        attribute :reason, API::Types::Coercible::String.optional
+        attribute :reason, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL user should open to start the lead
-        attribute :start_link, API::Types::Coercible::String.optional
+        attribute :start_link, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Session ID
-        attribute :sid, API::Types::Coercible::String.optional
+        attribute :sid, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

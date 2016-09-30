@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] ID of a collection to reorder items in. Set 0 to reorder full items list.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Item ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
           # @return [Integer] ID of an item to place current item before it.
-          attribute :before, API::Types::Coercible::Int.optional
+          attribute :before, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of an item to place current item after it.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

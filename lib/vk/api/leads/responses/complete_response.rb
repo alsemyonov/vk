@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class CompleteResponse < Vk::Schema::Response
           # @return [API::Leads::Complete] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Leads::Complete].optional
+          attribute :response, Dry::Types[API::Leads::Complete].optional.default(nil)
         end
       end
     end

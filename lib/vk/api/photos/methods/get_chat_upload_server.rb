@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the chat for which you want to upload a cover photo.
-          attribute :chat_id, API::Types::Coercible::Int.optional
+          attribute :chat_id, API::Types::Coercible::Int
           # @return [Integer] 
-          attribute :crop_x, API::Types::Coercible::Int.optional
+          attribute :crop_x, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :crop_y, API::Types::Coercible::Int.optional
+          attribute :crop_y, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Width (in pixels) of the photo after cropping.
-          attribute :crop_width, API::Types::Coercible::Int.optional
+          attribute :crop_width, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

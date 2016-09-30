@@ -12,9 +12,9 @@ module Vk
         # @return [String] Post text
         attribute :text, API::Types::Coercible::String
         # @return [API::Base::CommentsInfo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :comments, Dry::Types[API::Base::CommentsInfo].optional
+        attribute :comments, Dry::Types[API::Base::CommentsInfo].optional.default(nil)
         # @return [API::Base::LikesInfo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :likes, Dry::Types[API::Base::LikesInfo].optional
+        attribute :likes, Dry::Types[API::Base::LikesInfo].optional.default(nil)
       end
     end
   end

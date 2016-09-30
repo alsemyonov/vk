@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID (if the album will be created in a community).
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Album title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Document IDs. Example: ; "66748_91488,66748_91455";
-          attribute :docs, API::Types::Coercible::Array.optional
+          attribute :docs, API::Types::Coercible::Array
         end
       end
     end

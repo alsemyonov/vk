@@ -16,35 +16,35 @@ module Vk
         # @return [String] Element type
         attribute :type, API::Types::Coercible::String
         # @return [String] Element description
-        attribute :description, API::Types::Coercible::String.optional
+        attribute :description, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Duration in seconds
-        attribute :duration, API::Types::Coercible::Int.optional
+        attribute :duration, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] URL of the preview image with 130 px in width
-        attribute :photo_130, API::Types::Coercible::String.optional
+        attribute :photo_130, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 160 px in width
-        attribute :photo_160, API::Types::Coercible::String.optional
+        attribute :photo_160, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 320 px in width
-        attribute :photo_320, API::Types::Coercible::String.optional
+        attribute :photo_320, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 640 px in width
-        attribute :photo_640, API::Types::Coercible::String.optional
+        attribute :photo_640, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 800 px in width
-        attribute :photo_800, API::Types::Coercible::String.optional
+        attribute :photo_800, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when the element has been created
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Views number
-        attribute :views, API::Types::Coercible::Int.optional
+        attribute :views, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Comments number
-        attribute :comments, API::Types::Coercible::Int.optional
+        attribute :comments, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Information whether current user can add the video
-        attribute :can_add, API::Types::Coercible::Int.optional
+        attribute :can_add, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Information whether current user can edit the video
-        attribute :can_edit, API::Types::Coercible::Int.optional
+        attribute :can_edit, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Information whether the video is private
-        attribute :is_private, API::Types::Coercible::Int.optional
+        attribute :is_private, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Videos number (for album)
-        attribute :count, API::Types::Coercible::Int.optional
+        attribute :count, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date of last update (for album) in Unixtime
-        attribute :updated_time, API::Types::Coercible::Int.optional
+        attribute :updated_time, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of a previously-deleted message to restore.
-          attribute :message_id, API::Types::Coercible::Int.optional
+          attribute :message_id, API::Types::Coercible::Int
         end
       end
     end

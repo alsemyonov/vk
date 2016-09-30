@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class PhotoUploadResponse < Vk::Schema::Object
         # @return [Integer] Upload server number
-        attribute :server, API::Types::Coercible::Int.optional
+        attribute :server, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Uploaded photos data
-        attribute :photos_list, API::Types::Coercible::String.optional
+        attribute :photos_list, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Album ID
-        attribute :aid, API::Types::Coercible::Int.optional
+        attribute :aid, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Uploading hash
-        attribute :hash, API::Types::Coercible::String.optional
+        attribute :hash, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

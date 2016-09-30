@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the album to save photos to.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the community to save photos to.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Parameter returned when .
-          attribute :server, API::Types::Coercible::Int.optional
+          attribute :server, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Parameter returned when .
-          attribute :photos_list, API::Types::Coercible::String.optional
+          attribute :photos_list, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Parameter returned when .
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String.optional.default(nil)
           # @return [Number] Geographical latitude, in degrees (from '-90' to '90').
-          attribute :latitude, API::Types::Coercible::Int.optional
+          attribute :latitude, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical longitude, in degrees (from '-180' to '180').
-          attribute :longitude, API::Types::Coercible::Int.optional
+          attribute :longitude, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Text describing the photo. 2048 digits max.
-          attribute :caption, API::Types::Coercible::String.optional
+          attribute :caption, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

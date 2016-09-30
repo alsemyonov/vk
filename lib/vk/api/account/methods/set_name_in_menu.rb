@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [String] Application screen name.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

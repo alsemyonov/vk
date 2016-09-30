@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community that owns the discussion board.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Integer] ID of the topic to be commented on.
-          attribute :topic_id, API::Types::Coercible::Int.optional
+          attribute :topic_id, API::Types::Coercible::Int
           # @return [String] (Required if 'attachments' is not set.) Text of the comment.
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] (Required if 'text' is not set.) List of media objects attached to the comment, in the following format:; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media object:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; '<owner_id>' — ID of the media owner. ; '<media_id>' — Media ID.
-          attribute :attachments, API::Types::Coercible::Array.optional
+          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' — to post the comment as by the community; '0' — to post the comment as by the user (default)
-          attribute :from_group, API::Types::Bool.optional
+          attribute :from_group, API::Types::Bool.optional.default(nil)
           # @return [Integer] Sticker ID.
-          attribute :sticker_id, API::Types::Coercible::Int.optional
+          attribute :sticker_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Unique identifier to avoid repeated comments.
-          attribute :guid, API::Types::Coercible::String.optional
+          attribute :guid, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

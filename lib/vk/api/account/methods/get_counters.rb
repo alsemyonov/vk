@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Counters to be returned (friends, messages, photos, videos, notes, gifts, events, groups, sdk).
-          attribute :filter, API::Types::Coercible::Array.optional
+          attribute :filter, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

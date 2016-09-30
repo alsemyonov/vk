@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class LookupContactsResponse < Vk::Schema::Response
           # @return [API::Account::LookupResult] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Account::LookupResult].optional
+          attribute :response, Dry::Types[API::Account::LookupResult].optional.default(nil)
         end
       end
     end

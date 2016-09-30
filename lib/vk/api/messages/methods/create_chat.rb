@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] IDs of the users to be added to the chat.
-          attribute :user_ids, API::Types::Coercible::Array.optional
+          attribute :user_ids, API::Types::Coercible::Array
           # @return [String] Chat title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

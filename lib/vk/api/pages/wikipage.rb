@@ -20,13 +20,13 @@ module Vk
         # @return [Integer] Views number
         attribute :views, API::Types::Coercible::Int
         # @return [Integer] Last editor ID
-        attribute :editor_id, API::Types::Coercible::Int.optional
+        attribute :editor_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Last editor name
-        attribute :editor_name, API::Types::Coercible::String.optional
+        attribute :editor_name, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Page creator ID
-        attribute :creator_id, API::Types::Coercible::Int.optional
+        attribute :creator_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Page creator name
-        attribute :creator_name, API::Types::Coercible::Int.optional
+        attribute :creator_name, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

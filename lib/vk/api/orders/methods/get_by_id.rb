@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] order ID.
-          attribute :order_id, API::Types::Coercible::Int.optional
+          attribute :order_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] order IDs (when information about several orders is requested).
-          attribute :order_ids, API::Types::Coercible::Array.optional
+          attribute :order_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
-          attribute :test_mode, API::Types::Bool.optional
+          attribute :test_mode, API::Types::Bool.optional.default(nil)
         end
       end
     end

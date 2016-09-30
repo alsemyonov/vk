@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Setting name.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Setting value.
-          attribute :value, API::Types::Coercible::String.optional
+          attribute :value, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

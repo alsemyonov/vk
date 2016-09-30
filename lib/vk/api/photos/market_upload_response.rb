@@ -8,17 +8,17 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class MarketUploadResponse < Vk::Schema::Object
         # @return [Integer] Community ID
-        attribute :group_id, API::Types::Coercible::Int.optional
+        attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Upload server number
-        attribute :server, API::Types::Coercible::Int.optional
+        attribute :server, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Uploaded photo data
-        attribute :photo, API::Types::Coercible::String.optional
+        attribute :photo, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Uploading hash
-        attribute :hash, API::Types::Coercible::String.optional
+        attribute :hash, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Crop data
-        attribute :crop_data, API::Types::Coercible::String.optional
+        attribute :crop_data, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Crop hash
-        attribute :crop_hash, API::Types::Coercible::String.optional
+        attribute :crop_hash, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

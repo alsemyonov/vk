@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class DomainResolved < Vk::Schema::Object
         # @return [String] Object type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Object ID
-        attribute :object_id, API::Types::Coercible::Int.optional
+        attribute :object_id, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

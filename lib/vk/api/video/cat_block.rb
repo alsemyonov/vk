@@ -20,7 +20,7 @@ module Vk
         # @return [API::Base::BoolInt] Information whether the block can be hidden
         attribute :can_hide, API::Base::BoolInt
         # @return [String] Block type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

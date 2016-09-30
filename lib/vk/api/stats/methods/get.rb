@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Application ID.
-          attribute :app_id, API::Types::Coercible::Int.optional
+          attribute :app_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Latest datestamp (in Unix time) of statistics to return.
-          attribute :date_from, API::Types::Coercible::String.optional
+          attribute :date_from, API::Types::Coercible::String.optional.default(nil)
           # @return [String] End datestamp (in Unix time) of statistics to return.
-          attribute :date_to, API::Types::Coercible::String.optional
+          attribute :date_to, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

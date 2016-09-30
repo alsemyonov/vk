@@ -18,15 +18,15 @@ module Vk
         # @return [String] File extension
         attribute :ext, API::Types::Coercible::String
         # @return [String] File URL
-        attribute :url, API::Types::Coercible::String.optional
+        attribute :url, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when file has been uploaded in Unixtime
         attribute :date, API::Types::Coercible::Int
         # @return [Integer] Document type
         attribute :type, API::Types::Coercible::Int
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :preview, API::Types::Coercible::Hash.optional
+        attribute :preview, API::Types::Coercible::Hash.optional.default(nil)
         # @return [String] Access key for the document
-        attribute :access_key, API::Types::Coercible::String.optional
+        attribute :access_key, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

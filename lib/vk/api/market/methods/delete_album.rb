@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an collection owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Collection ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int
         end
       end
     end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the wall.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Post ID.
-          attribute :post_id, API::Types::Coercible::Int.optional
+          attribute :post_id, API::Types::Coercible::Int
           # @return [Integer] Reason for the complaint:; '0' – spam; '1' – child pornography; '2' – extremism; '3' – violence; '4' – drug propaganda; '5' – adult material; '6' – insult; abuse
-          attribute :reason, API::Types::Coercible::Int.optional
+          attribute :reason, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

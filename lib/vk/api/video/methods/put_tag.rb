@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user to be tagged.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Video ID.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [String] Tag text.
-          attribute :tagged_name, API::Types::Coercible::String.optional
+          attribute :tagged_name, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

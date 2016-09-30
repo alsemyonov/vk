@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Note ID.
-          attribute :note_id, API::Types::Coercible::Int.optional
+          attribute :note_id, API::Types::Coercible::Int
           # @return [Integer] Note owner ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

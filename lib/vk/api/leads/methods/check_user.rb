@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Lead ID.
-          attribute :lead_id, API::Types::Coercible::Int.optional
+          attribute :lead_id, API::Types::Coercible::Int
           # @return [Integer] Value to be return in 'result' field when test mode is used.
-          attribute :test_result, API::Types::Coercible::Int.optional
+          attribute :test_result, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] User age.
-          attribute :age, API::Types::Coercible::Int.optional
+          attribute :age, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] User country code.
-          attribute :country, API::Types::Coercible::String.optional
+          attribute :country, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

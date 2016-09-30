@@ -12,7 +12,7 @@ module Vk
         # @return [String] Error description
         attribute :error_description, API::Types::Coercible::String
         # @return [String] URI for validation
-        attribute :redirect_uri, API::Types::Coercible::String.optional
+        attribute :redirect_uri, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

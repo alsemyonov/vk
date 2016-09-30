@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class StatsCities < Vk::Schema::Object
         # @return [Number] Impressions rate
-        attribute :impressions_rate, API::Types::Coercible::Int.optional
+        attribute :impressions_rate, API::Types::Coercible::Int.optional.default(nil)
         # @return [Number] Clicks rate
-        attribute :clicks_rate, API::Types::Coercible::Int.optional
+        attribute :clicks_rate, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] City ID
-        attribute :value, API::Types::Coercible::Int.optional
+        attribute :value, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] City name
-        attribute :name, API::Types::Coercible::String.optional
+        attribute :name, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Item ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
           # @return [Array] Collections IDs to add  item to.
-          attribute :album_ids, API::Types::Coercible::Array.optional
+          attribute :album_ids, API::Types::Coercible::Array
         end
       end
     end

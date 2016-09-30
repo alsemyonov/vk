@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] Item type. Possible values:; *'wall' – post on the wall;; *'tag' – tag on a photo;; *'profilephoto' – profile photo;; *'video' – video;; *'audio' – audio.
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String
           # @return [Integer] Item owner's identifier (user or community); "Note that community id must be negative. ; 'owner_id=1' – user ; 'owner_id=-1' – community "
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Item identifier
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
         end
       end
     end

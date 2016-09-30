@@ -20,7 +20,7 @@ module Vk
         # @return [String] Comment text
         attribute :message, API::Types::Coercible::String
         # @return [Integer] ID of replied comment
-        attribute :reply_to, API::Types::Coercible::Int.optional
+        attribute :reply_to, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

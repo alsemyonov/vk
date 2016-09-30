@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Link to check (e.g., 'http://google.com').
-          attribute :url, API::Types::Coercible::String.optional
+          attribute :url, API::Types::Coercible::String
         end
       end
     end

@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Amount < Vk::Schema::Object
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :amounts, API::Types::Coercible::Array.optional
+        attribute :amounts, API::Types::Coercible::Array.optional.default(nil)
       end
     end
   end

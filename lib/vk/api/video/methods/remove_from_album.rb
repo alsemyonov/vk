@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :target_id, API::Types::Coercible::Int.optional
+          attribute :target_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :album_ids, API::Types::Coercible::Array.optional
+          attribute :album_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
         end
       end
     end

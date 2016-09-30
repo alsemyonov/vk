@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Integer] Offset needed to return a specific subset of users.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of users to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

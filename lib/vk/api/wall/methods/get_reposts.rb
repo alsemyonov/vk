@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID or community ID. By default, current user ID. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Post ID.
-          attribute :post_id, API::Types::Coercible::Int.optional
+          attribute :post_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of reposts.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of reposts to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

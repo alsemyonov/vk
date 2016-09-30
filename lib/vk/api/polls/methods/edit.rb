@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] poll owner id
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] edited poll's id
-          attribute :poll_id, API::Types::Coercible::Int.optional
+          attribute :poll_id, API::Types::Coercible::Int
           # @return [String] new question text
-          attribute :question, API::Types::Coercible::String.optional
+          attribute :question, API::Types::Coercible::String.optional.default(nil)
           # @return [String] answers list, for example: ; "["yes","no","maybe"]"
-          attribute :add_answers, API::Types::Coercible::String.optional
+          attribute :add_answers, API::Types::Coercible::String.optional.default(nil)
           # @return [String] object containing answers that need to be edited;; key – answer id, value – new answer text.; Example:; \$1"382967099":"option1", "382967103":"option2"\$1"
-          attribute :edit_answers, API::Types::Coercible::String.optional
+          attribute :edit_answers, API::Types::Coercible::String.optional.default(nil)
           # @return [String] list of answer ids to be deleted. For example:; "[382967099, 382967103]"
-          attribute :delete_answers, API::Types::Coercible::String.optional
+          attribute :delete_answers, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

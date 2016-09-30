@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Metric data obtained in the lead interface.
-          attribute :data, API::Types::Coercible::String.optional
+          attribute :data, API::Types::Coercible::String
         end
       end
     end

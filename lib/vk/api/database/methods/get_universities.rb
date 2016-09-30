@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Country ID.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] City ID.
-          attribute :city_id, API::Types::Coercible::Int.optional
+          attribute :city_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of universities.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of universities to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

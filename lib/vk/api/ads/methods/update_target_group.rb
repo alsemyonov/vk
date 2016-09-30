@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [Integer] 'Only for advertising agencies.' ; ID of the client with the advertising account where the group will be created.;
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Group ID.
-          attribute :target_group_id, API::Types::Coercible::Int.optional
+          attribute :target_group_id, API::Types::Coercible::Int
           # @return [String] New name of the target group — a string up to 64 characters long.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String
           # @return [String] Domain of the site where user accounting code will be placed.
-          attribute :domain, API::Types::Coercible::String.optional
+          attribute :domain, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] 'Only for the groups that get audience from sites with user accounting code.'; Time in days when users added to a retarget group will be automatically excluded from it. ; '0' – automatic exclusion is off.
-          attribute :lifetime, API::Types::Coercible::Int.optional
+          attribute :lifetime, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Voters < Vk::Schema::Object
         # @return [Integer] Answer ID
-        attribute :answer_id, API::Types::Coercible::Int.optional
+        attribute :answer_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :users, API::Types::Coercible::Hash.optional
+        attribute :users, API::Types::Coercible::Hash.optional.default(nil)
       end
     end
   end

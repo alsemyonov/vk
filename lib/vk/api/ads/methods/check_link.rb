@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [String] Object type:; *'community' — community;; *'post' — community post;; *'application' — VK application;; *'video' — video;; *'site' — external site.
-          attribute :link_type, API::Types::Coercible::String.optional
+          attribute :link_type, API::Types::Coercible::String
           # @return [String] Object URL.
-          attribute :link_url, API::Types::Coercible::String.optional
+          attribute :link_url, API::Types::Coercible::String
           # @return [Integer] Campaign ID
-          attribute :campaign_id, API::Types::Coercible::Int.optional
+          attribute :campaign_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

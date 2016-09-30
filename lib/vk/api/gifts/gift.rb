@@ -8,19 +8,19 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Gift < Vk::Schema::Object
         # @return [Integer] Gift ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Gift sender ID
-        attribute :from_id, API::Types::Coercible::Int.optional
+        attribute :from_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Comment text
-        attribute :message, API::Types::Coercible::String.optional
+        attribute :message, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when gist has been sent in Unixtime
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [API::Gifts::Layout] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :gift, Dry::Types[API::Gifts::Layout].optional
+        attribute :gift, Dry::Types[API::Gifts::Layout].optional.default(nil)
         # @return [Integer] Gift privacy
-        attribute :privacy, API::Types::Coercible::Int.optional
+        attribute :privacy, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Hash
-        attribute :gift_hash, API::Types::Coercible::String.optional
+        attribute :gift_hash, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

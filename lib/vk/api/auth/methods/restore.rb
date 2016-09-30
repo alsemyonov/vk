@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] user phone number.
-          attribute :phone, API::Types::Coercible::String.optional
+          attribute :phone, API::Types::Coercible::String
         end
       end
     end

@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the photo.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user to be tagged.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [Number] Upper left-corner coordinate of the tagged area (as a percentage of the photo's width).
-          attribute :x, API::Types::Coercible::Int.optional
+          attribute :x, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Upper left-corner coordinate of the tagged area (as a percentage of the photo's height).
-          attribute :y, API::Types::Coercible::Int.optional
+          attribute :y, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Lower right-corner coordinate of the tagged area (as a percentage of the photo's width).
-          attribute :x2, API::Types::Coercible::Int.optional
+          attribute :x2, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Lower right-corner coordinate of the tagged area (as a percentage of the photo's height).
-          attribute :y2, API::Types::Coercible::Int.optional
+          attribute :y2, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

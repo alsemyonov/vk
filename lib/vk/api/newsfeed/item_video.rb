@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class ItemVideo < Vk::Schema::Object
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :video, API::Types::Coercible::Hash.optional
+        attribute :video, API::Types::Coercible::Hash.optional.default(nil)
       end
     end
   end

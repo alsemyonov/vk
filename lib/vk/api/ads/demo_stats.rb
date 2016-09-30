@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class DemoStats < Vk::Schema::Object
         # @return [Integer] Object ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [API::Ads::ObjectType] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :type, API::Ads::ObjectType.optional
+        attribute :type, API::Ads::ObjectType.optional.default(nil)
         # @return [API::Ads::DemostatsFormat] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :stats, Dry::Types[API::Ads::DemostatsFormat].optional
+        attribute :stats, Dry::Types[API::Ads::DemostatsFormat].optional.default(nil)
       end
     end
   end

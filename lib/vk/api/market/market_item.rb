@@ -22,7 +22,7 @@ module Vk
         # @return [Integer] Date when the item has been created in Unixtime
         attribute :date, API::Types::Coercible::Int
         # @return [String] URL of the preview image
-        attribute :thumb_photo, API::Types::Coercible::String.optional
+        attribute :thumb_photo, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Information whether the item is available
         attribute :availability, API::Types::Coercible::Int
       end

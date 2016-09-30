@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class PostedPhoto < Vk::Schema::Object
         # @return [Integer] Photo ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Photo owner's ID
-        attribute :owner_id, API::Types::Coercible::Int.optional
+        attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] URL of the preview image with 130 px in width
-        attribute :photo_130, API::Types::Coercible::String.optional
+        attribute :photo_130, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 604 px in width
-        attribute :photo_604, API::Types::Coercible::String.optional
+        attribute :photo_604, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

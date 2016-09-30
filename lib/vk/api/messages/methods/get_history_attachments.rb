@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Peer ID.; ; "; For group chat:; '2000000000 + chat ID' ; ; For community:; '-community ID'"
-          attribute :peer_id, API::Types::Coercible::Int.optional
+          attribute :peer_id, API::Types::Coercible::Int
           # @return [String] Type of media files to return:; *'photo';; *'video';; *'audio';; *'doc';; *'link'.;
-          attribute :media_type, API::Types::Coercible::String.optional
+          attribute :media_type, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Message ID to start return results from.
-          attribute :start_from, API::Types::Coercible::String.optional
+          attribute :start_from, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of objects to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return photo sizes in a
-          attribute :photo_sizes, API::Types::Bool.optional
+          attribute :photo_sizes, API::Types::Bool.optional.default(nil)
           # @return [Array] Additional  to return.
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

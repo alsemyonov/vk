@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community that owns the wiki page.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

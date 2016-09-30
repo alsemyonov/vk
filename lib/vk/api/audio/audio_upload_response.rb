@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class AudioUploadResponse < Vk::Schema::Object
         # @return [String] Redirect URL
-        attribute :redirect, API::Types::Coercible::String.optional
+        attribute :redirect, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Upload server number
-        attribute :server, API::Types::Coercible::Int.optional
+        attribute :server, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Uploaded aduio data
-        attribute :audio, API::Types::Coercible::String.optional
+        attribute :audio, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Uploading hash
-        attribute :hash, API::Types::Coercible::String.optional
+        attribute :hash, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

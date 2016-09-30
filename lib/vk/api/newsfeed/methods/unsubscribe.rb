@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] Type of object from which to unsubscribe:; 'note' — note; 'photo' — photo; 'post' — post on user wall or community wall; 'topic' — topic; 'video' — video
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String
           # @return [Integer] Object owner ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Object ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
         end
       end
     end

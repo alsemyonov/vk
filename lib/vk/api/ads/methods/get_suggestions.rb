@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [String] Section, suggestions are retrieved in. Available values:; *countries — request of a list of countries. If q is not set or blank, a short list of countries is shown. Otherwise, a full list of countries is shown.; *regions — requested list of regions.  'country' parameter is required.; *cities — requested list of cities. 'country' parameter is required.; *districts — requested list of districts.  'cities' parameter is required.; *stations — requested list of subway stations.  'cities' parameter is required.; *streets — requested list of cities. 'cities' parameter is required.; *schools — requested list of educational organizations.  'cities' parameter is required.; *interests — requested list of interests.; *positions — requested list of positions (professions).; *group_types — requested list of group types.; *religions — requested list of religious commitments.; *browsers — requested list of browsers and mobile devices.;
-          attribute :section, API::Types::Coercible::String.optional
+          attribute :section, API::Types::Coercible::String
           # @return [String] Objects IDs separated by commas. If the parameter is passed, 'q, country, cities' should not be passed.
-          attribute :ids, API::Types::Coercible::String.optional
+          attribute :ids, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Filter-line of the request (for countries, regions, cities, streets, schools, interests, positions).
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] ID of the country objects are searched in.
-          attribute :country, API::Types::Coercible::Int.optional
+          attribute :country, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] IDs of cities where objects are searched in, separated with a comma.
-          attribute :cities, API::Types::Coercible::String.optional
+          attribute :cities, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Language of the returned string values. Supported languages:; *ru — Russian;; *ua — Ukrainian;; *en — English.;
-          attribute :lang, API::Types::Coercible::String.optional
+          attribute :lang, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

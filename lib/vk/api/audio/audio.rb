@@ -16,9 +16,9 @@ module Vk
         # @return [String] Title
         attribute :title, API::Types::Coercible::String
         # @return [String] URL of mp3 file
-        attribute :url, API::Types::Coercible::String.optional
+        attribute :url, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Access key for the audio
-        attribute :access_key, API::Types::Coercible::String.optional
+        attribute :access_key, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

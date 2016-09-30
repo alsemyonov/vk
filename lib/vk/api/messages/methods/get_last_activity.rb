@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
         end
       end
     end

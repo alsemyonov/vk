@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Text of the wiki page.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String
           # @return [Integer] ID of the group in the context of which this markup is interpreted.;
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

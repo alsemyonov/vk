@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetByIdResponse < Vk::Schema::Response
           # @return [API::Notes::Note] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Notes::Note].optional
+          attribute :response, Dry::Types[API::Notes::Note].optional.default(nil)
         end
       end
     end

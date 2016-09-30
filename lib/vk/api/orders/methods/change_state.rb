@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] order ID.
-          attribute :order_id, API::Types::Coercible::Int.optional
+          attribute :order_id, API::Types::Coercible::Int
           # @return [String] action to be done with the order. ; ; Available actions:; *cancel — to cancel unconfirmed order.; *charge — to confirm unconfirmed order. Applies only if processing of  notification failed.; *refund — to cancel confirmed order.;
-          attribute :action, API::Types::Coercible::String.optional
+          attribute :action, API::Types::Coercible::String
           # @return [Integer] internal ID of the order in the application.
-          attribute :app_order_id, API::Types::Coercible::Int.optional
+          attribute :app_order_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
-          attribute :test_mode, API::Types::Bool.optional
+          attribute :test_mode, API::Types::Bool.optional.default(nil)
         end
       end
     end

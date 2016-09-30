@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] ID or screen name of the community.
-          attribute :group_id, API::Types::Coercible::String.optional
+          attribute :group_id, API::Types::Coercible::String
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] User IDs.
-          attribute :user_ids, API::Types::Coercible::Array.optional
+          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' — to return an extended response with additional fields.; By default: '0'.
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
         end
       end
     end

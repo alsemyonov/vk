@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID (if the album is owned by a community).
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Album ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int
         end
       end
     end

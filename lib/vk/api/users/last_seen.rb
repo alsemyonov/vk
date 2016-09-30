@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class LastSeen < Vk::Schema::Object
         # @return [Integer] Last visit date (in Unix time)
-        attribute :time, API::Types::Coercible::Int.optional
+        attribute :time, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Type of the platform that used for the last authorization
-        attribute :platform, API::Types::Coercible::Int.optional
+        attribute :platform, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

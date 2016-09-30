@@ -8,23 +8,23 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Offer < Vk::Schema::Object
         # @return [Integer] Offer ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Offer title
-        attribute :title, API::Types::Coercible::String.optional
+        attribute :title, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Instruction how to process the offer
-        attribute :instruction, API::Types::Coercible::String.optional
+        attribute :instruction, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Instruction how to process the offer (HTML format)
-        attribute :instruction_html, API::Types::Coercible::String.optional
+        attribute :instruction_html, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Offer short description
-        attribute :short_description, API::Types::Coercible::String.optional
+        attribute :short_description, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Offer description
-        attribute :description, API::Types::Coercible::String.optional
+        attribute :description, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image
-        attribute :img, API::Types::Coercible::String.optional
+        attribute :img, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Offer tag
-        attribute :tag, API::Types::Coercible::String.optional
+        attribute :tag, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Offer price
-        attribute :price, API::Types::Coercible::Int.optional
+        attribute :price, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

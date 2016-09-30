@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' if videocalls are available for current device.
-          attribute :voip, API::Types::Bool.optional
+          attribute :voip, API::Types::Bool.optional.default(nil)
         end
       end
     end

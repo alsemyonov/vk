@@ -30,27 +30,27 @@ module Vk
           # @!group Arguments
 
           # @return [String] Sort order:; 'popular_today' — popular for one day (default); 'visitors' — by visitors number ; 'create_date' — by creation date; 'growth_rate' — by growth rate; 'popular_week' — popular for one week
-          attribute :sort, API::Types::Coercible::String.optional
+          attribute :sort, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Offset required to return a specific subset of apps.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of apps to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :platform, API::Types::Coercible::String.optional
+          attribute :platform, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to return additional fields 'screenshots', 'MAU', 'catalog_position', and 'international'. If set, 'count' must be less than or equal to '100'. ; '0' — not to return additional fields (default).
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :return_friends, API::Types::Bool.optional
+          attribute :return_friends, API::Types::Bool.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :name_case, API::Types::Coercible::String.optional
+          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :genre_id, API::Types::Coercible::Int.optional
+          attribute :genre_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] 'installed' — to return list of installed apps (only for mobile platform).
-          attribute :filter, API::Types::Coercible::String.optional
+          attribute :filter, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

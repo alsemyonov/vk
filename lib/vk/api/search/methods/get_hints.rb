@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Maximum number of results to return.
-          attribute :limit, API::Types::Coercible::Int.optional
+          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] 
-          attribute :filters, API::Types::Coercible::Array.optional
+          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] 
-          attribute :search_global, API::Types::Bool.optional
+          attribute :search_global, API::Types::Bool.optional.default(nil)
         end
       end
     end

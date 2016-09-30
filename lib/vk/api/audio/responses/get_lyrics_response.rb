@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetLyricsResponse < Vk::Schema::Response
           # @return [API::Audio::Lyrics] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Audio::Lyrics].optional
+          attribute :response, Dry::Types[API::Audio::Lyrics].optional.default(nil)
         end
       end
     end

@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the location's type (e.g., '1' — Home, '2' — Work). To get location type IDs, use the   method.
-          attribute :type, API::Types::Coercible::Int.optional
+          attribute :type, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Title of the location.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [Number] Geographical latitude, in degrees (from '-90' to '90').
-          attribute :latitude, API::Types::Coercible::Int.optional
+          attribute :latitude, API::Types::Coercible::Int
           # @return [Number] Geographical longitude, in degrees (from '-180' to '180').
-          attribute :longitude, API::Types::Coercible::Int.optional
+          attribute :longitude, API::Types::Coercible::Int
           # @return [Integer] ID of the location's country. To get country IDs, use the  method.
-          attribute :country, API::Types::Coercible::Int.optional
+          attribute :country, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the location's city. To get city IDs, use the  method.
-          attribute :city, API::Types::Coercible::Int.optional
+          attribute :city, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Street address of the location (e.g., '125 Elm Street').
-          attribute :address, API::Types::Coercible::String.optional
+          attribute :address, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

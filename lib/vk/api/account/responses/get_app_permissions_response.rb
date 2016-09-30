@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetAppPermissionsResponse < Vk::Schema::Response
           # @return [Integer] Permissions mask
-          attribute :response, API::Types::Coercible::Int.optional
+          attribute :response, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

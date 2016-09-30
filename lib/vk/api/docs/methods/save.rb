@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] This parameter is returned when the file is [https://vk.com/dev/upload_files_2?f=10.%2BUploading%2BDocuments|uploaded to the server].
-          attribute :file, API::Types::Coercible::String.optional
+          attribute :file, API::Types::Coercible::String
           # @return [String] Document title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Document tags.
-          attribute :tags, API::Types::Coercible::String.optional
+          attribute :tags, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -8,29 +8,29 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class GroupXtrInvitedBy < Vk::Schema::Object
         # @return [String] Community ID
-        attribute :id, API::Types::Coercible::String.optional
+        attribute :id, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Community name
-        attribute :name, API::Types::Coercible::String.optional
+        attribute :name, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Domain of the community page
-        attribute :screen_name, API::Types::Coercible::String.optional
+        attribute :screen_name, API::Types::Coercible::String.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether community is closed
-        attribute :is_closed, API::Base::BoolInt.optional
+        attribute :is_closed, API::Base::BoolInt.optional.default(nil)
         # @return [String] Community type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user is manager
-        attribute :is_admin, API::Base::BoolInt.optional
+        attribute :is_admin, API::Base::BoolInt.optional.default(nil)
         # @return [Integer] Level of current user's credentials as manager
-        attribute :admin_level, API::Types::Coercible::Int.optional
+        attribute :admin_level, API::Types::Coercible::Int.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user is member
-        attribute :is_member, API::Base::BoolInt.optional
+        attribute :is_member, API::Base::BoolInt.optional.default(nil)
         # @return [String] URL of square photo of the community with 50 pixels in width
-        attribute :photo_50, API::Types::Coercible::String.optional
+        attribute :photo_50, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of square photo of the community with 100 pixels in width
-        attribute :photo_100, API::Types::Coercible::String.optional
+        attribute :photo_100, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of square photo of the community with 200 pixels in width
-        attribute :photo_200, API::Types::Coercible::String.optional
+        attribute :photo_200, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Inviter ID
-        attribute :invited_by, API::Types::Coercible::Int.optional
+        attribute :invited_by, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

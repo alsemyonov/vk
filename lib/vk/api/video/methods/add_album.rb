@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID (if the album will be created in a community).
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Album title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] new access permissions for the album.; Possible values: ; *'0' – all users;; *'1' – friends only;; *'2' – friends and friends of friends;; *'3' – "only me".
-          attribute :privacy, API::Types::Coercible::Array.optional
+          attribute :privacy, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

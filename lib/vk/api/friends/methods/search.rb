@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [String] Search query string (e.g., 'Vasya Babich').
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online';
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] Case for declension of user name and surname:; 'nom' — nominative (default); 'gen' — genitive ; 'dat' — dative; 'acc' — accusative ; 'ins' — instrumental ; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional
+          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of friends.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of friends to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

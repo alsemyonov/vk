@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Owner ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Earliest timestamp (in Unix time) of a post to return. By default, 24 hours ago.;
-          attribute :start_time, API::Types::Coercible::Int.optional
+          attribute :start_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Latest timestamp (in Unix time) of a post to return. By default, the current time.;
-          attribute :end_time, API::Types::Coercible::Int.optional
+          attribute :end_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of posts.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

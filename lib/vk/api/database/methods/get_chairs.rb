@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] id of the faculty to get chairs from
-          attribute :faculty_id, API::Types::Coercible::Int.optional
+          attribute :faculty_id, API::Types::Coercible::Int
           # @return [Integer] offset required to get a certain subset of chairs
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] amount of chairs to get
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

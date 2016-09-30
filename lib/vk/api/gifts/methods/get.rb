@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of gifts to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of results.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

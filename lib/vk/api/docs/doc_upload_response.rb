@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class DocUploadResponse < Vk::Schema::Object
         # @return [String] Uploaded file data
-        attribute :file, API::Types::Coercible::String.optional
+        attribute :file, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

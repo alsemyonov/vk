@@ -12,11 +12,11 @@ module Vk
         # @return [Integer] Friend status with the user
         attribute :friend_status, API::Types::Coercible::Int
         # @return [String] Message sent with request
-        attribute :request_message, API::Types::Coercible::String.optional
+        attribute :request_message, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Information whether request is unviewed
-        attribute :read_state, API::Types::Coercible::Int.optional
+        attribute :read_state, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] MD5 hash for the result validation
-        attribute :sign, API::Types::Coercible::String.optional
+        attribute :sign, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

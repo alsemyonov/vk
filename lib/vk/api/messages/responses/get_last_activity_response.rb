@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetLastActivityResponse < Vk::Schema::Response
           # @return [API::Messages::LastActivity] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Messages::LastActivity].optional
+          attribute :response, Dry::Types[API::Messages::LastActivity].optional.default(nil)
         end
       end
     end

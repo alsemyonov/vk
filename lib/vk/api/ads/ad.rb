@@ -16,21 +16,21 @@ module Vk
         # @return [Integer] Cost type
         attribute :cost_type, API::Types::Coercible::Int
         # @return [Integer] Cost of a click, kopecks
-        attribute :cpc, API::Types::Coercible::Int.optional
+        attribute :cpc, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Cost of 1000 impressions, kopecks
-        attribute :cpm, API::Types::Coercible::Int.optional
+        attribute :cpm, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Impressions limit
-        attribute :impressions_limit, API::Types::Coercible::Int.optional
+        attribute :impressions_limit, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Information whether impressions are limited
-        attribute :impressions_limited, API::Types::Coercible::Int.optional
+        attribute :impressions_limited, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer, String] Ad platform
-        attribute :ad_platform, API::Types::Coercible::Int | API::Types::Coercible::String.optional
+        attribute :ad_platform, API::Types::Coercible::Int | API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Total limit
         attribute :all_limit, API::Types::Coercible::Int
         # @return [Integer] Category ID
-        attribute :category1_id, API::Types::Coercible::Int.optional
+        attribute :category1_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Additional category ID
-        attribute :category2_id, API::Types::Coercible::Int.optional
+        attribute :category2_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Ad atatus
         attribute :status, API::Types::Coercible::Int
         # @return [String] Ad title
@@ -38,13 +38,13 @@ module Vk
         # @return [Integer] Review status
         attribute :approved, API::Types::Coercible::Int
         # @return [API::Base::BoolInt] Information whether the ad is a video
-        attribute :video, API::Base::BoolInt.optional
+        attribute :video, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether disclaimer is enabled
-        attribute :disclaimer_medical, API::Base::BoolInt.optional
+        attribute :disclaimer_medical, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether disclaimer is enabled
-        attribute :disclaimer_specialist, API::Base::BoolInt.optional
+        attribute :disclaimer_specialist, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether disclaimer is enabled
-        attribute :disclaimer_supplements, API::Base::BoolInt.optional
+        attribute :disclaimer_supplements, API::Base::BoolInt.optional.default(nil)
       end
     end
   end

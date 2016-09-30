@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] This parameter is returned when the audio file is [https://vk.com/dev/upload_files_2?f=8.%20Uploading%20Audio%20Files|uploaded to the server].
-          attribute :server, API::Types::Coercible::Int.optional
+          attribute :server, API::Types::Coercible::Int
           # @return [String] This parameter is returned when the audio file is [https://vk.com/dev/upload_files_2?f=8.%20Uploading%20Audio%20Files|uploaded to the server].
-          attribute :audio, API::Types::Coercible::String.optional
+          attribute :audio, API::Types::Coercible::String
           # @return [String] This parameter is returned when the audio file is [https://vk.com/dev/upload_files_2?f=8.%20Uploading%20Audio%20Files|uploaded to the server].
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String.optional.default(nil)
           # @return [String] The name of the artist. By default, this is obtained from ID3 tags.
-          attribute :artist, API::Types::Coercible::String.optional
+          attribute :artist, API::Types::Coercible::String.optional.default(nil)
           # @return [String] The title of the audio file. By default, this is obtained from ID3 tags.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

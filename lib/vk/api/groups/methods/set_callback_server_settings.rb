@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] Callback API secret key.
-          attribute :secret_key, API::Types::Coercible::String.optional
+          attribute :secret_key, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

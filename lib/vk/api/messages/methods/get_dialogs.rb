@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Offset needed to return a specific subset of messages.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the message from what to return dialogs.
-          attribute :start_message_id, API::Types::Coercible::Int.optional
+          attribute :start_message_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of characters after which to truncate a previewed message. To preview the full message, specify '0'.; "NOTE: Messages are not truncated by default. Messages are truncated by words."
-          attribute :preview_length, API::Types::Coercible::Int.optional
+          attribute :preview_length, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — return unread messages only.
-          attribute :unread, API::Types::Bool.optional
+          attribute :unread, API::Types::Bool.optional.default(nil)
         end
       end
     end

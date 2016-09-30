@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class City < API::Base::Object
         # @return [String] Area title
-        attribute :area, API::Types::Coercible::String.optional
+        attribute :area, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Region title
-        attribute :region, API::Types::Coercible::String.optional
+        attribute :region, API::Types::Coercible::String.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether the city is included in important cities list
-        attribute :important, API::Base::BoolInt.optional
+        attribute :important, API::Base::BoolInt.optional.default(nil)
       end
     end
   end

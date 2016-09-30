@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class CropPhoto < Vk::Schema::Object
         # @return [API::Photos::Photo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :photo, Dry::Types[API::Photos::Photo].optional
+        attribute :photo, Dry::Types[API::Photos::Photo].optional.default(nil)
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :crop, API::Types::Coercible::Hash.optional
+        attribute :crop, API::Types::Coercible::Hash.optional.default(nil)
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :rect, API::Types::Coercible::Hash.optional
+        attribute :rect, API::Types::Coercible::Hash.optional.default(nil)
       end
     end
   end

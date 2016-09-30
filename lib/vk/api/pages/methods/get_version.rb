@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] 
-          attribute :version_id, API::Types::Coercible::Int.optional
+          attribute :version_id, API::Types::Coercible::Int
           # @return [Integer] ID of the community that owns the wiki page.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return the page as HTML
-          attribute :need_html, API::Types::Bool.optional
+          attribute :need_html, API::Types::Bool.optional.default(nil)
         end
       end
     end

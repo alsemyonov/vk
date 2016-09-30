@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Unique device ID.
-          attribute :device_id, API::Types::Coercible::String.optional
+          attribute :device_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Time in seconds for what notifications should be disabled. '-1' to disable forever.
-          attribute :time, API::Types::Coercible::Int.optional
+          attribute :time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Destination ID.; "For user:; 'User ID', e.g. '12345'.; ; For chat:; '2000000000' + 'Chat ID', e.g. '2000000001'.; ; For community:; '- Community ID', e.g. '-12345'.; "
-          attribute :peer_id, API::Types::Coercible::Int.optional
+          attribute :peer_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] '1' — to enable sound in this dialog, '0' — to disable sound. Only if 'peer_id' contains user or community ID.
-          attribute :sound, API::Types::Coercible::Int.optional
+          attribute :sound, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

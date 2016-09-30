@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [String] Device token used to send notifications. (for mpns, the token shall be URL for sending of notifications)
-          attribute :token, API::Types::Coercible::String.optional
+          attribute :token, API::Types::Coercible::String
           # @return [String] String name of device model.
-          attribute :device_model, API::Types::Coercible::String.optional
+          attribute :device_model, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Device year.
-          attribute :device_year, API::Types::Coercible::Int.optional
+          attribute :device_year, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Unique device ID.
-          attribute :device_id, API::Types::Coercible::String.optional
+          attribute :device_id, API::Types::Coercible::String
           # @return [String] String version of device operating system.
-          attribute :system_version, API::Types::Coercible::String.optional
+          attribute :system_version, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Push settings in a .
-          attribute :settings, API::Types::Coercible::String.optional
+          attribute :settings, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class LinkProduct < Vk::Schema::Object
         # @return [API::Market::Price] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :price, Dry::Types[API::Market::Price].optional
+        attribute :price, Dry::Types[API::Market::Price].optional.default(nil)
       end
     end
   end

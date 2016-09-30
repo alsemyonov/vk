@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] City IDs.
-          attribute :city_ids, API::Types::Coercible::Array.optional
+          attribute :city_ids, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Number of documents to return. By default, all documents.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of documents.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the user or community that owns the documents. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

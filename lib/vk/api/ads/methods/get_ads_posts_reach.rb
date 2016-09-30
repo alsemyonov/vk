@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [String] Ads IDS separated by comma.
-          attribute :ads_ids, API::Types::Coercible::String.optional
+          attribute :ads_ids, API::Types::Coercible::String
         end
       end
     end

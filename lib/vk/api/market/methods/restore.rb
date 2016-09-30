@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Deleted item ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
         end
       end
     end

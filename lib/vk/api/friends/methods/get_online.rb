@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Friend list ID. If this parameter is not set, information about all online friends is returned.
-          attribute :list_id, API::Types::Coercible::Int.optional
+          attribute :list_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return an additional 'online_mobile' field; '0' — (default);
-          attribute :online_mobile, API::Types::Bool.optional
+          attribute :online_mobile, API::Types::Bool.optional.default(nil)
           # @return [String] Sort order:; 'random' — random order
-          attribute :order, API::Types::Coercible::String.optional
+          attribute :order, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of friends to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of friends.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

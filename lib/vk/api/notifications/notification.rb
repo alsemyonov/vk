@@ -8,15 +8,15 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Notification < Vk::Schema::Object
         # @return [String] Notification type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when the event has been occured
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [API::Wall::WallpostToId, API::Photos::Photo, API::Board::Topic, API::Video::Video, API::Notifications::NotificationsComment] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :parent, Dry::Types[API::Wall::WallpostToId] | Dry::Types[API::Photos::Photo] | Dry::Types[API::Board::Topic] | Dry::Types[API::Video::Video] | Dry::Types[API::Notifications::NotificationsComment].optional
+        attribute :parent, Dry::Types[API::Wall::WallpostToId] | Dry::Types[API::Photos::Photo] | Dry::Types[API::Board::Topic] | Dry::Types[API::Video::Video] | Dry::Types[API::Notifications::NotificationsComment].optional.default(nil)
         # @return [API::Notifications::Feedback] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :feedback, Dry::Types[API::Notifications::Feedback].optional
+        attribute :feedback, Dry::Types[API::Notifications::Feedback].optional.default(nil)
         # @return [API::Notifications::Reply] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :reply, Dry::Types[API::Notifications::Reply].optional
+        attribute :reply, Dry::Types[API::Notifications::Reply].optional.default(nil)
       end
     end
   end

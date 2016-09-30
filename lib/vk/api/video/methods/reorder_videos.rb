@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the album with videos.
-          attribute :target_id, API::Types::Coercible::Int.optional
+          attribute :target_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the video album.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] ID of the video.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the video before which the video in question shall be placed.
-          attribute :before_owner_id, API::Types::Coercible::Int.optional
+          attribute :before_owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the video before which the video in question shall be placed.
-          attribute :before_video_id, API::Types::Coercible::Int.optional
+          attribute :before_video_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the user or community that owns the video after which the photo in question shall be placed.
-          attribute :after_owner_id, API::Types::Coercible::Int.optional
+          attribute :after_owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the video after which the photo in question shall be placed.
-          attribute :after_video_id, API::Types::Coercible::Int.optional
+          attribute :after_video_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

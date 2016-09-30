@@ -28,23 +28,23 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an items owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [String] Search query, for example "pink slippers".
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Minimum item price value.
-          attribute :price_from, API::Types::Coercible::Int.optional
+          attribute :price_from, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Maximum item price value.
-          attribute :price_to, API::Types::Coercible::Int.optional
+          attribute :price_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Comma-separated tag IDs list.
-          attribute :tags, API::Types::Coercible::Array.optional
+          attribute :tags, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] '0' — do not use reverse order, '1' — use reverse order
-          attribute :rev, API::Types::Coercible::Int.optional
+          attribute :rev, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of results.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of items to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' – to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
         end
       end
     end

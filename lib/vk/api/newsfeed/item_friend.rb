@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class ItemFriend < Vk::Schema::Object
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :friends, API::Types::Coercible::Hash.optional
+        attribute :friends, API::Types::Coercible::Hash.optional.default(nil)
       end
     end
   end

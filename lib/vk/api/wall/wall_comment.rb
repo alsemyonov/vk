@@ -16,15 +16,15 @@ module Vk
         # @return [String] Comment text
         attribute :text, API::Types::Coercible::String
         # @return [API::Base::LikesInfo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :likes, Dry::Types[API::Base::LikesInfo].optional
+        attribute :likes, Dry::Types[API::Base::LikesInfo].optional.default(nil)
         # @return [Integer] Replied user ID
-        attribute :reply_to_user, API::Types::Coercible::Int.optional
+        attribute :reply_to_user, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Replied comment ID
-        attribute :reply_to_comment, API::Types::Coercible::Int.optional
+        attribute :reply_to_comment, API::Types::Coercible::Int.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :attachments, API::Types::Coercible::Array.member(API::Wall::CommentAttachment).optional
+        attribute :attachments, API::Types::Coercible::Array.member(API::Wall::CommentAttachment).optional.default(nil)
         # @return [Integer] Real position of the comment
-        attribute :real_offset, API::Types::Coercible::Int.optional
+        attribute :real_offset, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

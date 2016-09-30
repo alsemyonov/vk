@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] identifier of a user or community to add a video to.; Use a negative value to designate a community ID.
-          attribute :target_id, API::Types::Coercible::Int.optional
+          attribute :target_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Video ID.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the video.; Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
         end
       end
     end

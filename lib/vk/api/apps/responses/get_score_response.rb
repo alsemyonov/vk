@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetScoreResponse < Vk::Schema::Response
           # @return [Integer] Score number
-          attribute :response, API::Types::Coercible::Int.optional
+          attribute :response, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [Integer] 'Only for advertising agencies.' ; ID of the client with the advertising account where the group will be created.;
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Target group ID.
-          attribute :target_group_id, API::Types::Coercible::Int.optional
+          attribute :target_group_id, API::Types::Coercible::Int
           # @return [String] List of phone numbers, emails or user IDs separated with a comma.
-          attribute :contacts, API::Types::Coercible::String.optional
+          attribute :contacts, API::Types::Coercible::String
         end
       end
     end

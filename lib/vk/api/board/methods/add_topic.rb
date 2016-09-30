@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community that owns the discussion board.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] Topic title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [String] Text of the topic.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] For a community:; '1' — to post the topic as by the community; '0' — to post the topic as by the user (default)
-          attribute :from_group, API::Types::Bool.optional
+          attribute :from_group, API::Types::Bool.optional.default(nil)
           # @return [Array] List of media objects attached to the topic, in the following format:; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media object:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; '<owner_id>' — ID of the media owner. ; '<media_id>' — Media ID.; ; Example:; "photo100172_166443618,photo66748_265827614"; ; "NOTE: If you try to attach more than one reference, an error will be thrown.";
-          attribute :attachments, API::Types::Coercible::Array.optional
+          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

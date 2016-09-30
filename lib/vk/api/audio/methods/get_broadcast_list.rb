@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Types of objects to return:; 'friends' — only friends; 'groups' — only communities; 'all' — both friends and communities (default)
-          attribute :filter, API::Types::Coercible::String.optional
+          attribute :filter, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to return only friends and communities that are broadcasting at the moment.; '0' — to return all friends and communities (default).
-          attribute :active, API::Types::Bool.optional
+          attribute :active, API::Types::Bool.optional.default(nil)
         end
       end
     end

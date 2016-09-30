@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Video ID.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [Integer] Reason for the complaint:; '0' – spam; '1' – child pornography; '2' – extremism; '3' – violence; '4' – drug propaganda; '5' – adult material; '6' – insult; abuse
-          attribute :reason, API::Types::Coercible::Int.optional
+          attribute :reason, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Comment describing the complaint.
-          attribute :comment, API::Types::Coercible::String.optional
+          attribute :comment, API::Types::Coercible::String.optional.default(nil)
           # @return [String] (If the video was found in search results.) Search query string.
-          attribute :search_query, API::Types::Coercible::String.optional
+          attribute :search_query, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

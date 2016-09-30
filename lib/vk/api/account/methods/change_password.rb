@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Session id received after the  method is executed.; (If the password is changed right after the access was restored)
-          attribute :restore_sid, API::Types::Coercible::String.optional
+          attribute :restore_sid, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Hash received after a successful OAuth authorization with a code got by SMS.; (If the password is changed right after the access was restored)
-          attribute :change_password_hash, API::Types::Coercible::String.optional
+          attribute :change_password_hash, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Current user password.
-          attribute :old_password, API::Types::Coercible::String.optional
+          attribute :old_password, API::Types::Coercible::String.optional.default(nil)
           # @return [String] New password that  will be set as a current
-          attribute :new_password, API::Types::Coercible::String.optional
+          attribute :new_password, API::Types::Coercible::String
         end
       end
     end

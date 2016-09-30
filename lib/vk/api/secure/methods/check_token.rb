@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] client 'access_token'
-          attribute :token, API::Types::Coercible::String.optional
+          attribute :token, API::Types::Coercible::String.optional.default(nil)
           # @return [String] user 'ip address'. Note that user may access using the 'ipv6' address, in this case it is required to transmit the 'ipv6' address. ; If not transmitted, the address will not be checked.
-          attribute :ip, API::Types::Coercible::String.optional
+          attribute :ip, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -52,71 +52,71 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string (e.g., 'Vasya Babich').
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Sort order:; '1' — by date registered; '0' — by rating
-          attribute :sort, API::Types::Coercible::Int.optional
+          attribute :sort, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of users.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of users to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online';
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] City ID.
-          attribute :city, API::Types::Coercible::Int.optional
+          attribute :city, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Country ID.
-          attribute :country, API::Types::Coercible::Int.optional
+          attribute :country, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] City name in a string.
-          attribute :hometown, API::Types::Coercible::String.optional
+          attribute :hometown, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] ID of the country where the user graduated.
-          attribute :university_country, API::Types::Coercible::Int.optional
+          attribute :university_country, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the institution of higher education.
-          attribute :university, API::Types::Coercible::Int.optional
+          attribute :university, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Year of graduation from an institution of higher education.
-          attribute :university_year, API::Types::Coercible::Int.optional
+          attribute :university_year, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Faculty ID.
-          attribute :university_faculty, API::Types::Coercible::Int.optional
+          attribute :university_faculty, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Chair ID.
-          attribute :university_chair, API::Types::Coercible::Int.optional
+          attribute :university_chair, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] '1' — female; '2' — male; '0' — any (default)
-          attribute :sex, API::Types::Coercible::Int.optional
+          attribute :sex, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Relationship status:; '1' — Not married; '2' — In a relationship; '3' — Engaged; '4' — Married; '5' — It's complicated; '6' — Actively searching; '7' — In love
-          attribute :status, API::Types::Coercible::Int.optional
+          attribute :status, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Minimum age.
-          attribute :age_from, API::Types::Coercible::Int.optional
+          attribute :age_from, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Maximum age.
-          attribute :age_to, API::Types::Coercible::Int.optional
+          attribute :age_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Day of birth.
-          attribute :birth_day, API::Types::Coercible::Int.optional
+          attribute :birth_day, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Month of birth.
-          attribute :birth_month, API::Types::Coercible::Int.optional
+          attribute :birth_month, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Year of birth.
-          attribute :birth_year, API::Types::Coercible::Int.optional
+          attribute :birth_year, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — online only; '0' — all users
-          attribute :online, API::Types::Bool.optional
+          attribute :online, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — with photo only; '0' — all users
-          attribute :has_photo, API::Types::Bool.optional
+          attribute :has_photo, API::Types::Bool.optional.default(nil)
           # @return [Integer] ID of the country where users finished school.
-          attribute :school_country, API::Types::Coercible::Int.optional
+          attribute :school_country, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the city where users finished school.
-          attribute :school_city, API::Types::Coercible::Int.optional
+          attribute :school_city, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :school_class, API::Types::Coercible::Int.optional
+          attribute :school_class, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the school.
-          attribute :school, API::Types::Coercible::Int.optional
+          attribute :school, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] School graduation year.
-          attribute :school_year, API::Types::Coercible::Int.optional
+          attribute :school_year, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Users' religious affiliation.
-          attribute :religion, API::Types::Coercible::String.optional
+          attribute :religion, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Users' interests.
-          attribute :interests, API::Types::Coercible::String.optional
+          attribute :interests, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Name of the company where users work.
-          attribute :company, API::Types::Coercible::String.optional
+          attribute :company, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Job position.
-          attribute :position, API::Types::Coercible::String.optional
+          attribute :position, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] ID of a community to search in communities.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :from_list, API::Types::Coercible::Array.optional
+          attribute :from_list, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

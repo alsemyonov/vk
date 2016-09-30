@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_ids, API::Types::Coercible::Array.optional
+          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] notification text which should be sent in 'UTF-8' encoding ('254' characters maximum).
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String
         end
       end
     end

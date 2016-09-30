@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Link ID (can be obtained by  method).
-          attribute :link_id, API::Types::Coercible::String.optional
+          attribute :link_id, API::Types::Coercible::String
         end
       end
     end

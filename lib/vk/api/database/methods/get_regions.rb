@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Country ID, received in  method.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int
           # @return [String] Search query.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Offset needed to return specific subset of regions.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of regions to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

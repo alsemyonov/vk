@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user on whose wall the photo will be saved.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of community on whose wall the photo will be saved.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Parameter returned when the .
-          attribute :photo, API::Types::Coercible::String.optional
+          attribute :photo, API::Types::Coercible::String
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :server, API::Types::Coercible::Int.optional
+          attribute :server, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

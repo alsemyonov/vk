@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetCountResponse < Vk::Schema::Response
           # @return [Integer] Audios number
-          attribute :response, API::Types::Coercible::Int.optional
+          attribute :response, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

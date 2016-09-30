@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class LinkRating < Vk::Schema::Object
         # @return [Number] Count of stars
-        attribute :stars, API::Types::Coercible::Int.optional
+        attribute :stars, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Count of reviews
-        attribute :reviews_count, API::Types::Coercible::Int.optional
+        attribute :reviews_count, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

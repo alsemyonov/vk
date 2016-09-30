@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Geo < Vk::Schema::Object
         # @return [String] Place type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
         # @return [String] String with coordinates
-        attribute :coordinates, API::Types::Coercible::String.optional
+        attribute :coordinates, API::Types::Coercible::String.optional.default(nil)
         # @return [API::Base::Place] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :place, Dry::Types[API::Base::Place].optional
+        attribute :place, Dry::Types[API::Base::Place].optional.default(nil)
         # @return [Integer] Information whether a map is showed
-        attribute :showmap, API::Types::Coercible::Int.optional
+        attribute :showmap, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Message IDs.
-          attribute :message_ids, API::Types::Coercible::Array.optional
+          attribute :message_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' — to mark message as spam.
-          attribute :spam, API::Types::Bool.optional
+          attribute :spam, API::Types::Bool.optional.default(nil)
         end
       end
     end

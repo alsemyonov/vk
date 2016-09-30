@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class TargSuggestionsCities < Vk::Schema::Object
         # @return [Integer] Object ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Object name
-        attribute :name, API::Types::Coercible::String.optional
+        attribute :name, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Parent object
-        attribute :parent, API::Types::Coercible::String.optional
+        attribute :parent, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetVersionResponse < Vk::Schema::Response
           # @return [API::Pages::WikipageFull] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Pages::WikipageFull].optional
+          attribute :response, Dry::Types[API::Pages::WikipageFull].optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Ad format:; *1 — image and text;; *2 — big image;; *3 — exclusive format;; *4 — community, square image;; *7 — special app format.
-          attribute :ad_format, API::Types::Coercible::Int.optional
+          attribute :ad_format, API::Types::Coercible::Int
         end
       end
     end

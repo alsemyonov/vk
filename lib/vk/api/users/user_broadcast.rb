@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UserBroadcast < API::Users::UserMin
         # @return [API::Audio::AudioFull] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :status_audio, Dry::Types[API::Audio::AudioFull].optional
+        attribute :status_audio, Dry::Types[API::Audio::AudioFull].optional.default(nil)
       end
     end
   end

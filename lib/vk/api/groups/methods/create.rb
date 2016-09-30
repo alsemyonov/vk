@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [String] Community title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [String] Community description (ignored for 'type' = 'public').
-          attribute :description, API::Types::Coercible::String.optional
+          attribute :description, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Community type. Possible values:; *'group' – group;; *'event' – event;; *'public' – public page
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Category ID (for 'type' = 'public' only).
-          attribute :public_category, API::Types::Coercible::Int.optional
+          attribute :public_category, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Public page subtype. Possible values:; *'1' – place or small business;; *'2' – company, organizaton or website;; *'3' – famous person or group of people;; *'4' – product or work of art.
-          attribute :subtype, API::Types::Coercible::Int.optional
+          attribute :subtype, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

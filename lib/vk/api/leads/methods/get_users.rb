@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Offer ID.
-          attribute :offer_id, API::Types::Coercible::Int.optional
+          attribute :offer_id, API::Types::Coercible::Int
           # @return [String] Secret key obtained in the lead testing interface.
-          attribute :secret, API::Types::Coercible::String.optional
+          attribute :secret, API::Types::Coercible::String
           # @return [Integer] Offset needed to return a specific subset of results.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of results to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Action type. Possible values:; *'0' — start;; *'1' — finish;; *'2' — blocking users;; *'3' — start in a test mode;; *'4' — finish in a test mode.;
-          attribute :status, API::Types::Coercible::Int.optional
+          attribute :status, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Sort order. Possible values:; *'1' — chronological;; *'0' — reverse chronological.
-          attribute :reverse, API::Types::Bool.optional
+          attribute :reverse, API::Types::Bool.optional.default(nil)
         end
       end
     end

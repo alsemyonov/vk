@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Country ID.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

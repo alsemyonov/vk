@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the albums..
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Album ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int
           # @return [Integer] ID of the album before which the album in question shall be placed.
-          attribute :before, API::Types::Coercible::Int.optional
+          attribute :before, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the album after which the album in question shall be placed.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

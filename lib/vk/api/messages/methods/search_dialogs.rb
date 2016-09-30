@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Maximum number of results.
-          attribute :limit, API::Types::Coercible::Int.optional
+          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Profile fields to return.;
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

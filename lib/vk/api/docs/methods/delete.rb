@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the document. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Document ID.
-          attribute :doc_id, API::Types::Coercible::Int.optional
+          attribute :doc_id, API::Types::Coercible::Int
         end
       end
     end

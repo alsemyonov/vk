@@ -28,23 +28,23 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Number] Geographical latitude, in degrees (from '-90' to '90').
-          attribute :lat, API::Types::Coercible::Int.optional
+          attribute :lat, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical longitude, in degrees (from '-180' to '180').;
-          attribute :long, API::Types::Coercible::Int.optional
+          attribute :long, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :start_time, API::Types::Coercible::Int.optional
+          attribute :start_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :end_time, API::Types::Coercible::Int.optional
+          attribute :end_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Sort order:
-          attribute :sort, API::Types::Coercible::Int.optional
+          attribute :sort, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of photos.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of photos to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Radius of search in meters (works very approximately). Available values: '10', '100', '800', '6000', '50000'.
-          attribute :radius, API::Types::Coercible::Int.optional
+          attribute :radius, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

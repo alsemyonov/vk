@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_ids, API::Types::Coercible::Array.optional
+          attribute :user_ids, API::Types::Coercible::Array
         end
       end
     end

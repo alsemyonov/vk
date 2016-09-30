@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class LinkChecked < Vk::Schema::Object
         # @return [String] Link status
-        attribute :status, API::Types::Coercible::String.optional
+        attribute :status, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Link URL
-        attribute :link, API::Types::Coercible::String.optional
+        attribute :link, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

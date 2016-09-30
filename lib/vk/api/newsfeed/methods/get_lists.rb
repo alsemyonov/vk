@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] numeric list identifiers.
-          attribute :list_ids, API::Types::Coercible::Array.optional
+          attribute :list_ids, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

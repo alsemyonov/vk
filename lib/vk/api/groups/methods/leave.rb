@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID or screen name of the community.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
         end
       end
     end

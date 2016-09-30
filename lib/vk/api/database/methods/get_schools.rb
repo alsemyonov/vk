@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] City ID.
-          attribute :city_id, API::Types::Coercible::Int.optional
+          attribute :city_id, API::Types::Coercible::Int
           # @return [Integer] Offset needed to return a specific subset of schools.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of schools to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

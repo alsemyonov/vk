@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Comment ID.
-          attribute :comment_id, API::Types::Coercible::Int.optional
+          attribute :comment_id, API::Types::Coercible::Int
           # @return [Integer] Note owner ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

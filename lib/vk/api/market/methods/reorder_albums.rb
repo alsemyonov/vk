@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Collection ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int
           # @return [Integer] ID of a collection to place current collection before it.
-          attribute :before, API::Types::Coercible::Int.optional
+          attribute :before, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of a collection to place current collection after it.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

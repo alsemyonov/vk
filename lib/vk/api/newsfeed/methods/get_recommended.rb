@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Earliest timestamp (in Unix time) of a news item to return. By default, 24 hours ago.
-          attribute :start_time, API::Types::Coercible::Int.optional
+          attribute :start_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Latest timestamp (in Unix time) of a news item to return. By default, the current time.
-          attribute :end_time, API::Types::Coercible::Int.optional
+          attribute :end_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Maximum number of photos to return. By default, '5'.
-          attribute :max_photos, API::Types::Coercible::Int.optional
+          attribute :max_photos, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] 'new_from' value obtained in previous call.
-          attribute :start_from, API::Types::Coercible::String.optional
+          attribute :start_from, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of news items to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Additional fields of  and  to return.
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

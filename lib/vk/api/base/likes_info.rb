@@ -14,7 +14,7 @@ module Vk
         # @return [Integer] Information whether current user can like the post
         attribute :can_like, API::Types::Coercible::Int
         # @return [Integer] Information whether current user can repost
-        attribute :can_publish, API::Types::Coercible::Int.optional
+        attribute :can_publish, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

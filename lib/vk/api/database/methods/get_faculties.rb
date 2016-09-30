@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] University ID.
-          attribute :university_id, API::Types::Coercible::Int.optional
+          attribute :university_id, API::Types::Coercible::Int
           # @return [Integer] Offset needed to return a specific subset of faculties.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of faculties to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

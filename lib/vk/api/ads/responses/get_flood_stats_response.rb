@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetFloodStatsResponse < Vk::Schema::Response
           # @return [API::Ads::FloodStats] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Ads::FloodStats].optional
+          attribute :response, Dry::Types[API::Ads::FloodStats].optional.default(nil)
         end
       end
     end

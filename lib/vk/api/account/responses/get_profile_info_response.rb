@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetProfileInfoResponse < Vk::Schema::Response
           # @return [API::Account::UserSettings] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Account::UserSettings].optional
+          attribute :response, Dry::Types[API::Account::UserSettings].optional.default(nil)
         end
       end
     end

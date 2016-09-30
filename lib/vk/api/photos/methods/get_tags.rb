@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the photo.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :access_key, API::Types::Coercible::String.optional
+          attribute :access_key, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

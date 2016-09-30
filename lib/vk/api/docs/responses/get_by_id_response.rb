@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetByIdResponse < Vk::Schema::Response
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, API::Types::Coercible::Array.member(API::Docs::Doc).optional
+          attribute :response, API::Types::Coercible::Array.member(API::Docs::Doc).optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Upload URL from the 'response' field returned by the  method upon successfully uploading an image.
-          attribute :file, API::Types::Coercible::String.optional
+          attribute :file, API::Types::Coercible::String
         end
       end
     end

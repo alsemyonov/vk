@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Offset needed to return a specific subset of invitations.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of invitations to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return additional  for communities..
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
         end
       end
     end

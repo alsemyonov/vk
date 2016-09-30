@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetVideoUploadUrlResponse < Vk::Schema::Response
           # @return [String] Video upload URL
-          attribute :response, API::Types::Coercible::String.optional
+          attribute :response, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

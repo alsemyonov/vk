@@ -16,13 +16,13 @@ module Vk
         # @return [Integer] Total number of videos in album
         attribute :count, API::Types::Coercible::Int
         # @return [String] URL of the preview image with 160px in width
-        attribute :photo_160, API::Types::Coercible::String.optional
+        attribute :photo_160, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 320px in width
-        attribute :photo_320, API::Types::Coercible::String.optional
+        attribute :photo_320, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when the album has been updated last time in Unixtime
         attribute :updated_time, API::Types::Coercible::Int
         # @return [Integer] Information whether album is system
-        attribute :is_system, API::Types::Coercible::Int.optional
+        attribute :is_system, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

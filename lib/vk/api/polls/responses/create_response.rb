@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class CreateResponse < Vk::Schema::Response
           # @return [API::Polls::Poll] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Polls::Poll].optional
+          attribute :response, Dry::Types[API::Polls::Poll].optional.default(nil)
         end
       end
     end

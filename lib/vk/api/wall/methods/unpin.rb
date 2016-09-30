@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Post ID.
-          attribute :post_id, API::Types::Coercible::Int.optional
+          attribute :post_id, API::Types::Coercible::Int
         end
       end
     end

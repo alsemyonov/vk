@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID whose settings information shall be got. By default: current user.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
         end
       end
     end

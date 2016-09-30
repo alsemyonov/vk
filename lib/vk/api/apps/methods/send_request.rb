@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] id of the user to send a request
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [String] request text
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [String] request type. Values:; 'invite' – if the request is sent to a user who does not have the app installed;; 'request' – if a user has already installed the app
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] special string key to be sent with the request
-          attribute :key, API::Types::Coercible::String.optional
+          attribute :key, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :separate, API::Types::Bool.optional
+          attribute :separate, API::Types::Bool.optional.default(nil)
         end
       end
     end

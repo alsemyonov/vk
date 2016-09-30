@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class TokenChecked < Vk::Schema::Object
         # @return [API::Base::OkResponse] Returns if successfully processed
-        attribute :success, API::Base::OkResponse.optional
+        attribute :success, API::Base::OkResponse.optional.default(nil)
         # @return [Integer] User ID
-        attribute :user_id, API::Types::Coercible::Int.optional
+        attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date when access_token has been generated in Unixtime
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date when access_token will expire in Unixtime
-        attribute :expire, API::Types::Coercible::Int.optional
+        attribute :expire, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

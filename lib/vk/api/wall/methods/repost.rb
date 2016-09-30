@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] ID of the object to be reposted on the wall. Example:; "wall66748_3675"
-          attribute :object, API::Types::Coercible::String.optional
+          attribute :object, API::Types::Coercible::String
           # @return [String] Comment to be added along with the reposted object.
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Target community ID when reposting to a community.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :mark_as_ads, API::Types::Bool.optional
+          attribute :mark_as_ads, API::Types::Bool.optional.default(nil)
         end
       end
     end

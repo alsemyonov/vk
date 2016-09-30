@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] Session obtained as GET parameter when session started.
-          attribute :vk_sid, API::Types::Coercible::String.optional
+          attribute :vk_sid, API::Types::Coercible::String
           # @return [String] Secret key from the lead testing interface.
-          attribute :secret, API::Types::Coercible::String.optional
+          attribute :secret, API::Types::Coercible::String
           # @return [String] Comment text.
-          attribute :comment, API::Types::Coercible::String.optional
+          attribute :comment, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

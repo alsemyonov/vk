@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class DeleteTopicResponse < Vk::Schema::Response
           # @return [API::Base::OkResponse] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, API::Base::OkResponse.optional
+          attribute :response, API::Base::OkResponse.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the friend list to delete.
-          attribute :list_id, API::Types::Coercible::Int.optional
+          attribute :list_id, API::Types::Coercible::Int
         end
       end
     end

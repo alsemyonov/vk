@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community that owns the discussion board.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Integer] Topic ID.
-          attribute :topic_id, API::Types::Coercible::Int.optional
+          attribute :topic_id, API::Types::Coercible::Int
         end
       end
     end

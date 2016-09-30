@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the audio files. By default, current user ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
         end
       end
     end

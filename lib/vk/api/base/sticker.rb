@@ -10,19 +10,19 @@ module Vk
         # @return [Integer] Sticker ID
         attribute :id, API::Types::Coercible::Int
         # @return [Integer] Collection ID
-        attribute :product_id, API::Types::Coercible::Int.optional
+        attribute :product_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] URL of the preview image with 64 px in height
-        attribute :photo_64, API::Types::Coercible::String.optional
+        attribute :photo_64, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 128 px in height
-        attribute :photo_128, API::Types::Coercible::String.optional
+        attribute :photo_128, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 256 px in height
-        attribute :photo_256, API::Types::Coercible::String.optional
+        attribute :photo_256, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 352 px in height
-        attribute :photo_352, API::Types::Coercible::String.optional
+        attribute :photo_352, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Width in px
-        attribute :width, API::Types::Coercible::Int.optional
+        attribute :width, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Hieght in px
-        attribute :height, API::Types::Coercible::Int.optional
+        attribute :height, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :levels, API::Types::Coercible::Array.optional
+          attribute :levels, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] level value.
-          attribute :level, API::Types::Coercible::Int.optional
+          attribute :level, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

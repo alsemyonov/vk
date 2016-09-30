@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetAmountResponse < Vk::Schema::Response
           # @return [API::Orders::Amount] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Orders::Amount].optional
+          attribute :response, Dry::Types[API::Orders::Amount].optional.default(nil)
         end
       end
     end

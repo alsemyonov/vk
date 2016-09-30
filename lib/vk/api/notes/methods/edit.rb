@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Note ID.
-          attribute :note_id, API::Types::Coercible::Int.optional
+          attribute :note_id, API::Types::Coercible::Int
           # @return [String] Note title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [String] Note text.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_view, API::Types::Coercible::Array.optional
+          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_comment, API::Types::Coercible::Array.optional
+          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

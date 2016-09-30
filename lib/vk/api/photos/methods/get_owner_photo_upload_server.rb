@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] identifier of a community or current user.; ; "Note that community id must be negative.; 'owner_id=1' – user; 'owner_id=-1' – community; "
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Street IDs.
-          attribute :street_ids, API::Types::Coercible::Array.optional
+          attribute :street_ids, API::Types::Coercible::Array
         end
       end
     end

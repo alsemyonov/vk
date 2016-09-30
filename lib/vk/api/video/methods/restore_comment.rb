@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the deleted comment.
-          attribute :comment_id, API::Types::Coercible::Int.optional
+          attribute :comment_id, API::Types::Coercible::Int
         end
       end
     end

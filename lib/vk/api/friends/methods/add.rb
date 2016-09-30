@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user whose friend request will be approved or to whom a friend request will be sent.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [String] Text of the message (up to 500 characters) for the friend request, if any.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' to pass an incoming request to followers list.
-          attribute :follow, API::Types::Bool.optional
+          attribute :follow, API::Types::Bool.optional.default(nil)
         end
       end
     end

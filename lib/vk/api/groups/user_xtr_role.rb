@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UserXtrRole < API::Users::UserFull
         # @return [API::Groups::RoleOptions] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :role, API::Groups::RoleOptions.optional
+        attribute :role, API::Groups::RoleOptions.optional.default(nil)
       end
     end
   end

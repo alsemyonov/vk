@@ -14,11 +14,11 @@ module Vk
         # @return [String] Object description
         attribute :description, API::Types::Coercible::String
         # @return [API::Base::BoolInt] Information whether the object has been found globally
-        attribute :global, API::Base::BoolInt.optional
+        attribute :global, API::Base::BoolInt.optional.default(nil)
         # @return [API::Groups::Group] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :group, Dry::Types[API::Groups::Group].optional
+        attribute :group, Dry::Types[API::Groups::Group].optional.default(nil)
         # @return [API::Users::UserMin] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :profile, Dry::Types[API::Users::UserMin].optional
+        attribute :profile, Dry::Types[API::Users::UserMin].optional.default(nil)
       end
     end
   end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Category id received from .
-          attribute :category_id, API::Types::Coercible::Int.optional
+          attribute :category_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Subcategory id received from .
-          attribute :subcategory_id, API::Types::Coercible::Int.optional
+          attribute :subcategory_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

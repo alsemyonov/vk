@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Integer] User ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [Integer] Date (in Unix time) when the user will be removed from the blacklist.
-          attribute :end_date, API::Types::Coercible::Int.optional
+          attribute :end_date, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Reason for ban:; '1' — spam; '2' — verbal abuse; '3' — strong language; '4' — irrelevant messages; '0' — other (default)
-          attribute :reason, API::Types::Coercible::Int.optional
+          attribute :reason, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Text of comment to ban.
-          attribute :comment, API::Types::Coercible::String.optional
+          attribute :comment, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — text of comment will be visible to the user;; '0' — text of comment will be invisible to the user. ; By default: '0'.
-          attribute :comment_visible, API::Types::Bool.optional
+          attribute :comment_visible, API::Types::Bool.optional.default(nil)
         end
       end
     end

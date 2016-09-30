@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :client_secret, API::Types::Coercible::String.optional
+          attribute :client_secret, API::Types::Coercible::String
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :phone, API::Types::Coercible::String.optional
+          attribute :phone, API::Types::Coercible::String
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :code, API::Types::Coercible::String.optional
+          attribute :code, API::Types::Coercible::String
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :password, API::Types::Coercible::String.optional
+          attribute :password, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :test_mode, API::Types::Bool.optional
+          attribute :test_mode, API::Types::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :intro, API::Types::Coercible::Int.optional
+          attribute :intro, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

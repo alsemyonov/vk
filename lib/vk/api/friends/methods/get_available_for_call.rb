@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'uid', 'first_name', 'last_name', 'nickname', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'domain', 'has_mobile', 'rate', 'contacts', 'education'.;
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] Case for declension of user name and surname: ; 'nom' — nominative (default) ; 'gen' — genitive ; 'dat' — dative ; 'acc' — accusative ; 'ins' — instrumental ; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional
+          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UploadResponse < Vk::Schema::Object
         # @return [Integer] Video size
-        attribute :size, API::Types::Coercible::Int.optional
+        attribute :size, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Video ID
-        attribute :video_id, API::Types::Coercible::Int.optional
+        attribute :video_id, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

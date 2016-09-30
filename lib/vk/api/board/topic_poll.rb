@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class TopicPoll < Vk::Schema::Object
         # @return [Integer] Poll ID
-        attribute :poll_id, API::Types::Coercible::Int.optional
+        attribute :poll_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Poll owner's ID
         attribute :owner_id, API::Types::Coercible::Int
         # @return [Integer] Date when poll has been created in Unixtime
         attribute :created, API::Types::Coercible::Int
         # @return [API::Base::BoolInt] Information whether the poll is closed
-        attribute :is_closed, API::Base::BoolInt.optional
+        attribute :is_closed, API::Base::BoolInt.optional.default(nil)
         # @return [String] Poll question
         attribute :question, API::Types::Coercible::String
         # @return [String] Votes number

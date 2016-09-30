@@ -29,25 +29,25 @@ module Vk
           # @!group Arguments
 
           # @return [String] User's first name.
-          attribute :first_name, API::Types::Coercible::String.optional
+          attribute :first_name, API::Types::Coercible::String
           # @return [String] User's surname.
-          attribute :last_name, API::Types::Coercible::String.optional
+          attribute :last_name, API::Types::Coercible::String
           # @return [Integer] Your application ID.
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :client_secret, API::Types::Coercible::String.optional
+          attribute :client_secret, API::Types::Coercible::String
           # @return [String] User's phone number. Can be pre-checked with the  method.
-          attribute :phone, API::Types::Coercible::String.optional
+          attribute :phone, API::Types::Coercible::String
           # @return [String] User's password (minimum of 6 characters). Can be specified later with the  method.
-          attribute :password, API::Types::Coercible::String.optional
+          attribute :password, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — test mode, in which the user will not be registered and the phone number will not be checked for availability; '0' — default mode (default)
-          attribute :test_mode, API::Types::Bool.optional
+          attribute :test_mode, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — call the phone number and leave a voice message of the authorization code; '0' — send the code by SMS (default)
-          attribute :voice, API::Types::Bool.optional
+          attribute :voice, API::Types::Bool.optional.default(nil)
           # @return [Integer] '1' — female; '2' — male
-          attribute :sex, API::Types::Coercible::Int.optional
+          attribute :sex, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Session ID required for method recall when SMS was not delivered.
-          attribute :sid, API::Types::Coercible::String.optional
+          attribute :sid, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

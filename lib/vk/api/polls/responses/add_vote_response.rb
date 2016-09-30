@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class AddVoteResponse < Vk::Schema::Response
           # @return [API::Base::BoolInt] Result
-          attribute :response, API::Base::BoolInt.optional
+          attribute :response, API::Base::BoolInt.optional.default(nil)
         end
       end
     end

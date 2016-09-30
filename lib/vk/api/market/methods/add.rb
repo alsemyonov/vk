@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [String] Item name.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String
           # @return [String] Item description.
-          attribute :description, API::Types::Coercible::String.optional
+          attribute :description, API::Types::Coercible::String
           # @return [Integer] Item category ID.
-          attribute :category_id, API::Types::Coercible::Int.optional
+          attribute :category_id, API::Types::Coercible::Int
           # @return [Number] Item price.
-          attribute :price, API::Types::Coercible::Int.optional
+          attribute :price, API::Types::Coercible::Int
           # @return [Boolean] Item status ('1' — deleted, '0' — not deleted).
-          attribute :deleted, API::Types::Bool.optional
+          attribute :deleted, API::Types::Bool.optional.default(nil)
           # @return [Integer] Cover photo ID.
-          attribute :main_photo_id, API::Types::Coercible::Int.optional
+          attribute :main_photo_id, API::Types::Coercible::Int
           # @return [Array] IDs of additional photos.
-          attribute :photo_ids, API::Types::Coercible::Array.optional
+          attribute :photo_ids, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Unique device ID.
-          attribute :device_id, API::Types::Coercible::String.optional
+          attribute :device_id, API::Types::Coercible::String
           # @return [String] Push settings in a .
-          attribute :settings, API::Types::Coercible::String.optional
+          attribute :settings, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Notification key.
-          attribute :key, API::Types::Coercible::String.optional
+          attribute :key, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] New value for the key in a .
-          attribute :value, API::Types::Coercible::Array.optional
+          attribute :value, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

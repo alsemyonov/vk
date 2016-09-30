@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] identifier of an item owner community; "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] comment id
-          attribute :comment_id, API::Types::Coercible::Int.optional
+          attribute :comment_id, API::Types::Coercible::Int
         end
       end
     end

@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Rules < Vk::Schema::Object
         # @return [String] Comment
-        attribute :title, API::Types::Coercible::String.optional
+        attribute :title, API::Types::Coercible::String.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :paragraphs, API::Types::Coercible::Array.member(API::Ads::Paragraphs).optional
+        attribute :paragraphs, API::Types::Coercible::Array.member(API::Ads::Paragraphs).optional.default(nil)
       end
     end
   end

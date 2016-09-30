@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] IDs of messages to mark as read.
-          attribute :message_ids, API::Types::Coercible::Array.optional
+          attribute :message_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] Destination ID.; ; "For user:; 'User ID', e.g. '12345'.; ; For chat:; '2000000000' + 'chat_id', e.g. '2000000001'.; ; For community:; '- community ID', e.g. '-12345'.; "
-          attribute :peer_id, API::Types::Coercible::String.optional
+          attribute :peer_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Message ID to start from.
-          attribute :start_message_id, API::Types::Coercible::Int.optional
+          attribute :start_message_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

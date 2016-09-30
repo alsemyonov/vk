@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] filter by start date. It is set as UNIX-time.
-          attribute :date_from, API::Types::Coercible::Int.optional
+          attribute :date_from, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] filter by end date. It is set as UNIX-time.
-          attribute :date_to, API::Types::Coercible::Int.optional
+          attribute :date_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] number of returned posts. By default — 1000.
-          attribute :limit, API::Types::Coercible::Int.optional
+          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

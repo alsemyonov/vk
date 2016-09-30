@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the video.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Video ID.
-          attribute :video_id, API::Types::Coercible::Int.optional
+          attribute :video_id, API::Types::Coercible::Int
           # @return [String] New comment text.
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] List of objects attached to the comment, in the following format:; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media attachment:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; '<owner_id>' — ID of the media attachment owner.; '<media_id>' — Media attachment ID. ; ; Example:; "photo100172_166443618,photo66748_265827614"
-          attribute :attachments, API::Types::Coercible::Array.optional
+          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' — to post the comment from a community name (only if 'owner_id'<0)
-          attribute :from_group, API::Types::Bool.optional
+          attribute :from_group, API::Types::Bool.optional.default(nil)
           # @return [Integer] 
-          attribute :reply_to_comment, API::Types::Coercible::Int.optional
+          attribute :reply_to_comment, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :sticker_id, API::Types::Coercible::Int.optional
+          attribute :sticker_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :guid, API::Types::Coercible::String.optional
+          attribute :guid, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

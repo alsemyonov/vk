@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID (if the document will be uploaded to the community).
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

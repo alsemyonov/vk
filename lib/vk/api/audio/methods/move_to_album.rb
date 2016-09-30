@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community where the audio files are located. By default, current user ID.;
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the album to which the audio files will be moved.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the audio files to be moved.; "NOTE: An album can hold up to 1000 audio files.";
-          attribute :audio_ids, API::Types::Coercible::Array.optional
+          attribute :audio_ids, API::Types::Coercible::Array
         end
       end
     end

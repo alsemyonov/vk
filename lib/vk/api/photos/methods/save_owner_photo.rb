@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [String] parameter returned after .
-          attribute :server, API::Types::Coercible::String.optional
+          attribute :server, API::Types::Coercible::String.optional.default(nil)
           # @return [String] parameter returned after .
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String.optional.default(nil)
           # @return [String] parameter returned after .
-          attribute :photo, API::Types::Coercible::String.optional
+          attribute :photo, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

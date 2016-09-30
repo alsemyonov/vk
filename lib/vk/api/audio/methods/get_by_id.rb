@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Audio file IDs, in the following format:; "\$1owner_id\$1_\$1audio_id\$1"
-          attribute :audios, API::Types::Coercible::Array.optional
+          attribute :audios, API::Types::Coercible::Array
         end
       end
     end

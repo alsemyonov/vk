@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID or screen name of the community.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Optional parameter which is taken into account when 'gid' belongs to the event:; '1' — Perhaps I will attend; '0' — I will be there for sure (default); ;
-          attribute :not_sure, API::Types::Coercible::String.optional
+          attribute :not_sure, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [Integer] Ad ID.
-          attribute :ad_id, API::Types::Coercible::Int.optional
+          attribute :ad_id, API::Types::Coercible::Int
         end
       end
     end

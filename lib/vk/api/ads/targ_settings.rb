@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class TargSettings < Vk::Schema::Object
         # @return [Integer] Ad ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Campaign ID
-        attribute :campaign_id, API::Types::Coercible::Int.optional
+        attribute :campaign_id, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Integer] Link ID.
-          attribute :link_id, API::Types::Coercible::Int.optional
+          attribute :link_id, API::Types::Coercible::Int
           # @return [Integer] ID of the link after which to place the link with 'link_id'.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

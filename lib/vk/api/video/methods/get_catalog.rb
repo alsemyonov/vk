@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] number of catalog blocks to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] number of videos in each block.
-          attribute :items_count, API::Types::Coercible::Int.optional
+          attribute :items_count, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] parameter for requesting the next results page. Value for transmitting here is returned in the 'next' field in a reply.
-          attribute :from, API::Types::Coercible::String.optional
+          attribute :from, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] list of requested catalog sections
-          attribute :filters, API::Types::Coercible::Array.optional
+          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

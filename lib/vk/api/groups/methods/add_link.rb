@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] LInk URL.
-          attribute :link, API::Types::Coercible::String.optional
+          attribute :link, API::Types::Coercible::String
           # @return [String] Description text for the link.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

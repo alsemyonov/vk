@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [String] Name of the friend list.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Friend list ID.
-          attribute :list_id, API::Types::Coercible::Int.optional
+          attribute :list_id, API::Types::Coercible::Int
           # @return [Array] IDs of users in the friend list.
-          attribute :user_ids, API::Types::Coercible::Array.optional
+          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] (Applies if 'user_ids' parameter is not set.); User IDs to add to the friend list.
-          attribute :add_user_ids, API::Types::Coercible::Array.optional
+          attribute :add_user_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] (Applies if 'user_ids' parameter is not set.); User IDs to delete from the friend list.
-          attribute :delete_user_ids, API::Types::Coercible::Array.optional
+          attribute :delete_user_ids, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

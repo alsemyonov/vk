@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID or community ID. Use a negative value to designate a community ID.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

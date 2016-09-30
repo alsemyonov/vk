@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — to return outgoing messages; '0' — to return incoming messages (default)
-          attribute :out, API::Types::Bool.optional
+          attribute :out, API::Types::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of messages.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Maximum time since a message was sent, in seconds. To return messages without a time limitation, set as '0'.
-          attribute :time_offset, API::Types::Coercible::Int.optional
+          attribute :time_offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of characters after which to truncate a previewed message. To preview the full message, specify '0'.; "NOTE: Messages are not truncated by default. Messages are truncated by words."
-          attribute :preview_length, API::Types::Coercible::Int.optional
+          attribute :preview_length, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the message received before the message that will be returned last (provided that no more than 'count' messages were received before it; otherwise 'offset' parameter shall be used).
-          attribute :last_message_id, API::Types::Coercible::Int.optional
+          attribute :last_message_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

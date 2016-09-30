@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Link URL.
-          attribute :link, API::Types::Coercible::String.optional
+          attribute :link, API::Types::Coercible::String
           # @return [String] Description text.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

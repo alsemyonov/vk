@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Item ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
           # @return [Boolean] '1' — to return likes info.
-          attribute :need_likes, API::Types::Bool.optional
+          attribute :need_likes, API::Types::Bool.optional.default(nil)
           # @return [Integer] ID of a comment to start a list from (details below).
-          attribute :start_comment_id, API::Types::Coercible::Int.optional
+          attribute :start_comment_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of results to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Sort order ('asc' — from old to new, 'desc' — from new to old)
-          attribute :sort, API::Types::Coercible::String.optional
+          attribute :sort, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — comments will be returned as numbered objects, in addition lists of 'profiles' and 'groups' objects will be returned.
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
           # @return [Array] List of additional profile fields to return. See the [vk.com/dev/fields|details]
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Chat ID.
-          attribute :chat_id, API::Types::Coercible::Int.optional
+          attribute :chat_id, API::Types::Coercible::Int
         end
       end
     end

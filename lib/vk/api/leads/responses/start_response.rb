@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class StartResponse < Vk::Schema::Response
           # @return [API::Leads::Start] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Leads::Start].optional
+          attribute :response, Dry::Types[API::Leads::Start].optional.default(nil)
         end
       end
     end

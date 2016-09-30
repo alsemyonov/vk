@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Offset needed to return a specific subset of messages.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] ID of the user whose message history you want to return.
-          attribute :user_id, API::Types::Coercible::String.optional
+          attribute :user_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :peer_id, API::Types::Coercible::Int.optional
+          attribute :peer_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Starting message ID from which to return history.
-          attribute :start_message_id, API::Types::Coercible::Int.optional
+          attribute :start_message_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Sort order:; '1' — return messages in chronological order.; '0' — return messages in reverse chronological order.
-          attribute :rev, API::Types::Coercible::Int.optional
+          attribute :rev, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Chat ID.
-          attribute :chat_id, API::Types::Coercible::Int.optional
+          attribute :chat_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Chat IDs.
-          attribute :chat_ids, API::Types::Coercible::Array.optional
+          attribute :chat_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] Profile fields to return.;
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] Case for declension of user name and surname:; 'nom' — nominative (default); 'gen' — genitive; 'dat' — dative; 'acc' — accusative; 'ins' — instrumental; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional
+          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Lead ID.
-          attribute :lead_id, API::Types::Coercible::Int.optional
+          attribute :lead_id, API::Types::Coercible::Int
           # @return [String] Secret key from the lead testing interface.
-          attribute :secret, API::Types::Coercible::String.optional
+          attribute :secret, API::Types::Coercible::String
         end
       end
     end

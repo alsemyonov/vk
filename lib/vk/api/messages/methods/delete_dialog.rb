@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] User ID. To clear a chat history use 'chat_id'
-          attribute :user_id, API::Types::Coercible::String.optional
+          attribute :user_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Destination ID.; ; "For user:; 'User ID', e.g. '12345'.; ; For chat:; '2000000000' + 'chat_id', e.g. '2000000001'.; ; For community:; '- community ID', e.g. '-12345'.; "
-          attribute :peer_id, API::Types::Coercible::Int.optional
+          attribute :peer_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of messages.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to delete.; "NOTE: If the number of messages exceeds the maximum, the method shall be called several times."
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

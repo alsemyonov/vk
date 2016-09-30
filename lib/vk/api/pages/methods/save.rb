@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [String] Text of the wiki page in wiki-format.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Wiki page ID. The 'title' parameter can be passed instead of 'pid'.
-          attribute :page_id, API::Types::Coercible::Int.optional
+          attribute :page_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the community that owns the wiki page.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Wiki page title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

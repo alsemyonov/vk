@@ -14,25 +14,25 @@ module Vk
         # @return [Integer] Date when the checkin has been added in Unixtime
         attribute :date, API::Types::Coercible::Int
         # @return [Number] Place latitude
-        attribute :latitude, API::Types::Coercible::Int.optional
+        attribute :latitude, API::Types::Coercible::Int.optional.default(nil)
         # @return [Number] Place longitude
-        attribute :longitude, API::Types::Coercible::Int.optional
+        attribute :longitude, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Place ID
-        attribute :place_id, API::Types::Coercible::Int.optional
+        attribute :place_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Comment text
-        attribute :text, API::Types::Coercible::String.optional
+        attribute :text, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Distance to the place
-        attribute :distance, API::Types::Coercible::Int.optional
+        attribute :distance, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Place title
-        attribute :place_title, API::Types::Coercible::String.optional
+        attribute :place_title, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Country ID
-        attribute :place_country, API::Types::Coercible::Int.optional
+        attribute :place_country, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] City ID
-        attribute :place_city, API::Types::Coercible::Int.optional
+        attribute :place_city, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Place type
-        attribute :place_type, API::Types::Coercible::String.optional
+        attribute :place_type, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the place's icon
-        attribute :place_icon, API::Types::Coercible::String.optional
+        attribute :place_icon, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -8,19 +8,19 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class FavesLink < Vk::Schema::Object
         # @return [Integer] Link ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Link URL
-        attribute :url, API::Types::Coercible::String.optional
+        attribute :url, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Link title
-        attribute :title, API::Types::Coercible::String.optional
+        attribute :title, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Link description
-        attribute :description, API::Types::Coercible::String.optional
+        attribute :description, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 50 px in width
-        attribute :photo_50, API::Types::Coercible::String.optional
+        attribute :photo_50, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 100 px in width
-        attribute :photo_100, API::Types::Coercible::String.optional
+        attribute :photo_100, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the preview image with 200 px in width
-        attribute :photo_200, API::Types::Coercible::String.optional
+        attribute :photo_200, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

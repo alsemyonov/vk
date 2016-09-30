@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class AddListResponse < Vk::Schema::Response
           # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, API::Types::Coercible::Hash.optional
+          attribute :response, API::Types::Coercible::Hash
         end
       end
     end

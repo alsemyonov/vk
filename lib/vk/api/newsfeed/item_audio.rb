@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class ItemAudio < Vk::Schema::Object
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :audio, API::Types::Coercible::Hash.optional
+        attribute :audio, API::Types::Coercible::Hash.optional.default(nil)
       end
     end
   end

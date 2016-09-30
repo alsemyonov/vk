@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class StatsSex < Vk::Schema::Object
         # @return [Number] Impressions rate
-        attribute :impressions_rate, API::Types::Coercible::Int.optional
+        attribute :impressions_rate, API::Types::Coercible::Int.optional.default(nil)
         # @return [Number] Clicks rate
-        attribute :clicks_rate, API::Types::Coercible::Int.optional
+        attribute :clicks_rate, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Sex
-        attribute :value, API::Types::Coercible::String.optional
+        attribute :value, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

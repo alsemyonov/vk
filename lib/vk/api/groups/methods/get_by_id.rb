@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] IDs or screen names of communities.
-          attribute :group_ids, API::Types::Coercible::Array.optional
+          attribute :group_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] ID or screen name of the community.
-          attribute :group_id, API::Types::Coercible::String.optional
+          attribute :group_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Group fields to return.;
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] 'id' value returned with a block to hide by the '' method.
-          attribute :section_id, API::Types::Coercible::Int.optional
+          attribute :section_id, API::Types::Coercible::Int
         end
       end
     end

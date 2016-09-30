@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] Phone number.
-          attribute :phone, API::Types::Coercible::String.optional
+          attribute :phone, API::Types::Coercible::String
           # @return [Integer] User ID.
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :client_secret, API::Types::Coercible::String.optional
+          attribute :client_secret, API::Types::Coercible::String
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :auth_by_phone, API::Types::Bool.optional
+          attribute :auth_by_phone, API::Types::Bool.optional.default(nil)
         end
       end
     end

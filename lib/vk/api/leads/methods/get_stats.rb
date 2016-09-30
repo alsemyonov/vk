@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Lead ID.
-          attribute :lead_id, API::Types::Coercible::Int.optional
+          attribute :lead_id, API::Types::Coercible::Int
           # @return [String] Secret key obtained from the lead testing interface.
-          attribute :secret, API::Types::Coercible::String.optional
+          attribute :secret, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Day to start stats from (YYYY_MM_DD, e.g.2011-09-17).
-          attribute :date_start, API::Types::Coercible::String.optional
+          attribute :date_start, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Day to finish stats (YYYY_MM_DD, e.g.2011-09-17).
-          attribute :date_end, API::Types::Coercible::String.optional
+          attribute :date_end, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

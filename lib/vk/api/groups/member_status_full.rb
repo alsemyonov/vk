@@ -12,9 +12,9 @@ module Vk
         # @return [Integer] User ID
         attribute :user_id, API::Types::Coercible::Int
         # @return [API::Base::BoolInt] Information whether user has been invited to the group
-        attribute :invitation, API::Base::BoolInt.optional
+        attribute :invitation, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether user has send request to the group
-        attribute :request, API::Base::BoolInt.optional
+        attribute :request, API::Base::BoolInt.optional.default(nil)
       end
     end
   end

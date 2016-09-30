@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [String] Album title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [Integer] ID of the community in which the album will be created.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Album description.
-          attribute :description, API::Types::Coercible::String.optional
+          attribute :description, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_view, API::Types::Coercible::Array.optional
+          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_comment, API::Types::Coercible::Array.optional
+          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :upload_by_admins_only, API::Types::Bool.optional
+          attribute :upload_by_admins_only, API::Types::Bool.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :comments_disabled, API::Types::Bool.optional
+          attribute :comments_disabled, API::Types::Bool.optional.default(nil)
         end
       end
     end

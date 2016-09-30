@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Note ID.
-          attribute :note_id, API::Types::Coercible::Int.optional
+          attribute :note_id, API::Types::Coercible::Int
         end
       end
     end

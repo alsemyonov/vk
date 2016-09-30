@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Item ID.
-          attribute :item_id, API::Types::Coercible::Int.optional
+          attribute :item_id, API::Types::Coercible::Int
           # @return [String] Comment text (required if 'attachments' parameter is not specified)
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Comma-separated list of objects attached to a comment. The field is submitted the following way: ; "'<owner_id>_<media_id>,<owner_id>_<media_id>'"; ; '' - media attachment type:; "'photo' - photo; 'video' - video; 'audio' - audio; 'doc' - document"; ; '<owner_id>' - media owner id; '<media_id>' - media attachment id; ; For example:; "photo100172_166443618,photo66748_265827614";
-          attribute :attachments, API::Types::Coercible::Array.optional
+          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' - comment will be published on behalf of a community, '0' - on behalf of a user (by default).
-          attribute :from_group, API::Types::Bool.optional
+          attribute :from_group, API::Types::Bool.optional.default(nil)
           # @return [Integer] ID of a comment to reply with current comment to.
-          attribute :reply_to_comment, API::Types::Coercible::Int.optional
+          attribute :reply_to_comment, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Sticker ID.
-          attribute :sticker_id, API::Types::Coercible::Int.optional
+          attribute :sticker_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Random value to avoid resending one comment.
-          attribute :guid, API::Types::Coercible::String.optional
+          attribute :guid, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [String] Serialized JSON array with ad IDs.
-          attribute :ids, API::Types::Coercible::String.optional
+          attribute :ids, API::Types::Coercible::String
         end
       end
     end

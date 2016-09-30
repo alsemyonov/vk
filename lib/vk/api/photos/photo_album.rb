@@ -10,13 +10,13 @@ module Vk
         # @return [Integer] Photo album ID
         attribute :id, API::Types::Coercible::Int
         # @return [API::Photos::Photo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :thumb, Dry::Types[API::Photos::Photo].optional
+        attribute :thumb, Dry::Types[API::Photos::Photo].optional.default(nil)
         # @return [Integer] Album owner's ID
         attribute :owner_id, API::Types::Coercible::Int
         # @return [String] Photo album title
         attribute :title, API::Types::Coercible::String
         # @return [String] Photo album description
-        attribute :description, API::Types::Coercible::String.optional
+        attribute :description, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Date when the album has been created in Unixtime
         attribute :created, API::Types::Coercible::Int
         # @return [Integer] Date when the album has been updated last time in Unixtime

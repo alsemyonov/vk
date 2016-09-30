@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Leaderboard type. Possible values:; *'level' — by level;; *'points' — by mission points;; *'score' — by score ().
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String
           # @return [Boolean] Rating type.  Possible values:; *'1' — global rating among all players;; *'0' — rating among user friends.
-          attribute :global, API::Types::Bool.optional
+          attribute :global, API::Types::Bool.optional.default(nil)
         end
       end
     end

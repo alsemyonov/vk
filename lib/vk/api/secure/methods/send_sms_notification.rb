@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user to whom SMS notification is sent. The user shall allow the application to send him/her notifications (, +1).
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
           # @return [String] 'SMS' text to be sent in 'UTF-8' encoding. Only Latin letters and numbers are allowed. Maximum size is '160' characters.
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String
         end
       end
     end

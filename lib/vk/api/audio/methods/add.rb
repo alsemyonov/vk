@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Audio file ID.
-          attribute :audio_id, API::Types::Coercible::Int.optional
+          attribute :audio_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the audio file. Use a negative value to designate a community ID. ; ;
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Community ID, needed when adding the audio file to a community (without minus).
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Album ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

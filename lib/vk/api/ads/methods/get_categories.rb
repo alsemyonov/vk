@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Language. The full list of supported languages is .
-          attribute :lang, API::Types::Coercible::String.optional
+          attribute :lang, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

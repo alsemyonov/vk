@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Paragraphs < Vk::Schema::Object
         # @return [String] Rules paragraph
-        attribute :paragraph, API::Types::Coercible::String.optional
+        attribute :paragraph, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

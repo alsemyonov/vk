@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Note ID.
-          attribute :note_id, API::Types::Coercible::Int.optional
+          attribute :note_id, API::Types::Coercible::Int
           # @return [Integer] Note owner ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the user to whom the reply is addressed (if the comment is a reply to another comment).;
-          attribute :reply_to, API::Types::Coercible::Int.optional
+          attribute :reply_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Comment text.
-          attribute :message, API::Types::Coercible::String.optional
+          attribute :message, API::Types::Coercible::String
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :guid, API::Types::Coercible::String.optional
+          attribute :guid, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] user or community id. ; "Remember that for a community 'owner_id' must be negative."
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] user or community screen name.
-          attribute :domain, API::Types::Coercible::String.optional
+          attribute :domain, API::Types::Coercible::String.optional.default(nil)
           # @return [String] search query string.
-          attribute :query, API::Types::Coercible::String.optional
+          attribute :query, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' – returns only page owner's posts.
-          attribute :owners_only, API::Types::Bool.optional
+          attribute :owners_only, API::Types::Bool.optional.default(nil)
           # @return [Integer] count of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] show extended post info.
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

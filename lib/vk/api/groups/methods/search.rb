@@ -28,23 +28,23 @@ module Vk
           # @!group Arguments
 
           # @return [String] Search query string.
-          attribute :q, API::Types::Coercible::String.optional
+          attribute :q, API::Types::Coercible::String
           # @return [String] Community type. Possible values: 'group, page, event.'
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Country ID.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] City ID. If this parameter is transmitted, country_id is ignored.
-          attribute :city_id, API::Types::Coercible::Int.optional
+          attribute :city_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' —  to return only upcoming events. Works with the 'type' = 'event' only.
-          attribute :future, API::Types::Bool.optional
+          attribute :future, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return communities with enabled market only.
-          attribute :market, API::Types::Bool.optional
+          attribute :market, API::Types::Bool.optional.default(nil)
           # @return [Integer] Sort order. Possible values:; *'0' — default sorting (similar the full version of the site);; *'1' — by growth speed;; *'2'— by the "day attendance/members number" ratio;; *'3' — by the "Likes number/members number" ratio;; *'4' — by the "comments number/members number" ratio;; *'5' — by the "boards entries number/members number" ratio.; ;
-          attribute :sort, API::Types::Coercible::Int.optional
+          attribute :sort, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of results.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of communities to return.; "Note that you can not receive more than first thousand of results, regardless of 'count' and 'offset' values."
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

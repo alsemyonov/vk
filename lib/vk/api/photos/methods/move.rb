@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the photo.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the album to which the photo will be moved.
-          attribute :target_album_id, API::Types::Coercible::Int.optional
+          attribute :target_album_id, API::Types::Coercible::Int
           # @return [Integer] Photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
         end
       end
     end

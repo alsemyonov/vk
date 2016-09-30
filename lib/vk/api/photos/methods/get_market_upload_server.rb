@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Boolean] '1' if you want to upload the main item photo.
-          attribute :main_photo, API::Types::Bool.optional
+          attribute :main_photo, API::Types::Bool.optional.default(nil)
           # @return [Integer] X coordinate of the crop left upper corner.
-          attribute :crop_x, API::Types::Coercible::Int.optional
+          attribute :crop_x, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Y coordinate of the crop left upper corner.
-          attribute :crop_y, API::Types::Coercible::Int.optional
+          attribute :crop_y, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Width of the cropped photo in px.
-          attribute :crop_width, API::Types::Coercible::Int.optional
+          attribute :crop_width, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

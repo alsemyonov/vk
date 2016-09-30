@@ -30,27 +30,27 @@ module Vk
           # @!group Arguments
 
           # @return [String] Name of the video.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Description of the video.
-          attribute :description, API::Types::Coercible::String.optional
+          attribute :description, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to designate the video as private (send it via a private message); the video will not appear on the user's video list and will not be available by ID for other users; '0' — not to designate the video as private
-          attribute :is_private, API::Types::Bool.optional
+          attribute :is_private, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — to post the saved video on a user's wall; '0' — not to post the saved video on a user's wall
-          attribute :wallpost, API::Types::Bool.optional
+          attribute :wallpost, API::Types::Bool.optional.default(nil)
           # @return [String] URL for embedding the video from an external website.
-          attribute :link, API::Types::Coercible::String.optional
+          attribute :link, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] ID of the community in which the video will be saved. By default, the current user's page.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the album to which the saved video will be added.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_view, API::Types::Coercible::Array.optional
+          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_comment, API::Types::Coercible::Array.optional
+          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :no_comments, API::Types::Bool.optional
+          attribute :no_comments, API::Types::Bool.optional.default(nil)
           # @return [Boolean] '1' — to repeat the playback of the video; '0' — to play the video once;
-          attribute :repeat, API::Types::Bool.optional
+          attribute :repeat, API::Types::Bool.optional.default(nil)
         end
       end
     end

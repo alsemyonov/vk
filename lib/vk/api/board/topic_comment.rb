@@ -16,9 +16,9 @@ module Vk
         # @return [String] Comment text
         attribute :text, API::Types::Coercible::String
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :attachments, API::Types::Coercible::Array.member(API::Wall::CommentAttachment).optional
+        attribute :attachments, API::Types::Coercible::Array.member(API::Wall::CommentAttachment).optional.default(nil)
         # @return [Integer] Real position of the comment
-        attribute :real_offset, API::Types::Coercible::Int.optional
+        attribute :real_offset, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

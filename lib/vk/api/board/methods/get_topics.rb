@@ -27,21 +27,21 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the community that owns the discussion board.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [Array] IDs of topics to be returned (100 maximum). By default, all topics are returned.; ; If this parameter is set, the 'order', 'offset', and 'count' parameters are ignored.
-          attribute :topic_ids, API::Types::Coercible::Array.optional
+          attribute :topic_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] Sort order:; '1' — by date updated in reverse chronological order.; '2' — by date created in reverse chronological order.; '-1' — by date updated in chronological order.; '-2' — by date created in chronological order.; ; If no sort order is specified, topics are returned in the order specified by the group administrator. Pinned topics are returned first, regardless of the sorting.
-          attribute :order, API::Types::Coercible::Int.optional
+          attribute :order, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of topics.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of topics to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return information about users who created topics or who posted there last; '0' — to return no additional fields (default)
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
           # @return [Integer] '1' — to return the first comment in each topic;; '2' — to return the last comment in each topic;; '0' — to return no comments.; ; By default: '0'.
-          attribute :preview, API::Types::Coercible::Int.optional
+          attribute :preview, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of characters after which to truncate the previewed comment. To preview the full comment, specify '0'.
-          attribute :preview_length, API::Types::Coercible::Int.optional
+          attribute :preview_length, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

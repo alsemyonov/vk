@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Address of the page where you need to refesh the cached version
-          attribute :url, API::Types::Coercible::String.optional
+          attribute :url, API::Types::Coercible::String
         end
       end
     end

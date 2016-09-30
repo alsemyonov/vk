@@ -14,15 +14,15 @@ module Vk
         # @return [Integer] Comments number
         attribute :comments, API::Types::Coercible::Int
         # @return [API::Base::BoolInt] Information whether current user can comment the note
-        attribute :can_comment, API::Base::BoolInt.optional
+        attribute :can_comment, API::Base::BoolInt.optional.default(nil)
         # @return [Integer] Date when the note has been created in Unixtime
         attribute :date, API::Types::Coercible::Int
         # @return [String] Note title
         attribute :title, API::Types::Coercible::String
         # @return [String] Note text
-        attribute :text, API::Types::Coercible::String.optional
+        attribute :text, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Note text in wiki format
-        attribute :text_wiki, API::Types::Coercible::String.optional
+        attribute :text_wiki, API::Types::Coercible::String.optional.default(nil)
         # @return [String] URL of the page with note preview
         attribute :view_url, API::Types::Coercible::String
       end

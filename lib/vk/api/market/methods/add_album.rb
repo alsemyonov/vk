@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of an item owner community.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [String] Collection title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String
           # @return [Integer] Cover photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Set as main ('1' – set, '0' – no).
-          attribute :main_album, API::Types::Bool.optional
+          attribute :main_album, API::Types::Bool.optional.default(nil)
         end
       end
     end

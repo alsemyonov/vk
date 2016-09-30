@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Price < Vk::Schema::Object
         # @return [String] Amount
-        attribute :amount, API::Types::Coercible::String.optional
+        attribute :amount, API::Types::Coercible::String.optional.default(nil)
         # @return [API::Market::Currency] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :currency, Dry::Types[API::Market::Currency].optional
+        attribute :currency, Dry::Types[API::Market::Currency].optional.default(nil)
         # @return [String] Text
-        attribute :text, API::Types::Coercible::String.optional
+        attribute :text, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Audio file ID.
-          attribute :audio_id, API::Types::Coercible::Int.optional
+          attribute :audio_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the audio file.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the audio file before which to place the audio file.
-          attribute :before, API::Types::Coercible::Int.optional
+          attribute :before, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the audio file after which to place the audio file.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

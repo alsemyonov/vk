@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] User ID or community ID. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Document ID.
-          attribute :doc_id, API::Types::Coercible::Int.optional
+          attribute :doc_id, API::Types::Coercible::Int
           # @return [String] Document title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Document tags.
-          attribute :tags, API::Types::Coercible::Array.optional
+          attribute :tags, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

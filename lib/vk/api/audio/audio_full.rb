@@ -8,17 +8,17 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class AudioFull < API::Audio::Audio
         # @return [Integer] Duration in seconds
-        attribute :duration, API::Types::Coercible::Int.optional
+        attribute :duration, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date when uploaded
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Album ID
-        attribute :album_id, API::Types::Coercible::Int.optional
+        attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Lyrics ID
-        attribute :lyrics_id, API::Types::Coercible::Int.optional
+        attribute :lyrics_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Genre ID
-        attribute :genre_id, API::Types::Coercible::Int.optional
+        attribute :genre_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether the audio is hidden from search
-        attribute :no_search, API::Base::BoolInt.optional
+        attribute :no_search, API::Base::BoolInt.optional.default(nil)
       end
     end
   end

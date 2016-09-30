@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class AddLinkResponse < Vk::Schema::Response
           # @return [API::Groups::GroupLink] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Groups::GroupLink].optional
+          attribute :response, Dry::Types[API::Groups::GroupLink].optional.default(nil)
         end
       end
     end

@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UserXtrPhone < API::Users::UserFull
         # @return [String] User phone
-        attribute :phone, API::Types::Coercible::String.optional
+        attribute :phone, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -14,9 +14,9 @@ module Vk
         # @return [String] User last name
         attribute :last_name, API::Types::Coercible::String
         # @return [String] Returns if a profile is deleted or blocked
-        attribute :deactivated, API::Types::Coercible::String.optional
+        attribute :deactivated, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Returns if a profile is hidden.
-        attribute :hidden, API::Types::Coercible::Int.optional
+        attribute :hidden, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

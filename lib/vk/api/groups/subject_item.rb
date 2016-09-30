@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class SubjectItem < Vk::Schema::Object
         # @return [Integer] Subject ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Subject title
-        attribute :name, API::Types::Coercible::String.optional
+        attribute :name, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

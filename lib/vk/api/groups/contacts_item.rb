@@ -8,13 +8,13 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class ContactsItem < Vk::Schema::Object
         # @return [Integer] User ID
-        attribute :user_id, API::Types::Coercible::Int.optional
+        attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Contact description
-        attribute :desc, API::Types::Coercible::String.optional
+        attribute :desc, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Contact email
-        attribute :email, API::Types::Coercible::String.optional
+        attribute :email, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Contact phone
-        attribute :phone, API::Types::Coercible::String.optional
+        attribute :phone, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

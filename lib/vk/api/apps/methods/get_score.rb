@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Chat ID.
-          attribute :chat_id, API::Types::Coercible::Int.optional
+          attribute :chat_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user to be added to the chat.
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int
         end
       end
     end

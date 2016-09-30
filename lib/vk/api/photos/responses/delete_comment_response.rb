@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class DeleteCommentResponse < Vk::Schema::Response
           # @return [API::Base::BoolInt] Returns 1 if request has been processed successfully, 0 if the comment is not found
-          attribute :response, API::Base::BoolInt.optional
+          attribute :response, API::Base::BoolInt.optional.default(nil)
         end
       end
     end

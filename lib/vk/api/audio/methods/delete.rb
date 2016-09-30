@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Audio file ID.
-          attribute :audio_id, API::Types::Coercible::Int.optional
+          attribute :audio_id, API::Types::Coercible::Int
           # @return [Integer] ID of the user or community that owns the audio file. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
         end
       end
     end

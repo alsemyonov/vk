@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetPushSettingsResponse < Vk::Schema::Response
           # @return [API::Account::PushSettings] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Account::PushSettings].optional
+          attribute :response, Dry::Types[API::Account::PushSettings].optional.default(nil)
         end
       end
     end

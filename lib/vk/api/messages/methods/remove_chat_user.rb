@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Chat ID.
-          attribute :chat_id, API::Types::Coercible::Int.optional
+          attribute :chat_id, API::Types::Coercible::Int
           # @return [String] ID of the user to be removed from the chat.
-          attribute :user_id, API::Types::Coercible::String.optional
+          attribute :user_id, API::Types::Coercible::String
         end
       end
     end

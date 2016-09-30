@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Advertising account ID.
-          attribute :account_id, API::Types::Coercible::Int.optional
+          attribute :account_id, API::Types::Coercible::Int
           # @return [Integer] 'Only for advertising agencies.'; ID of the client with the advertising account where the group will be created.;
-          attribute :client_id, API::Types::Coercible::Int.optional
+          attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Name of the target group — a string up to 64 characters long.
-          attribute :name, API::Types::Coercible::String.optional
+          attribute :name, API::Types::Coercible::String
           # @return [String] Domain of the site where user accounting code will be placed.
-          attribute :domain, API::Types::Coercible::String.optional
+          attribute :domain, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] 'For groups with auditory created with pixel code only.'; ; Number of days after that users will be automatically removed from the group. '0' — not to remove users.;
-          attribute :lifetime, API::Types::Coercible::Int.optional
+          attribute :lifetime, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

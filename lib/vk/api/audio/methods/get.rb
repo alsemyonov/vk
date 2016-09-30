@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the audio file. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Audio album ID.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the audio files to return.
-          attribute :audio_ids, API::Types::Coercible::Array.optional
+          attribute :audio_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Boolean] '1' — to return information about users who uploaded audio files
-          attribute :need_user, API::Types::Bool.optional
+          attribute :need_user, API::Types::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of audio files.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of audio files to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [String] ID or screen name of the community.
-          attribute :group_id, API::Types::Coercible::String.optional
+          attribute :group_id, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Sort order. Available values: 'id_asc', 'id_desc', 'time_asc', 'time_desc'.; 'time_asc' and 'time_desc' are availavle only if the method is called by the group's 'moderator'.
-          attribute :sort, API::Types::Coercible::String.optional
+          attribute :sort, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of community members.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of community members to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] List of additional fields to be returned. ; Available values: 'sex, bdate, city, country, photo_50, photo_100, photo_200_orig, photo_200, photo_400_orig, photo_max, photo_max_orig, online, online_mobile, lists, domain, has_mobile, contacts, connections, site, education, universities, schools, can_post, can_see_all_posts, can_see_audio, can_write_private_message, status, last_seen, common_count, relation, relatives, counters'.
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] *'friends' – only friends in this community will be returned;; *'unsure' – only those who pressed 'I may attend' will be returned (if it's an event).
-          attribute :filter, API::Types::Coercible::String.optional
+          attribute :filter, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

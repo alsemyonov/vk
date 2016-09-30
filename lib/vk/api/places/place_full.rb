@@ -8,33 +8,33 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class PlaceFull < Vk::Schema::Object
         # @return [Integer] Place ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Place title
-        attribute :title, API::Types::Coercible::String.optional
+        attribute :title, API::Types::Coercible::String.optional.default(nil)
         # @return [Number] Place latitude
-        attribute :latitude, API::Types::Coercible::Int.optional
+        attribute :latitude, API::Types::Coercible::Int.optional.default(nil)
         # @return [Number] Place longitude
-        attribute :longitude, API::Types::Coercible::Int.optional
+        attribute :longitude, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date of the place creation in Unixtime
-        attribute :created, API::Types::Coercible::Int.optional
+        attribute :created, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] URL of the place's icon
-        attribute :icon, API::Types::Coercible::String.optional
+        attribute :icon, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Checkins number
-        attribute :checkins, API::Types::Coercible::Int.optional
+        attribute :checkins, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Place type
-        attribute :type, API::Types::Coercible::String.optional
+        attribute :type, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Country ID
-        attribute :country, API::Types::Coercible::Int.optional
+        attribute :country, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] City ID
-        attribute :city, API::Types::Coercible::Int.optional
+        attribute :city, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Place address
-        attribute :address, API::Types::Coercible::String.optional
+        attribute :address, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Distance to the place
-        attribute :distance, API::Types::Coercible::Int.optional
+        attribute :distance, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Community ID
-        attribute :group_id, API::Types::Coercible::Int.optional
+        attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] URL of the community's photo
-        attribute :group_photo, API::Types::Coercible::String.optional
+        attribute :group_photo, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

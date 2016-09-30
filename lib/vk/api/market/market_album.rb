@@ -18,7 +18,7 @@ module Vk
         # @return [Integer] Date when album has been updated last time in Unixtime
         attribute :updated_time, API::Types::Coercible::Int
         # @return [API::Photos::Photo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :photo, Dry::Types[API::Photos::Photo].optional
+        attribute :photo, Dry::Types[API::Photos::Photo].optional.default(nil)
       end
     end
   end

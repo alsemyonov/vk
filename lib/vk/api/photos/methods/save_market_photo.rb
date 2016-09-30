@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Parameter returned when photos are .
-          attribute :photo, API::Types::Coercible::String.optional
+          attribute :photo, API::Types::Coercible::String
           # @return [Integer] Parameter returned when photos are .
-          attribute :server, API::Types::Coercible::Int.optional
+          attribute :server, API::Types::Coercible::Int
           # @return [String] Parameter returned when photos are .
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String
           # @return [String] Parameter returned when photos are .
-          attribute :crop_data, API::Types::Coercible::String.optional
+          attribute :crop_data, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Parameter returned when photos are .
-          attribute :crop_hash, API::Types::Coercible::String.optional
+          attribute :crop_hash, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

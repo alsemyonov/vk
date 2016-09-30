@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetCountersResponse < Vk::Schema::Response
           # @return [API::Account::AccountCounters] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Account::AccountCounters].optional
+          attribute :response, Dry::Types[API::Account::AccountCounters].optional.default(nil)
         end
       end
     end

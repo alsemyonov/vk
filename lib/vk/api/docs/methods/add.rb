@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the document. Use a negative value to designate a community ID.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] Document ID.
-          attribute :doc_id, API::Types::Coercible::Int.optional
+          attribute :doc_id, API::Types::Coercible::Int
           # @return [String] Access key. This parameter is required if 'access_key' was returned with the document's data.
-          attribute :access_key, API::Types::Coercible::String.optional
+          attribute :access_key, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

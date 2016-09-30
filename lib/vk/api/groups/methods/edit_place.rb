@@ -26,19 +26,19 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] Place title.
-          attribute :title, API::Types::Coercible::String.optional
+          attribute :title, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Place address.
-          attribute :address, API::Types::Coercible::String.optional
+          attribute :address, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Country ID.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] City ID.
-          attribute :city_id, API::Types::Coercible::Int.optional
+          attribute :city_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical latitude.
-          attribute :latitude, API::Types::Coercible::Int.optional
+          attribute :latitude, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical longitude.
-          attribute :longitude, API::Types::Coercible::Int.optional
+          attribute :longitude, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

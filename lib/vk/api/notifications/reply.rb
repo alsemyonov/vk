@@ -8,11 +8,11 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Reply < Vk::Schema::Object
         # @return [Integer] Reply ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Date when the reply has been created in Unixtime
-        attribute :date, API::Types::Coercible::Int.optional
+        attribute :date, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Reply text
-        attribute :text, API::Types::Coercible::Int.optional
+        attribute :text, API::Types::Coercible::Int.optional.default(nil)
       end
     end
   end

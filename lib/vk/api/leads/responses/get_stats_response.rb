@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetStatsResponse < Vk::Schema::Response
           # @return [API::Leads::Lead] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Leads::Lead].optional
+          attribute :response, Dry::Types[API::Leads::Lead].optional.default(nil)
         end
       end
     end

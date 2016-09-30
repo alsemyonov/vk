@@ -25,17 +25,17 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user whose friends will be checked against the friends of the user specified in 'target_uid'.
-          attribute :source_uid, API::Types::Coercible::Int.optional
+          attribute :source_uid, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the user whose friends will be checked against the friends of the user specified in 'source_uid'.
-          attribute :target_uid, API::Types::Coercible::Int.optional
+          attribute :target_uid, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the users whose friends will be checked against the friends of the user specified in 'source_uid'.
-          attribute :target_uids, API::Types::Coercible::Array.optional
+          attribute :target_uids, API::Types::Coercible::Array.optional.default(nil)
           # @return [String] Sort order:; 'random' — random order
-          attribute :order, API::Types::Coercible::String.optional
+          attribute :order, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of mutual friends to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of mutual friends.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

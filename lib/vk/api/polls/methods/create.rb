@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [String] question text
-          attribute :question, API::Types::Coercible::String.optional
+          attribute :question, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' – anonymous poll, participants list is hidden;; '0' – public poll, participants list is available;; Default value is '0'.
-          attribute :is_anonymous, API::Types::Bool.optional
+          attribute :is_anonymous, API::Types::Bool.optional.default(nil)
           # @return [Integer] If a poll will be added to a communty it is required to send a negative group identifier. Current user by default.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] available answers list, for example:; " ["yes","no","maybe"]"; There can be from 1 to 10 answers.
-          attribute :add_answers, API::Types::Coercible::String.optional
+          attribute :add_answers, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

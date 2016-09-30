@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] IDs of messages to mark as important.
-          attribute :message_ids, API::Types::Coercible::Array.optional
+          attribute :message_ids, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] '1' — to add a star (mark as important); '0' — to remove the star
-          attribute :important, API::Types::Coercible::Int.optional
+          attribute :important, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

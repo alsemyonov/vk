@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] photo's owner ID
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] photo ID
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
           # @return [String] for private photos
-          attribute :access_key, API::Types::Coercible::String.optional
+          attribute :access_key, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

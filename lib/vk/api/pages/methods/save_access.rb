@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Wiki page ID.
-          attribute :page_id, API::Types::Coercible::Int.optional
+          attribute :page_id, API::Types::Coercible::Int
           # @return [Integer] ID of the community that owns the wiki page.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] 
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Who can view the wiki page:; '1' — only community members; '2' — all users can view the page; '0' — only community managers
-          attribute :view, API::Types::Coercible::Int.optional
+          attribute :view, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Who can edit the wiki page:; '1' — only community members; '2' — all users can edit the page; '0' — only community managers
-          attribute :edit, API::Types::Coercible::Int.optional
+          attribute :edit, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

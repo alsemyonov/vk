@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Unique device ID.
-          attribute :device_id, API::Types::Coercible::String.optional
+          attribute :device_id, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Lyrics ID (could be obtained with , , or  methods).
-          attribute :lyrics_id, API::Types::Coercible::Int.optional
+          attribute :lyrics_id, API::Types::Coercible::Int
         end
       end
     end

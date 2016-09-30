@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class ResolveScreenNameResponse < Vk::Schema::Response
           # @return [API::Utils::DomainResolved] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Utils::DomainResolved].optional
+          attribute :response, Dry::Types[API::Utils::DomainResolved].optional.default(nil)
         end
       end
     end

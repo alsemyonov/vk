@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] Server URL.
-          attribute :server_url, API::Types::Coercible::String.optional
+          attribute :server_url, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

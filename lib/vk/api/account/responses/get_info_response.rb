@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class GetInfoResponse < Vk::Schema::Response
           # @return [API::Account::Info] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Account::Info].optional
+          attribute :response, Dry::Types[API::Account::Info].optional.default(nil)
         end
       end
     end

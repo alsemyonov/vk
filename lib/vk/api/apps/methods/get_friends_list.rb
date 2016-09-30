@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] List size.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] List type. Possible values:; * 'invite' — available for invites (don't play the game);; * 'request' — available for request (play the game).; ; By default: 'invite'.
-          attribute :type, API::Types::Coercible::String.optional
+          attribute :type, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Additional profile fields, see .
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

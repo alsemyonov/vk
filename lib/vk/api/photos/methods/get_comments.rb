@@ -29,25 +29,25 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the photo.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
           # @return [Boolean] '1' — to return an additional 'likes' field; '0' — (default)
-          attribute :need_likes, API::Types::Bool.optional
+          attribute :need_likes, API::Types::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :start_comment_id, API::Types::Coercible::Int.optional
+          attribute :start_comment_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of comments. By default, '0'.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of comments to return.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Sort order:; 'asc' — old first; 'desc' — new first
-          attribute :sort, API::Types::Coercible::String.optional
+          attribute :sort, API::Types::Coercible::String.optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :access_key, API::Types::Coercible::String.optional
+          attribute :access_key, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :extended, API::Types::Bool.optional
+          attribute :extended, API::Types::Bool.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional
+          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
         end
       end
     end

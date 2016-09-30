@@ -33,33 +33,33 @@ module Vk
           # @!group Arguments
 
           # @return [String] User first name.
-          attribute :first_name, API::Types::Coercible::String.optional
+          attribute :first_name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] User last name.
-          attribute :last_name, API::Types::Coercible::String.optional
+          attribute :last_name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] User maiden name (female only)
-          attribute :maiden_name, API::Types::Coercible::String.optional
+          attribute :maiden_name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] User screen name.
-          attribute :screen_name, API::Types::Coercible::String.optional
+          attribute :screen_name, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] ID of the name change request to be canceled. If this paremeter is sent, all the others are ignored.
-          attribute :cancel_request_id, API::Types::Coercible::Int.optional
+          attribute :cancel_request_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] User sex. Possible values: ; * '1' – female;; * '2' – male.
-          attribute :sex, API::Types::Coercible::Int.optional
+          attribute :sex, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] User relationship status. Possible values: ; * '1' – single;; * '2' – in a relationship;; * '3' – engaged;; * '4' – married;; * '5' – it's complicated;; * '6' – actively searching;; * '7' – in love;; * '0' – not specified.
-          attribute :relation, API::Types::Coercible::Int.optional
+          attribute :relation, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the relationship partner.
-          attribute :relation_partner_id, API::Types::Coercible::Int.optional
+          attribute :relation_partner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] User birth date, format: DD.MM.YYYY.
-          attribute :bdate, API::Types::Coercible::String.optional
+          attribute :bdate, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Birth date visibility. Returned values: ; * '1' – show birth date;; * '2' – show only month and date;; * '0' – hide birth date.
-          attribute :bdate_visibility, API::Types::Coercible::Int.optional
+          attribute :bdate_visibility, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] User home town.
-          attribute :home_town, API::Types::Coercible::String.optional
+          attribute :home_town, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] User country.
-          attribute :country_id, API::Types::Coercible::Int.optional
+          attribute :country_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] User city.
-          attribute :city_id, API::Types::Coercible::Int.optional
+          attribute :city_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Status text.
-          attribute :status, API::Types::Coercible::String.optional
+          attribute :status, API::Types::Coercible::String.optional.default(nil)
         end
       end
     end

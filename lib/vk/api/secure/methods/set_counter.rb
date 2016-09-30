@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :counters, API::Types::Coercible::Array.optional
+          attribute :counters, API::Types::Coercible::Array.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :user_id, API::Types::Coercible::Int.optional
+          attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] counter value.
-          attribute :counter, API::Types::Coercible::Int.optional
+          attribute :counter, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

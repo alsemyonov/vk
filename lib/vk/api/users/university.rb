@@ -8,27 +8,27 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class University < Vk::Schema::Object
         # @return [Integer] University ID
-        attribute :id, API::Types::Coercible::Int.optional
+        attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Country ID
-        attribute :country, API::Types::Coercible::Int.optional
+        attribute :country, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] City ID
-        attribute :city, API::Types::Coercible::Int.optional
+        attribute :city, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] University name
-        attribute :name, API::Types::Coercible::String.optional
+        attribute :name, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Faculty ID
-        attribute :faculty, API::Types::Coercible::Int.optional
+        attribute :faculty, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Faculty name
-        attribute :faculty_name, API::Types::Coercible::String.optional
+        attribute :faculty_name, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Chair ID
-        attribute :chair, API::Types::Coercible::Int.optional
+        attribute :chair, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Chair name
-        attribute :chair_name, API::Types::Coercible::String.optional
+        attribute :chair_name, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Graduation year
-        attribute :graduation, API::Types::Coercible::Int.optional
+        attribute :graduation, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Education form
-        attribute :education_form, API::Types::Coercible::String.optional
+        attribute :education_form, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Education status
-        attribute :education_status, API::Types::Coercible::String.optional
+        attribute :education_status, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class CreateAlbumResponse < Vk::Schema::Response
           # @return [API::Photos::PhotoAlbumFull] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Photos::PhotoAlbumFull].optional
+          attribute :response, Dry::Types[API::Photos::PhotoAlbumFull].optional.default(nil)
         end
       end
     end

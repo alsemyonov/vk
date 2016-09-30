@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the album(s).
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Album ID. If the parameter is not set, comments on all of the user's albums will be returned.
-          attribute :album_id, API::Types::Coercible::Int.optional
+          attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return an additional 'likes' field; '0' — (default)
-          attribute :need_likes, API::Types::Bool.optional
+          attribute :need_likes, API::Types::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of comments. By default, '0'.
-          attribute :offset, API::Types::Coercible::Int.optional
+          attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of comments to return. By default, '20'. Maximum value, '100'.
-          attribute :count, API::Types::Coercible::Int.optional
+          attribute :count, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

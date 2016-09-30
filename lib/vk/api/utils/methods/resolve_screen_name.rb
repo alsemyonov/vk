@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [String] Screen name of the user, community (e.g., 'apiclub,' 'andrew', or 'rules_of_war'), or application.
-          attribute :screen_name, API::Types::Coercible::String.optional
+          attribute :screen_name, API::Types::Coercible::String
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [String] Text of the new status.
-          attribute :text, API::Types::Coercible::String.optional
+          attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Identifier of a community to set a status in. If left blank the status is set to current user.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end

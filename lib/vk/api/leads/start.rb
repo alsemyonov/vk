@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Start < Vk::Schema::Object
         # @return [API::Base::BoolInt] Information whether test mode is enabled
-        attribute :test_mode, API::Base::BoolInt.optional
+        attribute :test_mode, API::Base::BoolInt.optional.default(nil)
         # @return [String] Session data
-        attribute :vk_sid, API::Types::Coercible::String.optional
+        attribute :vk_sid, API::Types::Coercible::String.optional.default(nil)
       end
     end
   end

@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class SaveResponse < Vk::Schema::Response
           # @return [API::Video::SaveResult] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :response, Dry::Types[API::Video::SaveResult].optional
+          attribute :response, Dry::Types[API::Video::SaveResult].optional.default(nil)
         end
       end
     end

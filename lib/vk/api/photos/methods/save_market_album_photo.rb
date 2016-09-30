@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Community ID.
-          attribute :group_id, API::Types::Coercible::Int.optional
+          attribute :group_id, API::Types::Coercible::Int
           # @return [String] Parameter returned when photos are .
-          attribute :photo, API::Types::Coercible::String.optional
+          attribute :photo, API::Types::Coercible::String
           # @return [Integer] Parameter returned when photos are .
-          attribute :server, API::Types::Coercible::Int.optional
+          attribute :server, API::Types::Coercible::Int
           # @return [String] Parameter returned when photos are .
-          attribute :hash, API::Types::Coercible::String.optional
+          attribute :hash, API::Types::Coercible::String
         end
       end
     end

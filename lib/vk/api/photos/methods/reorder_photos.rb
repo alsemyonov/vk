@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] ID of the user or community that owns the photo.
-          attribute :owner_id, API::Types::Coercible::Int.optional
+          attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Photo ID.
-          attribute :photo_id, API::Types::Coercible::Int.optional
+          attribute :photo_id, API::Types::Coercible::Int
           # @return [Integer] ID of the photo before which the photo in question shall be placed.
-          attribute :before, API::Types::Coercible::Int.optional
+          attribute :before, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the photo after which the photo in question shall be placed.
-          attribute :after, API::Types::Coercible::Int.optional
+          attribute :after, API::Types::Coercible::Int.optional.default(nil)
         end
       end
     end
