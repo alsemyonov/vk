@@ -8,7 +8,7 @@ module Vk
         include HasAttributes
 
         def self.namespace_splitter
-          @namespace_splitter = /\./
+          @namespace_splitter ||= /\./
         end
 
         def initialize(name, definition, schema)

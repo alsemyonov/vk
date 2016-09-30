@@ -6,7 +6,7 @@ module Vk
     class Definition
       class Constant < self
         def self.namespace_splitter
-          @namespace_splitter = /_/
+          @namespace_splitter ||= /_/
         end
 
         # @param [String] name
