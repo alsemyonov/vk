@@ -11,7 +11,7 @@ module Vk
           'integer' => 'API::Types::Coercible::Int',
           'number' => 'API::Types::Coercible::Int',
           'object' => 'API::Types::Coercible::Hash',
-          'boolean' => 'API::Types::Bool'
+          'boolean' => 'API::Types::Form::Bool'
         )
 
         def initialize(name, definition, schema, object)
@@ -36,7 +36,7 @@ module Vk
         def type
           type = if simple?
                    simple_type
-                 elsif array?
+                 elsif multiple_types?
                    type_variants
                  elsif reference?
                    referenced_definition.dry_type
@@ -44,28 +44,80 @@ module Vk
                    polymorphic_type
                  elsif inline_object?
                    # TODO: make inline struct definition
-                   'API::Types::Coercible::Hash'
+                   'API::Types::Coercible::Hash'.tap do |hash|
+                   end
                  else
                    puts "Unknown definition: #{definition.inspect}"
                  end
-          type += '.optional.default(nil)' unless required_attribute?
+          type += '.optional' unless required?
+          type += ".default(#{default_value})" if default? || optional?
           type
         end
 
-        def required_attribute?
+        # @return [Boolean]
+        def default?
+          definition.key?('default')
+        end
+
+        # @return [Boolean]
+        def enum?
+          definition.key?('enum')
+        end
+
+        # @return [Object]
+        def default_value
+          if default?
+            value = if enum?
+                      definition['enum'][
+                        definition['default']
+                      ]
+                    else
+                      definition['default']
+                    end
+            value = value == 1 if boolean?
+            # TODO: fix following after schema fixed
+            value = [] if array? && value.zero?
+            value = nil if string? && !value.is_a?(String)
+            value
+          end.inspect
+        end
+
+        # @return [String]
+        def boolean?
+          definition['type'] == 'boolean'
+        end
+
+        # @return [String]
+        def string?
+          definition['type'] == 'string'
+        end
+
+        # @return [Boolean]
+        def required?
           object.required_attribute?(@name) || definition['required']
+        end
+
+        # @return [Boolean]
+        def optional?
+          !required?
         end
 
         # @return [String]
         def simple_type
           result = self.class.type_for(definition['type'])
           if array_item?
-            member = referenced_item_definition.referenced_type_name
-            result += ".member(#{member})"
+            member = if definition['items']['$ref'].is_a?(String)
+                       referenced_item_definition.referenced_type_name
+                     elsif definition['items']['type']
+                       self.class.type_for(definition['items']['type'])
+                     end
+            result += ".member(#{member})" if member
 
             if definition['maxItems']
               result += ".constrained(max_size: #{definition['maxItems']})"
             end
+          elsif enum?
+            result += ".enum(#{definition['enum'].map(&:inspect).join(', ')})"
           end
           result
         end
@@ -91,7 +143,7 @@ module Vk
           type =
             if simple?
               definition['type'].capitalize
-            elsif array?
+            elsif multiple_types?
               definition['type'].map(&:capitalize).join(', ')
             elsif reference?
               referenced_definition.referenced_type_name
@@ -117,13 +169,17 @@ module Vk
         end
 
         # @return [Boolean]
-        def array?
+        def multiple_types?
           definition['type'].is_a?(Array)
+        end
+
+        def array?
+          definition['type'] == 'array'
         end
 
         # @return [Boolean]
         def array_item?
-          definition['items'].is_a?(Hash) && definition['items']['$ref'].is_a?(String)
+          array? && definition['items'].is_a?(Hash)
         end
 
         # @return [Boolean]

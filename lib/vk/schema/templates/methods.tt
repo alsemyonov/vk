@@ -18,7 +18,7 @@ module Vk
       <%- methods.each do |method| -%>
       # @param [Hash] arguments
       <%- method.attributes.each do |attribute| -%>
-      # @option arguments [<%= attribute.returned_type %>] <%= attribute.attribute_name %> <%= attribute.description %>
+      # @option arguments [<%= attribute.returned_type %>] <%= attribute.attribute_name %> <%= "(#{attribute.default_value})" if attribute.default? %> <%= attribute.description %>
       <%- end -%>
       # @see Vk::API::<%= method.namespace %>::Methods::<%= method.type_name %>
       # @return [<%= method.response_class %>] <%= method.description %>
