@@ -58,7 +58,6 @@ module Vk
       end
     end
 
-    # TODO: fix after JSON Schema fixed
     OBJECTS_DEFINITION = %r{\A(objects\.json)?#/definitions/}
     RESPONSES_DEFINITION = %r{\Aresponses\.json?#/definitions/}
 
