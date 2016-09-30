@@ -7,7 +7,7 @@ module Vk
       class Error < self
         # @return [String]
         def type_name
-          name.camelcase
+          name.camelize
         end
 
         # @return [String]

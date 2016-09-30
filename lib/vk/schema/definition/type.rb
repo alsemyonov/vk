@@ -6,7 +6,7 @@ module Vk
     class Definition
       class Type < Constant
         PRIMITIVES = Hash.new do |hash, key|
-          hash[key] = key.to_s.camelcase
+          hash[key] = key.to_s.camelize
         end
 
         alias dry_type referenced_type_name

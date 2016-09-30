@@ -19,7 +19,7 @@ module Vk
 
         # @return [String]
         def request
-          @request.camelcase
+          @request.camelize
         end
 
         # @return [String]

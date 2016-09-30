@@ -30,7 +30,7 @@ module Vk
         @loaded_methods ||= Hash.new do |hash, method|
           method = method.underscore
           require "#{@namespace}/methods/#{method}"
-          hash[method] = methods_module.const_get(method.camelcase)
+          hash[method] = methods_module.const_get(method.camelize)
         end
       end
 
@@ -39,7 +39,7 @@ module Vk
         @loaded_methods ||= Hash.new do |hash, method|
           method = "#{method.underscore}_response"
           require "#{@namespace}/responses/#{method}"
-          hash[method] = responses_module.const_get(method.camelcase)
+          hash[method] = responses_module.const_get(method.camelize)
         end
       end
 
@@ -55,7 +55,7 @@ module Vk
 
       # @return [Module]
       def namespace_module
-        @namespace_module ||= Vk::API.const_get(@namespace.camelcase)
+        @namespace_module ||= Vk::API.const_get(@namespace.camelize)
       end
     end
   end

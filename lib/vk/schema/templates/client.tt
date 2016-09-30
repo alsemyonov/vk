@@ -7,10 +7,10 @@ module Vk
     # @!group DSL
 
     <%- schema.namespaces.each do |namespace| -%>
-    # @return [Vk::API::<%= namespace.camelcase %>]
+    # @return [Vk::API::<%= namespace.camelize %>]
     def <%= namespace %>
       # require "vk/api/<%= namespace %>"
-      @<%= namespace %> ||= Vk::API::<%= namespace.camelcase %>.new('<%= namespace %>', self)
+      @<%= namespace %> ||= Vk::API::<%= namespace.camelize %>.new('<%= namespace %>', self)
     end
     <%- end -%>
   end

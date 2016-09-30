@@ -22,12 +22,12 @@ module Vk
 
         # @return [String]
         def namespace
-          @namespace.camelcase
+          @namespace.camelize
         end
 
         # @return [String]
         def type_name
-          @type_name ||= name.camelcase
+          @type_name ||= name.camelize
         end
 
         # @return [String]
