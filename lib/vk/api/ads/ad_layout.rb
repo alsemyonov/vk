@@ -14,7 +14,7 @@ module Vk
         # @return [Integer] Ad format
         attribute :ad_format, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Cost type
-        attribute :cost_type, API::Types::Coercible::Int
+        attribute :cost_type, API::Types::Coercible::Int.enum(0, 1)
         # @return [API::Base::BoolInt] Information whether the ad is a video
         attribute :video, API::Base::BoolInt.optional.default(nil)
         # @return [String] Ad title

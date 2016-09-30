@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — to return only foreign audio files; '0' — to return all audio files;
-          attribute :only_eng, API::Types::Bool.optional.default(nil)
+          attribute :only_eng, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Genre ID. See .
           attribute :genre_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of audio files.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of audio files to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

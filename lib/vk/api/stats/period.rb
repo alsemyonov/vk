@@ -22,15 +22,15 @@ module Vk
         # @return [Integer] Number of users unsubscribed
         attribute :unsubscribed, API::Types::Coercible::Int.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :sex, API::Types::Coercible::Array.optional.default(nil)
+        attribute :sex, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :age, API::Types::Coercible::Array.optional.default(nil)
+        attribute :age, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :sex_age, API::Types::Coercible::Array.optional.default(nil)
+        attribute :sex_age, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :cities, API::Types::Coercible::Array.optional.default(nil)
+        attribute :cities, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :countries, API::Types::Coercible::Array.optional.default(nil)
+        attribute :countries, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
       end
     end
   end

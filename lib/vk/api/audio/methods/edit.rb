@@ -38,7 +38,7 @@ module Vk
           # @return [Integer] Genre of the audio file. See the list of .
           attribute :genre_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — audio file will not be available for search; '0' — audio file will be available for search (default)
-          attribute :no_search, API::Types::Bool.optional.default(nil)
+          attribute :no_search, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

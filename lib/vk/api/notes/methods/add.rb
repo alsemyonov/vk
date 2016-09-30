@@ -27,9 +27,9 @@ module Vk
           # @return [String] Note text.
           attribute :text, API::Types::Coercible::String
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_view, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default([])
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default([])
         end
       end
     end

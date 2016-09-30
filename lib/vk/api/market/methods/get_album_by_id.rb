@@ -23,7 +23,7 @@ module Vk
           # @return [Integer] identifier of an album owner community; "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
           attribute :owner_id, API::Types::Coercible::Int
           # @return [Array] collections identifiers to obtain data from
-          attribute :album_ids, API::Types::Coercible::Array
+          attribute :album_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
         end
       end
     end

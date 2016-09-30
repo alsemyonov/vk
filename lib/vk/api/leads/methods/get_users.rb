@@ -31,11 +31,11 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of results.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of results to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
           # @return [Integer] Action type. Possible values:; *'0' — start;; *'1' — finish;; *'2' — blocking users;; *'3' — start in a test mode;; *'4' — finish in a test mode.;
           attribute :status, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Sort order. Possible values:; *'1' — chronological;; *'0' — reverse chronological.
-          attribute :reverse, API::Types::Bool.optional.default(nil)
+          attribute :reverse, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

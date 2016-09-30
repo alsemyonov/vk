@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] Request ID needed to cancel the request
         attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Request status
-        attribute :status, API::Types::Coercible::String.optional.default(nil)
+        attribute :status, API::Types::Coercible::String.enum("success", "processing", "declined", "was_accepted", "was_declined").optional.default(nil)
         # @return [String] First name in request
         attribute :first_name, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Last name in request

@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] Post ID
         attribute :post_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Post type
-        attribute :post_type, API::Types::Coercible::String.optional.default(nil)
+        attribute :post_type, API::Types::Coercible::String.enum("post", "copy", "reply").optional.default(nil)
         # @return [String] Post text
         attribute :text, API::Types::Coercible::String.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

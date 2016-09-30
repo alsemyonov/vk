@@ -14,7 +14,7 @@ module Vk
         # @return [String] Element title
         attribute :title, API::Types::Coercible::String
         # @return [String] Element type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("video", "album")
         # @return [String] Element description
         attribute :description, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Duration in seconds

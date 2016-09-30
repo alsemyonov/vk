@@ -29,7 +29,7 @@ module Vk
           # @return [String] New comment text.;
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] List of objects attached to the comment, in the following format:; ; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media attachment:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; '<owner_id>' — ID of the media attachment owner.; '<media_id>' — Media attachment ID. ; ; For example:; "photo100172_166443618,photo66748_265827614"
-          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
+          attribute :attachments, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

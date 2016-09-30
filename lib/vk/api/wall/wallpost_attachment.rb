@@ -32,13 +32,13 @@ module Vk
         # @return [API::Photos::PhotoAlbum] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :album, Dry::Types[API::Photos::PhotoAlbum].optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :photos_list, API::Types::Coercible::Array.optional.default(nil)
+        attribute :photos_list, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [API::Market::MarketAlbum] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :market_market_album, Dry::Types[API::Market::MarketAlbum].optional.default(nil)
         # @return [API::Market::MarketItem] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :market, Dry::Types[API::Market::MarketItem].optional.default(nil)
         # @return [String] Attachment type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("photo", "posted_photo", "audio", "video", "doc", "link", "graffiti", "note", "app", "poll", "page", "album", "photos_list", "market_market_album", "market")
       end
     end
   end

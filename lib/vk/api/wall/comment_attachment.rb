@@ -28,7 +28,7 @@ module Vk
         # @return [API::Base::Sticker] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :sticker, Dry::Types[API::Base::Sticker].optional.default(nil)
         # @return [String] Attachment type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("photo", "audio", "video", "doc", "link", "note", "page", "market_market_album", "market", "sticker")
       end
     end
   end

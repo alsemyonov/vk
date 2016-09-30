@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] Communities number
         attribute :count, API::Types::Coercible::Int
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :items, API::Types::Coercible::Array
+        attribute :items, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
       end
     end
   end

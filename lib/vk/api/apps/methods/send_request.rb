@@ -29,13 +29,13 @@ module Vk
           # @return [String] request text
           attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [String] request type. Values:; 'invite' – if the request is sent to a user who does not have the app installed;; 'request' – if a user has already installed the app
-          attribute :type, API::Types::Coercible::String.optional.default(nil)
+          attribute :type, API::Types::Coercible::String.enum("request", "invite").optional.default("request")
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :name, API::Types::Coercible::String.optional.default(nil)
           # @return [String] special string key to be sent with the request
           attribute :key, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :separate, API::Types::Bool.optional.default(nil)
+          attribute :separate, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

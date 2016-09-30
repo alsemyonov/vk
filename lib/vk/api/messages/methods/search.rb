@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] Date to search message before in Unixtime.
           attribute :date, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
         end
       end
     end

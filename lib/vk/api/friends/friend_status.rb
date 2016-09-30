@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] User ID
         attribute :user_id, API::Types::Coercible::Int
         # @return [Integer] Friend status with the user
-        attribute :friend_status, API::Types::Coercible::Int
+        attribute :friend_status, API::Types::Coercible::Int.enum(0, 1, 2, 3)
         # @return [String] Message sent with request
         attribute :request_message, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Information whether request is unviewed

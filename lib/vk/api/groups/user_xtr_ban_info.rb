@@ -120,9 +120,9 @@ module Vk
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :occupation, API::Types::Coercible::Hash.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :career, API::Types::Coercible::Array.optional.default(nil)
+        attribute :career, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :military, API::Types::Coercible::Array.optional.default(nil)
+        attribute :military, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Integer] University ID
         attribute :university, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] University name
@@ -160,13 +160,13 @@ module Vk
         # @return [String] User's favorite games
         attribute :games, API::Types::Coercible::String.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :universities, API::Types::Coercible::Array.optional.default(nil)
+        attribute :universities, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :schools, API::Types::Coercible::Array.optional.default(nil)
+        attribute :schools, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [String] About me field
         attribute :about, API::Types::Coercible::String.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :relatives, API::Types::Coercible::Array.optional.default(nil)
+        attribute :relatives, API::Types::Coercible::Array.member(API::Types::Coercible::Hash).optional.default(nil)
         # @return [String] Favorite quotes
         attribute :quotes, API::Types::Coercible::String.optional.default(nil)
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

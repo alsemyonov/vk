@@ -34,15 +34,15 @@ module Vk
           # @return [Integer] Offset required to return a specific subset of apps.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of apps to return.
-          attribute :count, API::Types::Coercible::Int
+          attribute :count, API::Types::Coercible::Int.default(100)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :platform, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to return additional fields 'screenshots', 'MAU', 'catalog_position', and 'international'. If set, 'count' must be less than or equal to '100'. ; '0' — not to return additional fields (default).
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :return_friends, API::Types::Bool.optional.default(nil)
+          attribute :return_friends, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :name_case, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Search query string.

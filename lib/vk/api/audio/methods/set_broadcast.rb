@@ -23,7 +23,7 @@ module Vk
           # @return [String] ID of the audio file to be shown in status (e.g., '1_190442705'). If the parameter is not set, the audio status of given communities and user will be deleted.
           attribute :audio, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] IDs of communities and user whose statuses will be included in the broadcast. Use a negative value to designate a community ID. By default, current user ID.
-          attribute :target_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :target_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 20).optional.default(nil)
         end
       end
     end

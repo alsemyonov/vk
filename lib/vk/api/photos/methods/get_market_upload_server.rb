@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] Community ID.
           attribute :group_id, API::Types::Coercible::Int
           # @return [Boolean] '1' if you want to upload the main item photo.
-          attribute :main_photo, API::Types::Bool.optional.default(nil)
+          attribute :main_photo, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] X coordinate of the crop left upper corner.
           attribute :crop_x, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Y coordinate of the crop left upper corner.

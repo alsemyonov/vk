@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Message IDs.
-          attribute :message_ids, API::Types::Coercible::Array
+          attribute :message_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 100)
         end
       end
     end

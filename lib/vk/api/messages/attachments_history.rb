@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class AttachmentsHistory < Vk::Schema::Object
         # @return [String] Attachments type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("photo", "video", "audio", "doc", "link")
         # @return [API::Photos::Photo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :photo, Dry::Types[API::Photos::Photo].optional.default(nil)
         # @return [API::Video::Video] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

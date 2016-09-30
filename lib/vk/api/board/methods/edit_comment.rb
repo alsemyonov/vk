@@ -32,7 +32,7 @@ module Vk
           # @return [String] (Required if 'attachments' is not set). New comment text.
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] (Required if 'message' is not set.) List of media objects attached to the comment, in the following format:; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media object:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; '<owner_id>' — ID of the media owner. ; '<media_id>' — Media ID.; ; Example:; "photo100172_166443618,photo66748_265827614"
-          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
+          attribute :attachments, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

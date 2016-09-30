@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Street IDs.
-          attribute :street_ids, API::Types::Coercible::Array
+          attribute :street_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 1000)
         end
       end
     end

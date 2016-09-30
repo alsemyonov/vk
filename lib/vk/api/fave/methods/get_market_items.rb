@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Number of results to return. ;
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(50)
           # @return [Boolean] '1' – to return additional fields  'likes, can_comment, can_repost, photos'. By default: '0'.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

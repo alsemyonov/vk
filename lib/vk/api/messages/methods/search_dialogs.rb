@@ -24,9 +24,9 @@ module Vk
           # @return [String] Search query string.
           attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Maximum number of results.
-          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
+          attribute :limit, API::Types::Coercible::Int.optional.default(20)
           # @return [Array] Profile fields to return.;
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

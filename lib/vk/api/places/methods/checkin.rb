@@ -33,9 +33,9 @@ module Vk
           # @return [Number] Geographical longitude of the check-in, in degrees (from '-180' to '180').
           attribute :longitude, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — Check-in will be available only for friends.; '0' — Check-in will be available for all users (default).
-          attribute :friends_only, API::Types::Bool.optional.default(nil)
+          attribute :friends_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] List of services or websites (e.g., 'twitter', 'facebook') to which the check-in will be exported, if the user has set up the respective option.
-          attribute :services, API::Types::Coercible::Array.optional.default(nil)
+          attribute :services, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

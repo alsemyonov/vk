@@ -32,7 +32,7 @@ module Vk
           # @return [Integer] Post ID.
           attribute :post_id, API::Types::Coercible::Int
           # @return [Boolean] '1' — to return the 'likes' field; '0'  — not to return the 'likes' field (default)
-          attribute :need_likes, API::Types::Bool.optional.default(nil)
+          attribute :need_likes, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :start_comment_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of comments.
@@ -44,7 +44,7 @@ module Vk
           # @return [Integer] Number of characters at which to truncate comments when previewed. By default, '90'. Specify '0' if you do not want to truncate comments.;
           attribute :preview_length, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

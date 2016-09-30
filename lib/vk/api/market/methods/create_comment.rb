@@ -33,9 +33,9 @@ module Vk
           # @return [String] Comment text (required if 'attachments' parameter is not specified)
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Comma-separated list of objects attached to a comment. The field is submitted the following way: ; "'<owner_id>_<media_id>,<owner_id>_<media_id>'"; ; '' - media attachment type:; "'photo' - photo; 'video' - video; 'audio' - audio; 'doc' - document"; ; '<owner_id>' - media owner id; '<media_id>' - media attachment id; ; For example:; "photo100172_166443618,photo66748_265827614";
-          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
+          attribute :attachments, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] '1' - comment will be published on behalf of a community, '0' - on behalf of a user (by default).
-          attribute :from_group, API::Types::Bool.optional.default(nil)
+          attribute :from_group, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] ID of a comment to reply with current comment to.
           attribute :reply_to_comment, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Sticker ID.

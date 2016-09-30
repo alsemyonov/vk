@@ -16,11 +16,11 @@ module Vk
         # @return [API::Base::BoolInt] Information whether community is closed
         attribute :is_closed, API::Base::BoolInt.optional.default(nil)
         # @return [String] Community type
-        attribute :type, API::Types::Coercible::String.optional.default(nil)
+        attribute :type, API::Types::Coercible::String.enum("group", "page", "event").optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user is manager
         attribute :is_admin, API::Base::BoolInt.optional.default(nil)
         # @return [Integer] Level of current user's credentials as manager
-        attribute :admin_level, API::Types::Coercible::Int.optional.default(nil)
+        attribute :admin_level, API::Types::Coercible::Int.enum(1, 2, 3).optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user is member
         attribute :is_member, API::Base::BoolInt.optional.default(nil)
         # @return [String] URL of square photo of the community with 50 pixels in width

@@ -31,15 +31,15 @@ module Vk
           # @return [Integer] Topic ID.
           attribute :topic_id, API::Types::Coercible::Int
           # @return [Boolean] '1' — to return the 'likes' field; '0'  — not to return the 'likes' field (default)
-          attribute :need_likes, API::Types::Bool.optional.default(nil)
+          attribute :need_likes, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :start_comment_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of comments.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of comments to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Boolean] '1' — to return information about users who posted comments; '0' — to return no additional fields (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Sort order:; 'asc' — by creation date in chronological order; 'desc' — by creation date in reverse chronological order;
           attribute :sort, API::Types::Coercible::String.optional.default(nil)
         end

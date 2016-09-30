@@ -27,7 +27,7 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of messages.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [String] ID of the user whose message history you want to return.
           attribute :user_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

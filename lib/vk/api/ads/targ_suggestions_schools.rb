@@ -14,7 +14,7 @@ module Vk
         # @return [String] Full school title
         attribute :desc, API::Types::Coercible::String.optional.default(nil)
         # @return [String] School type
-        attribute :type, API::Types::Coercible::String.optional.default(nil)
+        attribute :type, API::Types::Coercible::String.enum("school", "university", "faculty", "chair").optional.default(nil)
         # @return [String] City name
         attribute :parent, API::Types::Coercible::String.optional.default(nil)
       end

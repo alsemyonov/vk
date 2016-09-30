@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] User's political views
         attribute :political, API::Types::Coercible::Int.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :langs, API::Types::Coercible::Array.optional.default(nil)
+        attribute :langs, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [String] User's religion
         attribute :religion, API::Types::Coercible::String.optional.default(nil)
         # @return [String] User's inspired by

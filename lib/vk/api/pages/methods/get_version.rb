@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] 
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return the page as HTML
-          attribute :need_html, API::Types::Bool.optional.default(nil)
+          attribute :need_html, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

@@ -35,11 +35,11 @@ module Vk
           # @return [Integer] If not null, only searches for high-definition videos.
           attribute :hd, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to disable the Safe Search filter; '0' — to enable the Safe Search filter
-          attribute :adult, API::Types::Bool.optional.default(nil)
+          attribute :adult, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Filters to apply:; 'youtube' — return YouTube videos only; 'vimeo' — return Vimeo videos only; 'short' — return short videos only; 'long' — return long videos only
-          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
+          attribute :filters, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] 
-          attribute :search_own, API::Types::Bool.optional.default(nil)
+          attribute :search_own, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of videos.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
@@ -47,7 +47,7 @@ module Vk
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :shorter, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of videos to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
         end
       end
     end

@@ -21,7 +21,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Number of results to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(10)
           # @return [Integer] Offset needed to return a specific subset of results.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
         end

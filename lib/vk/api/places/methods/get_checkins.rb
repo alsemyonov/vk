@@ -38,13 +38,13 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of check-ins. (Ignored if 'timestamp' is not null.)
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of check-ins to return. (Ignored if 'timestamp' is not null.)
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Integer] Specifies that only those check-ins created after the specified timestamp will be returned.
           attribute :timestamp, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return only check-ins with set geographical coordinates. (Ignored if 'latitude' and 'longitude' are not set.)
-          attribute :friends_only, API::Types::Bool.optional.default(nil)
+          attribute :friends_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return location information with the check-ins. (Ignored if 'place' is not set.);
-          attribute :need_places, API::Types::Bool.optional.default(nil)
+          attribute :need_places, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

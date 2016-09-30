@@ -27,9 +27,9 @@ module Vk
           # @return [String] list name.
           attribute :title, API::Types::Coercible::String
           # @return [Array] users and communities identifiers to be added to the list. Community identifiers must be negative numbers.
-          attribute :source_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :source_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Boolean] reposts display on and off ('1' is for off).
-          attribute :no_reposts, API::Types::Bool.optional.default(nil)
+          attribute :no_reposts, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

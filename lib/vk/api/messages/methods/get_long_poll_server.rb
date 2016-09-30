@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — to use SSL.
-          attribute :use_ssl, API::Types::Bool.optional.default(nil)
+          attribute :use_ssl, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return the 'pts' field, needed for the  method.
-          attribute :need_pts, API::Types::Bool.optional.default(nil)
+          attribute :need_pts, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

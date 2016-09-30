@@ -32,7 +32,7 @@ module Vk
           # @return [Integer] Cover photo id
           attribute :photo_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Set as main ('1' – set, '0' – no).
-          attribute :main_album, API::Types::Bool.optional.default(nil)
+          attribute :main_album, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

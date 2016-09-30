@@ -35,13 +35,13 @@ module Vk
           # @return [String] New video description.
           attribute :desc, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Privacy settings in a .; Privacy setting is available for videos uploaded to own profile by user.
-          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_view, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Array] Privacy settings for comments in a .
-          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] Disable comments for the group video.
-          attribute :no_comments, API::Types::Bool.optional.default(nil)
+          attribute :no_comments, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to repeat the playback of the video; '0' — to play the video once;
-          attribute :repeat, API::Types::Bool.optional.default(nil)
+          attribute :repeat, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

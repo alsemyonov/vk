@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] Note owner ID.
           attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of comments to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
         end
       end
     end

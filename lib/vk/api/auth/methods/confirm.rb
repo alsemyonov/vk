@@ -36,7 +36,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :password, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :test_mode, API::Types::Bool.optional.default(nil)
+          attribute :test_mode, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :intro, API::Types::Coercible::Int.optional.default(nil)
         end

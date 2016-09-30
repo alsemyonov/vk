@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] ID of the album to which the audio files will be moved.
           attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the audio files to be moved.; "NOTE: An album can hold up to 1000 audio files.";
-          attribute :audio_ids, API::Types::Coercible::Array
+          attribute :audio_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
         end
       end
     end

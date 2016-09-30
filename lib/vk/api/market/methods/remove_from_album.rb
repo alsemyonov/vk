@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] Item ID.
           attribute :item_id, API::Types::Coercible::Int
           # @return [Array] Collections IDs to remove item from.
-          attribute :album_ids, API::Types::Coercible::Array
+          attribute :album_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
         end
       end
     end

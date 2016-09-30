@@ -32,13 +32,13 @@ module Vk
           # @return [String] Album description.
           attribute :description, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_view, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default([])
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy_comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default([])
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :upload_by_admins_only, API::Types::Bool.optional.default(nil)
+          attribute :upload_by_admins_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :comments_disabled, API::Types::Bool.optional.default(nil)
+          attribute :comments_disabled, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

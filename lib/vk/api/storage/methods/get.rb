@@ -24,7 +24,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :key, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :keys, API::Types::Coercible::Array.optional.default(nil)
+          attribute :keys, API::Types::Coercible::Array.member(API::Types::Coercible::String).constrained(max_size: 1000).optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
         end

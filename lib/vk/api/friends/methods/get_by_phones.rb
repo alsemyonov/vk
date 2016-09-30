@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] List of phone numbers in MSISDN format (maximum 1000).; Example:; "+79219876543,+79111234567"
-          attribute :phones, API::Types::Coercible::Array.optional.default(nil)
+          attribute :phones, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online, counters'.;
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

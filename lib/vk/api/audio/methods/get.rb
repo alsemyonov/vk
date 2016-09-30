@@ -29,9 +29,9 @@ module Vk
           # @return [Integer] Audio album ID.
           attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the audio files to return.
-          attribute :audio_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :audio_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Boolean] '1' — to return information about users who uploaded audio files
-          attribute :need_user, API::Types::Bool.optional.default(nil)
+          attribute :need_user, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of audio files.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of audio files to return.

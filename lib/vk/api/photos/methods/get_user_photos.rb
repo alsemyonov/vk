@@ -28,9 +28,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of photos. By default, '0'.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of photos to return. Maximum value is 100.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Boolean] '1' — to return an additional 'likes' field; '0' — (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Sort order:; '1' — by date the tag was added in ascending order; '0' — by date the tag was added in descending order
           attribute :sort, API::Types::Coercible::String.optional.default(nil)
         end

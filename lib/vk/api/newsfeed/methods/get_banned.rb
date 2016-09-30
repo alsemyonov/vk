@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — return extra information about users and communities
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Profile fields to return.; ;
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String] Case for declension of user name and surname:; 'nom' — nominative (default); 'gen' — genitive ; 'dat' — dative; 'acc' — accusative ; 'ins' — instrumental ; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
+          attribute :name_case, API::Types::Coercible::String.enum("nom", "gen", "dat", "acc", "ins", "abl").optional.default(nil)
         end
       end
     end

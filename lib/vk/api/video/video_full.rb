@@ -46,9 +46,9 @@ module Vk
         # @return [Object] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :files, API::Types::Coercible::Hash.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
+        attribute :privacy_view, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
+        attribute :privacy_comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user can comment the video
         attribute :can_comment, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user can comment the video

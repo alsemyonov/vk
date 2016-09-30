@@ -26,9 +26,9 @@ module Vk
         # @return [Integer] Photos number
         attribute :size, API::Types::Coercible::Int
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :privacy_view, API::Types::Coercible::Array.optional.default(nil)
+        attribute :privacy_view, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :privacy_comment, API::Types::Coercible::Array.optional.default(nil)
+        attribute :privacy_comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [API::Base::BoolInt] Information whether only community administrators can upload photos
         attribute :upload_by_admins_only, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether album comments are disabled

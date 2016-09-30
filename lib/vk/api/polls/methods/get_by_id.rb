@@ -24,7 +24,7 @@ module Vk
           # @return [Integer] ID of the user or community that owns the poll. Use a negative value to designate a community ID.
           attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' – poll is in a board, '0' – poll is on a wall. ; '0' by default.
-          attribute :is_board, API::Types::Bool.optional.default(nil)
+          attribute :is_board, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Poll ID.
           attribute :poll_id, API::Types::Coercible::Int
         end

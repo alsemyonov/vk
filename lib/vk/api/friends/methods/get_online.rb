@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] Friend list ID. If this parameter is not set, information about all online friends is returned.
           attribute :list_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return an additional 'online_mobile' field; '0' — (default);
-          attribute :online_mobile, API::Types::Bool.optional.default(nil)
+          attribute :online_mobile, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Sort order:; 'random' — random order
           attribute :order, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of friends to return.

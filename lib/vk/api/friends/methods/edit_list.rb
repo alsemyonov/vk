@@ -28,11 +28,11 @@ module Vk
           # @return [Integer] Friend list ID.
           attribute :list_id, API::Types::Coercible::Int
           # @return [Array] IDs of users in the friend list.
-          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Array] (Applies if 'user_ids' parameter is not set.); User IDs to add to the friend list.
-          attribute :add_user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :add_user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Array] (Applies if 'user_ids' parameter is not set.); User IDs to delete from the friend list.
-          attribute :delete_user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :delete_user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
         end
       end
     end

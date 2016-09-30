@@ -29,7 +29,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :period, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(10)
         end
       end
     end

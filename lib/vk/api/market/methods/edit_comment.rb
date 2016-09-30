@@ -29,7 +29,7 @@ module Vk
           # @return [String] New comment text (required if 'attachments' are not specified); ; 2048 symbols maximum.
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Comma-separated list of objects attached to a comment. The field is submitted the following way: ; "'<owner_id>_<media_id>,<owner_id>_<media_id>'"; ; '' - media attachment type:; "'photo' - photo; 'video' - video; 'audio' - audio; 'doc' - document"; ; '<owner_id>' - media owner id; '<media_id>' - media attachment id; ; For example:; "photo100172_166443618,photo66748_265827614";
-          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
+          attribute :attachments, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

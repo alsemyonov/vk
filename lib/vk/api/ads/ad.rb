@@ -14,7 +14,7 @@ module Vk
         # @return [Integer] Ad format
         attribute :ad_format, API::Types::Coercible::Int
         # @return [Integer] Cost type
-        attribute :cost_type, API::Types::Coercible::Int
+        attribute :cost_type, API::Types::Coercible::Int.enum(0, 1)
         # @return [Integer] Cost of a click, kopecks
         attribute :cpc, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Cost of 1000 impressions, kopecks
@@ -32,11 +32,11 @@ module Vk
         # @return [Integer] Additional category ID
         attribute :category2_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Ad atatus
-        attribute :status, API::Types::Coercible::Int
+        attribute :status, API::Types::Coercible::Int.enum(0, 1, 2)
         # @return [String] Ad title
         attribute :name, API::Types::Coercible::String
         # @return [Integer] Review status
-        attribute :approved, API::Types::Coercible::Int
+        attribute :approved, API::Types::Coercible::Int.enum(0, 1, 2, 3)
         # @return [API::Base::BoolInt] Information whether the ad is a video
         attribute :video, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether disclaimer is enabled

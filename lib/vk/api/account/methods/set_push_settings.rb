@@ -29,7 +29,7 @@ module Vk
           # @return [String] Notification key.
           attribute :key, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] New value for the key in a .
-          attribute :value, API::Types::Coercible::Array.optional.default(nil)
+          attribute :value, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

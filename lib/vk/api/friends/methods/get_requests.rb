@@ -30,15 +30,15 @@ module Vk
           # @return [Integer] Number of friend requests to return (default 100, maximum 1000).
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return response messages from users who have sent a friend request or, if 'suggested' is set to '1', to return a list of suggested friends
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return a list of mutual friends (up to 20), if any
-          attribute :need_mutual, API::Types::Bool.optional.default(nil)
+          attribute :need_mutual, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return outgoing requests; '0' — to return incoming requests (default)
-          attribute :out, API::Types::Bool.optional.default(nil)
+          attribute :out, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Sort order:; '1' — by number of mutual friends; '0' — by date
           attribute :sort, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return a list of suggested friends; '0' — to return friend requests (default)
-          attribute :suggested, API::Types::Bool.optional.default(nil)
+          attribute :suggested, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

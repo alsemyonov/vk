@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] 'Only for advertising agencies.'; ID of the client with the advertising account where the group will be created.;
           attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return pixel code.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

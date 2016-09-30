@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class AddResponse < Vk::Schema::Response
           # @return [Integer] Friend request status
-          attribute :response, API::Types::Coercible::Int.optional.default(nil)
+          attribute :response, API::Types::Coercible::Int.enum(1, 2, 4).optional.default(nil)
         end
       end
     end

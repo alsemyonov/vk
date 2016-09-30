@@ -41,9 +41,9 @@ module Vk
           # @return [String] User's password (minimum of 6 characters). Can be specified later with the  method.
           attribute :password, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — test mode, in which the user will not be registered and the phone number will not be checked for availability; '0' — default mode (default)
-          attribute :test_mode, API::Types::Bool.optional.default(nil)
+          attribute :test_mode, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — call the phone number and leave a voice message of the authorization code; '0' — send the code by SMS (default)
-          attribute :voice, API::Types::Bool.optional.default(nil)
+          attribute :voice, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] '1' — female; '2' — male
           attribute :sex, API::Types::Coercible::Int.optional.default(nil)
           # @return [String] Session ID required for method recall when SMS was not delivered.

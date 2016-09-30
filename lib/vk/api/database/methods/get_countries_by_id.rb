@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Country IDs.
-          attribute :country_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :country_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 1000).optional.default(nil)
         end
       end
     end

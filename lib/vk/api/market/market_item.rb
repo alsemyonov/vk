@@ -24,7 +24,7 @@ module Vk
         # @return [String] URL of the preview image
         attribute :thumb_photo, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Information whether the item is available
-        attribute :availability, API::Types::Coercible::Int
+        attribute :availability, API::Types::Coercible::Int.enum(0, 1, 2)
       end
     end
   end

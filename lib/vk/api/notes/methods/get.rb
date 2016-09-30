@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Note IDs.
-          attribute :note_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :note_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Integer] Note owner ID.
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of notes to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
         end
       end
     end

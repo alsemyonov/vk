@@ -25,11 +25,11 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — to return outgoing messages; '0' — to return incoming messages (default)
-          attribute :out, API::Types::Bool.optional.default(nil)
+          attribute :out, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of messages.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of messages to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Integer] Maximum time since a message was sent, in seconds. To return messages without a time limitation, set as '0'.
           attribute :time_offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of characters after which to truncate a previewed message. To preview the full message, specify '0'.; "NOTE: Messages are not truncated by default. Messages are truncated by words."

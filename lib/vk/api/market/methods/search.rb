@@ -36,15 +36,15 @@ module Vk
           # @return [Integer] Maximum item price value.
           attribute :price_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Comma-separated tag IDs list.
-          attribute :tags, API::Types::Coercible::Array.optional.default(nil)
+          attribute :tags, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Integer] '0' — do not use reverse order, '1' — use reverse order
-          attribute :rev, API::Types::Coercible::Int.optional.default(nil)
+          attribute :rev, API::Types::Coercible::Int.enum(0, 1).optional.default(1)
           # @return [Integer] Offset needed to return a specific subset of results.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of items to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Boolean] '1' – to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(false)
         end
       end
     end

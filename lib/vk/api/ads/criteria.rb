@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class Criteria < Vk::Schema::Object
         # @return [Integer] Sex
-        attribute :sex, API::Types::Coercible::Int.optional.default(nil)
+        attribute :sex, API::Types::Coercible::Int.enum(0, 1, 2).optional.default(nil)
         # @return [Integer] Age from
         attribute :age_from, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Age to

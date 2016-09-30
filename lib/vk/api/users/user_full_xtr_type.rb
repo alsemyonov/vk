@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UserFullXtrType < API::Users::UserFull
         # @return [String] Object type
-        attribute :type, API::Types::Coercible::String.optional.default(nil)
+        attribute :type, API::Types::Coercible::String.enum("profile").optional.default(nil)
       end
     end
   end

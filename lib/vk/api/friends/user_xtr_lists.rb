@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class UserXtrLists < API::Users::UserFull
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :lists, API::Types::Coercible::Array.optional.default(nil)
+        attribute :lists, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
       end
     end
   end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Location IDs.
-          attribute :places, API::Types::Coercible::Array
+          attribute :places, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
         end
       end
     end

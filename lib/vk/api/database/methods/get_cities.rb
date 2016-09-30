@@ -31,11 +31,11 @@ module Vk
           # @return [String] Search query.
           attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to return all cities in the country; '0' — to return major cities in the country (default);
-          attribute :need_all, API::Types::Bool.optional.default(nil)
+          attribute :need_all, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of cities.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of cities to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

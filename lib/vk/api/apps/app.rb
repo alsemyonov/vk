@@ -30,7 +30,7 @@ module Vk
         # @return [String] URL of the app banner with 896 px in width
         attribute :banner_896, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Application type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("app", "game", "site", "standalone")
         # @return [String] Application section name
         attribute :section, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Application author's URL
@@ -50,7 +50,7 @@ module Vk
         # @return [Integer] Information whether the application is multilanguage
         attribute :international, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Leaderboard type
-        attribute :leaderboard_type, API::Types::Coercible::Int.optional.default(nil)
+        attribute :leaderboard_type, API::Types::Coercible::Int.enum(0, 1, 2).optional.default(nil)
         # @return [Integer] Genre ID
         attribute :genre_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Genre name

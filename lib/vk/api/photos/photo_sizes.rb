@@ -14,7 +14,7 @@ module Vk
         # @return [Integer] Height in px
         attribute :height, API::Types::Coercible::Int
         # @return [String] Size type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("s", "m", "x", "o", "p", "q", "r", "y", "z", "w")
       end
     end
   end

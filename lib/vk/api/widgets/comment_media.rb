@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class CommentMedia < Vk::Schema::Object
         # @return [String] Media type
-        attribute :type, API::Types::Coercible::String.optional.default(nil)
+        attribute :type, API::Types::Coercible::String.enum("audio", "photo", "video").optional.default(nil)
         # @return [Integer] Media owner's ID
         attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Media item ID

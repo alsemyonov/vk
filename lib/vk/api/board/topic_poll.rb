@@ -22,7 +22,7 @@ module Vk
         # @return [Integer] Current user's answer ID
         attribute :answer_id, API::Types::Coercible::Int
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :answers, API::Types::Coercible::Array
+        attribute :answers, API::Types::Coercible::Array.member(API::Types::Coercible::Hash)
       end
     end
   end

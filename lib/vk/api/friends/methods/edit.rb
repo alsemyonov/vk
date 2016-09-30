@@ -23,7 +23,7 @@ module Vk
           # @return [Integer] ID of the user whose friend list is to be edited.
           attribute :user_id, API::Types::Coercible::Int
           # @return [Array] IDs of the friend lists to which to add the user.
-          attribute :list_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :list_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
         end
       end
     end

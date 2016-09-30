@@ -30,9 +30,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of audio files.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of audio files to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
           # @return [Boolean] '1' — shuffle on
-          attribute :shuffle, API::Types::Bool.optional.default(nil)
+          attribute :shuffle, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

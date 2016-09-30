@@ -32,19 +32,19 @@ module Vk
           # @return [Integer] Poll ID.
           attribute :poll_id, API::Types::Coercible::Int
           # @return [Array] Answer IDs.
-          attribute :answer_ids, API::Types::Coercible::Array
+          attribute :answer_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :is_board, API::Types::Bool.optional.default(nil)
+          attribute :is_board, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return only current user's friends; '0' — to return all users (default);
-          attribute :friends_only, API::Types::Bool.optional.default(nil)
+          attribute :friends_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of voters.; '0' — (default)
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of user IDs to return (if the 'friends_only' parameter is not set, maximum '1000'; otherwise '10').; '100' — (default)
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array, 'sex'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate (birthdate)', 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.;
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String] Case for declension of user name and surname: ; 'nom' — nominative (default) ; 'gen' — genitive ; 'dat' — dative ; 'acc' — accusative ; 'ins' — instrumental ; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
+          attribute :name_case, API::Types::Coercible::String.enum("nom", "gen", "dat", "acc", "ins", "abl").optional.default(nil)
         end
       end
     end

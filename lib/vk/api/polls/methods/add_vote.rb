@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] Answer ID.
           attribute :answer_id, API::Types::Coercible::Int
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :is_board, API::Types::Bool.optional.default(nil)
+          attribute :is_board, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

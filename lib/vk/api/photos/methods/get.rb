@@ -33,17 +33,17 @@ module Vk
           # @return [String] Photo album ID. To return information about photos from service albums, use the following string values: 'profile, wall, saved'.
           attribute :album_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Photo IDs.
-          attribute :photo_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :photo_ids, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] Sort order:; '1' — reverse chronological; '0' — chronological
-          attribute :rev, API::Types::Bool.optional.default(nil)
+          attribute :rev, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return additional 'likes', 'comments', and 'tags' fields; '0' — (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Type of feed obtained in 'feed' field of the method.
           attribute :feed_type, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] unixtime, that can be obtained with  method in date field to get all photos uploaded by the user on a specific day, or photos the user has been tagged on. Also, 'uid' parameter of the user the event happened with shall be specified.
           attribute :feed, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return photo sizes in a
-          attribute :photo_sizes, API::Types::Bool.optional.default(nil)
+          attribute :photo_sizes, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

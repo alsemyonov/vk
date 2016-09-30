@@ -41,7 +41,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :foursquare_id, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :delete_place, API::Types::Bool.optional.default(nil)
+          attribute :delete_place, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

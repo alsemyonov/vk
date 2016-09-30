@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Array] List of contacts separated with commas
-          attribute :contacts, API::Types::Coercible::Array.optional.default(nil)
+          attribute :contacts, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String] String identifier of a service which contacts are used for searching. Possible values: ; * email; * phone; * twitter; * facebook; * odnoklassniki; * instagram; * google
           attribute :service, API::Types::Coercible::String
           # @return [String] Contact of a current user on a specified service
           attribute :mycontact, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' – also return contacts found using this service before, '0' – return only contacts found using 'contacts' field.
-          attribute :return_all, API::Types::Bool.optional.default(nil)
+          attribute :return_all, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Profile fields to return. Possible values: 'nickname, domain, sex, bdate, city, country, timezone, photo_50, photo_100, photo_200_orig, has_mobile, contacts, education, online, relation, last_seen, status, can_write_private_message, can_see_all_posts, can_post, universities'.
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

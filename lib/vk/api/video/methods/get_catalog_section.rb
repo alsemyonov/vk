@@ -26,7 +26,7 @@ module Vk
           # @return [String] 'next' value returned with a block by the '' method.
           attribute :from, API::Types::Coercible::String
           # @return [Integer] number of blocks to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(10)
         end
       end
     end

@@ -27,7 +27,7 @@ module Vk
           # @return [Integer] 'For advertising agencies'. ID of the client advertising campaigns are retrieved from.
           attribute :client_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Flag that specifies whether archived ads shall be shown.; *0 — show only active campaigns;; *1 — show all campaigns.;
-          attribute :include_deleted, API::Types::Bool.optional.default(nil)
+          attribute :include_deleted, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Filter of advertising campaigns to show. ; Serialized JSON array with campaign IDs. Only campaigns that exist in 'campaign_ids' and belong to the specified advertising account will be shown. If the parameter is null, all campaigns will be shown.;
           attribute :campaign_ids, API::Types::Coercible::String.optional.default(nil)
         end

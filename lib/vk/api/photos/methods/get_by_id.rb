@@ -22,11 +22,11 @@ module Vk
           # @!group Arguments
 
           # @return [Array] IDs separated with a comma, that are IDs of users who posted photos and IDs of photos themselves with an underscore character between such IDs. To get information about a photo in the group album, you shall specify group ID instead of user ID. Example:; "1_129207899,6492_135055734, ; -20629724_271945303"
-          attribute :photos, API::Types::Coercible::Array
+          attribute :photos, API::Types::Coercible::Array.member(API::Types::Coercible::String)
           # @return [Boolean] '1' — to return additional fields; '0' — (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return photo sizes in a
-          attribute :photo_sizes, API::Types::Bool.optional.default(nil)
+          attribute :photo_sizes, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

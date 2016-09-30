@@ -29,19 +29,19 @@ module Vk
           # @return [String] Search query string (e.g., 'The Beatles').
           attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to correct for mistakes in the search query (e.g., if you enter 'Beetles', the system will search for 'Beatles').
-          attribute :auto_complete, API::Types::Bool.optional.default(nil)
+          attribute :auto_complete, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return only audio files that have associated lyrics.
-          attribute :lyrics, API::Types::Bool.optional.default(nil)
+          attribute :lyrics, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to search only by artist name.
-          attribute :performer_only, API::Types::Bool.optional.default(nil)
+          attribute :performer_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Sort order: ; '1' — by duration;; '2' — by popularity;; '0' — by date added.
-          attribute :sort, API::Types::Coercible::Int.optional.default(nil)
+          attribute :sort, API::Types::Coercible::Int.enum(0, 1, 2).optional.default(nil)
           # @return [Boolean] '1' — to search among current user's audios. By default: '0'.
-          attribute :search_own, API::Types::Bool.optional.default(nil)
+          attribute :search_own, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of audio files.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of audio files to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(30)
         end
       end
     end

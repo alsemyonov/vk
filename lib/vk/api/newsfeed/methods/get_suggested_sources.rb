@@ -25,11 +25,11 @@ module Vk
           # @return [Integer] offset required to choose a particular subset of communities or users.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] amount of communities or users to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Boolean] shuffle the returned list or not.
-          attribute :shuffle, API::Types::Bool.optional.default(nil)
+          attribute :shuffle, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] list of extra fields to be returned. See  and .
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

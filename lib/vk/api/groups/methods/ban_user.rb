@@ -35,7 +35,7 @@ module Vk
           # @return [String] Text of comment to ban.
           attribute :comment, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — text of comment will be visible to the user;; '0' — text of comment will be invisible to the user. ; By default: '0'.
-          attribute :comment_visible, API::Types::Bool.optional.default(nil)
+          attribute :comment_visible, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

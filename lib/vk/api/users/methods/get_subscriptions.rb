@@ -26,13 +26,13 @@ module Vk
           # @return [Integer] User ID.
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return a combined list of users and communities; '0' — to return separate lists of users and communities (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of subscriptions.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of users and communities to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

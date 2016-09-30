@@ -10,7 +10,7 @@ module Vk
         # @return [Integer] User ID
         attribute :id, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] User's credentials as community admin
-        attribute :role, API::Types::Coercible::String.optional.default(nil)
+        attribute :role, API::Types::Coercible::String.enum("moderator", "editor", "administrator", "creator").optional.default(nil)
       end
     end
   end

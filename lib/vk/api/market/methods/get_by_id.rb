@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Comma-separated ids list: \$1user id\$1_\$1item id\$1.; If an item belongs to a community -\$1community id\$1 is used. ; " 'Videos' value example: ; '-4363_136089719,13245770_137352259'"
-          attribute :item_ids, API::Types::Coercible::Array
+          attribute :item_ids, API::Types::Coercible::Array.member(API::Types::Coercible::String).constrained(max_size: 100)
           # @return [Boolean] '1' – to return additional fields: 'likes, can_comment, car_repost, photos'. By default: '0'.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

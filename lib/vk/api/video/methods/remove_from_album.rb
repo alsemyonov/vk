@@ -28,7 +28,7 @@ module Vk
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :album_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :album_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :album_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :owner_id, API::Types::Coercible::Int
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

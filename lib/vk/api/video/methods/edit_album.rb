@@ -29,7 +29,7 @@ module Vk
           # @return [String] New album title.
           attribute :title, API::Types::Coercible::String
           # @return [Array] new access permissions for the album.; Possible values: ; *'0' – all users;; *'1' – friends only;; *'2' – friends and friends of friends;; *'3' – "only me".
-          attribute :privacy, API::Types::Coercible::Array.optional.default(nil)
+          attribute :privacy, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

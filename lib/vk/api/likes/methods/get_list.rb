@@ -39,15 +39,15 @@ module Vk
           # @return [String] Filters to apply:; 'likes' — returns information about all users who liked the object (default); 'copies' — returns information only about users who told their friends about the object
           attribute :filter, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] Specifies which users are returned:; '1' — to return only the current user's friends; '0' — to return all users (default)
-          attribute :friends_only, API::Types::Bool.optional.default(nil)
+          attribute :friends_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] Specifies whether extended information will be returned.; '1' — to return extended information about users and communities from the 'Likes' list; '0' — to return no additional information (default)
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Offset needed to select a specific subset of users.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of user IDs to return (maximum '1000').; Default is '100' if 'friends_only' is set to  '0'; otherwise, the default is '10' if 'friends_only' is set to '1'.;
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :skip_own, API::Types::Bool.optional.default(nil)
+          attribute :skip_own, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

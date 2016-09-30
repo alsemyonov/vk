@@ -25,11 +25,11 @@ module Vk
           # @return [String] Search query string.
           attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Maximum number of results to return.
-          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
+          attribute :limit, API::Types::Coercible::Int.optional.default(9)
           # @return [Array] 
-          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
+          attribute :filters, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] 
-          attribute :search_global, API::Types::Bool.optional.default(nil)
+          attribute :search_global, API::Types::Form::Bool.optional.default(true)
         end
       end
     end

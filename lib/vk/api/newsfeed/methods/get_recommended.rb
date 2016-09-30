@@ -35,7 +35,7 @@ module Vk
           # @return [Integer] Number of news items to return.
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Additional fields of  and  to return.
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

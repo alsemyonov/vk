@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] Target community ID when reposting to a community.
           attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :mark_as_ads, API::Types::Bool.optional.default(nil)
+          attribute :mark_as_ads, API::Types::Form::Bool.optional.default(false)
         end
       end
     end

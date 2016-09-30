@@ -27,9 +27,9 @@ module Vk
           # @return [Integer] User ID.
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] User IDs.
-          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Boolean] '1' — to return an extended response with additional fields.; By default: '0'.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

@@ -20,7 +20,7 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Number of results to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

@@ -58,9 +58,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of users.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of users to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online';
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Integer] City ID.
           attribute :city, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Country ID.
@@ -92,9 +92,9 @@ module Vk
           # @return [Integer] Year of birth.
           attribute :birth_year, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — online only; '0' — all users
-          attribute :online, API::Types::Bool.optional.default(nil)
+          attribute :online, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — with photo only; '0' — all users
-          attribute :has_photo, API::Types::Bool.optional.default(nil)
+          attribute :has_photo, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] ID of the country where users finished school.
           attribute :school_country, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] ID of the city where users finished school.
@@ -116,7 +116,7 @@ module Vk
           # @return [Integer] ID of a community to search in communities.
           attribute :group_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :from_list, API::Types::Coercible::Array.optional.default(nil)
+          attribute :from_list, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

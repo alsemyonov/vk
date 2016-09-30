@@ -24,9 +24,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of posts.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(50)
           # @return [Boolean] '1' — to return additional 'wall', 'profiles', and 'groups' fields.; ; By default: '0'.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

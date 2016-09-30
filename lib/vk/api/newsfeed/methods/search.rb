@@ -30,9 +30,9 @@ module Vk
           # @return [String] Search query string (e.g., 'New Year').
           attribute :q, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to return additional information about the user or community that placed the post.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Number of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(30)
           # @return [Number] Geographical latitude point (in degrees, -90 to 90) within which to search.;
           attribute :latitude, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical longitude point (in degrees, -180 to 180) within which to search.;
@@ -44,7 +44,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :start_from, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Additional fields of  and  to return.
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

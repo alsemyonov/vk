@@ -100,29 +100,29 @@ module Vk
           # @return [Integer] Audio settings. Possible values:; *'0' – disabled;; *'1' – open;; *'2' – limited (for groups and events only).
           attribute :audio, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Links settings (for public pages only). Possible values:; *'0' – disabled;; *'1' – enabled.;
-          attribute :links, API::Types::Bool.optional.default(nil)
+          attribute :links, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] Events settings (for public pages only). Possible values:; *'0' – disabled;; *'1' – enabled.;
-          attribute :events, API::Types::Bool.optional.default(nil)
+          attribute :events, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] Places settings (for public pages only). Possible values:; *'0' – disabled;; *'1' – enabled.;
-          attribute :places, API::Types::Bool.optional.default(nil)
+          attribute :places, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] Contacts settings (for public pages only). Possible values:; *'0' – disabled;; *'1' – enabled.;
-          attribute :contacts, API::Types::Bool.optional.default(nil)
+          attribute :contacts, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Documents settings. Possible values:; *'0' – disabled;; *'1' – open;; *'2' – limited (for groups and events only).
           attribute :docs, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Wiki pages settings. Possible values:; *'0' – disabled;; *'1' – open;; *'2' – limited (for groups and events only).
           attribute :wiki, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Community messages. Possible values:; *'0' — disabled;; *'1' — enabled.
-          attribute :messages, API::Types::Bool.optional.default(nil)
+          attribute :messages, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Community age limits. Possible values:; *'1' — no limits;; *'2' — 16+;; *'3' — 18+.
-          attribute :age_limits, API::Types::Coercible::Int.optional.default(nil)
+          attribute :age_limits, API::Types::Coercible::Int.enum(1, 2, 3).optional.default(2)
           # @return [Boolean] Market settings. Possible values:; *'0' – disabled;; *'1' – enabled.
-          attribute :market, API::Types::Bool.optional.default(nil)
+          attribute :market, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] market comments settings. Possible values:; *'0' – disabled;; *'1' – enabled.
-          attribute :market_comments, API::Types::Bool.optional.default(nil)
+          attribute :market_comments, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Market delivery countries.
-          attribute :market_country, API::Types::Coercible::Array.optional.default(nil)
+          attribute :market_country, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 10).optional.default(nil)
           # @return [Array] Market delivery cities (if only one country is specified).
-          attribute :market_city, API::Types::Coercible::Array.optional.default(nil)
+          attribute :market_city, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 10).optional.default(nil)
           # @return [Integer] Market currency settings. Possbile values: ; *'643' – Russian rubles;; *'980' – Ukrainian hryvnia;; *'398' – Kazakh tenge;; *'978' – Euro;; *'840' – US dollars
           attribute :market_currency, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Seller contact for market.; Set '0' for community messages.
@@ -130,11 +130,11 @@ module Vk
           # @return [Integer] ID of a wiki page with market description.
           attribute :market_wiki, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] Obscene expressions filter in comments. Possible values: ; *'0' – disabled;; *'1' – enabled.
-          attribute :obscene_filter, API::Types::Bool.optional.default(nil)
+          attribute :obscene_filter, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] Stopwords filter in comments. Possible values: ; *'0' – disabled;; *'1' – enabled.
-          attribute :obscene_stopwords, API::Types::Bool.optional.default(nil)
+          attribute :obscene_stopwords, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Keywords for stopwords filter.
-          attribute :obscene_words, API::Types::Coercible::Array.optional.default(nil)
+          attribute :obscene_words, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

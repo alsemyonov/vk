@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] filter by end date. It is set as UNIX-time.
           attribute :date_to, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] number of returned posts. By default — 1000.
-          attribute :limit, API::Types::Coercible::Int.optional.default(nil)
+          attribute :limit, API::Types::Coercible::Int.optional.default(1000)
         end
       end
     end

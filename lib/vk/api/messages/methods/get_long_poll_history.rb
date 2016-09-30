@@ -33,13 +33,13 @@ module Vk
           # @return [Integer] Number of characters after which to truncate a previewed message. To preview the full message, specify '0'.; "NOTE: Messages are not truncated by default. Messages are truncated by words."
           attribute :preview_length, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return history with online users only.
-          attribute :onlines, API::Types::Bool.optional.default(nil)
+          attribute :onlines, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] Additional  to return.
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default([])
           # @return [Integer] Maximum nimber of events to return.
-          attribute :events_limit, API::Types::Coercible::Int.optional.default(nil)
+          attribute :events_limit, API::Types::Coercible::Int.optional.default(1000)
           # @return [Integer] Maximum number of messages to return.
-          attribute :msgs_limit, API::Types::Coercible::Int.optional.default(nil)
+          attribute :msgs_limit, API::Types::Coercible::Int.optional.default(200)
           # @return [Integer] Maximum ID of the message among existing ones in the local copy. Both messages received with API methods (for example, , ), and data received from a Long Poll server (events with code 4) are taken into account.
           attribute :max_msg_id, API::Types::Coercible::Int.optional.default(nil)
         end

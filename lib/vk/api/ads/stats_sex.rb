@@ -12,7 +12,7 @@ module Vk
         # @return [Number] Clicks rate
         attribute :clicks_rate, API::Types::Coercible::Int.optional.default(nil)
         # @return [String] Sex
-        attribute :value, API::Types::Coercible::String.optional.default(nil)
+        attribute :value, API::Types::Coercible::String.enum("f", "m").optional.default(nil)
       end
     end
   end

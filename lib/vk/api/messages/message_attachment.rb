@@ -30,7 +30,7 @@ module Vk
         # @return [API::Wall::WallComment] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :wall_reply, Dry::Types[API::Wall::WallComment].optional.default(nil)
         # @return [String] Attachment type
-        attribute :type, API::Types::Coercible::String
+        attribute :type, API::Types::Coercible::String.enum("photo", "audio", "video", "doc", "link", "market", "market_market_album", "gift", "sticker", "wall", "wall_reply")
       end
     end
   end

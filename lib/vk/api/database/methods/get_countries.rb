@@ -23,13 +23,13 @@ module Vk
           # @!group Arguments
 
           # @return [Boolean] '1' — to return a full list of all countries; '0' — to return a list of countries near the current user's country (default).;
-          attribute :need_all, API::Types::Bool.optional.default(nil)
+          attribute :need_all, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Country codes in  standard.
           attribute :code, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of countries.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of countries to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

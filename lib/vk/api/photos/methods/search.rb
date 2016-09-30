@@ -42,9 +42,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of photos.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of photos to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
           # @return [Integer] Radius of search in meters (works very approximately). Available values: '10', '100', '800', '6000', '50000'.
-          attribute :radius, API::Types::Coercible::Int.optional.default(nil)
+          attribute :radius, API::Types::Coercible::Int.optional.default(5000)
         end
       end
     end

@@ -24,11 +24,11 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] Number of notifications to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(30)
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :start_from, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Type of notifications to return:; 'wall' — wall posts; 'mentions' — mentions in wall posts, comments, or topics; 'comments' — comments to wall posts, photos, and videos; 'likes'  — likes; 'reposted' — wall posts that are copied from the current user's wall; 'followers' — new followers; 'friends' — accepted friend requests
-          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
+          attribute :filters, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Integer] Earliest timestamp (in Unix time) of a notification to return. By default, 24 hours ago.
           attribute :start_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Latest timestamp (in Unix time) of a notification to return. By default, the current time.

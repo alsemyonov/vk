@@ -29,7 +29,7 @@ module Vk
           # @return [String] Document title.
           attribute :title, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] Document tags.
-          attribute :tags, API::Types::Coercible::Array.optional.default(nil)
+          attribute :tags, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

@@ -29,7 +29,7 @@ module Vk
           # @return [Integer] ID of the user whose friends will be checked against the friends of the user specified in 'source_uid'.
           attribute :target_uid, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of the users whose friends will be checked against the friends of the user specified in 'source_uid'.
-          attribute :target_uids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :target_uids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [String] Sort order:; 'random' — random order
           attribute :order, API::Types::Coercible::String.optional.default(nil)
           # @return [Integer] Number of mutual friends to return.

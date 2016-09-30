@@ -24,15 +24,15 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Types of potential friends to return:; 'mutual' — users with many mutual friends ; 'contacts' — users found with the  method; 'mutual_contacts' — users who imported the same contacts as the current user with the  method
-          attribute :filter, API::Types::Coercible::Array.optional.default(nil)
+          attribute :filter, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Integer] Number of suggestions to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(500)
           # @return [Integer] Offset needed to return a specific subset of suggestions.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array, 'bdate'] Profile fields to return. Sample values: 'nickname', 'screen_name', 'sex', 'bdate' (birthdate), 'city', 'country', 'timezone', 'photo', 'photo_medium', 'photo_big', 'has_mobile', 'rate', 'contacts', 'education', 'online', 'counters'.;
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String] Case for declension of user name and surname: ; 'nom' — nominative (default) ; 'gen' — genitive ; 'dat' — dative ; 'acc' — accusative ; 'ins' — instrumental ; 'abl' — prepositional
-          attribute :name_case, API::Types::Coercible::String.optional.default(nil)
+          attribute :name_case, API::Types::Coercible::String.enum("nom", "gen", "dat", "acc", "ins", "abl").optional.default(nil)
         end
       end
     end

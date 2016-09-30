@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] Item ID.
           attribute :item_id, API::Types::Coercible::Int
           # @return [Integer] Complaint reason. Possible values:; *'0' — spam;; *'1' — child porn;; *'2' — extremism;; *'3' — violence;; *'4' — drugs propaganda;; *'5' — adult materials;; *'6' — insult.
-          attribute :reason, API::Types::Coercible::Int
+          attribute :reason, API::Types::Coercible::Int.enum(0, 1, 2, 3, 4, 5, 6)
         end
       end
     end

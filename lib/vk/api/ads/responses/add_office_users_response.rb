@@ -8,7 +8,7 @@ module Vk
         # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         class AddOfficeUsersResponse < Vk::Schema::Response
           # @return [Boolean] true if success
-          attribute :response, API::Types::Bool.optional.default(nil)
+          attribute :response, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

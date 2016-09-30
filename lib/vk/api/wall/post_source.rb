@@ -8,7 +8,7 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class PostSource < Vk::Schema::Object
         # @return [String] Type of post source
-        attribute :type, API::Types::Coercible::String.optional.default(nil)
+        attribute :type, API::Types::Coercible::String.enum("vk", "widget", "api", "rss", "sms").optional.default(nil)
         # @return [String] Platform name
         attribute :platform, API::Types::Coercible::String.optional.default(nil)
         # @return [String] Additional data

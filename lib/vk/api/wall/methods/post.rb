@@ -35,17 +35,17 @@ module Vk
           # @return [Integer] User ID or community ID. Use a negative value to designate a community ID.
           attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — post will be available to friends only; '0' — post will be available to all users (default)
-          attribute :friends_only, API::Types::Bool.optional.default(nil)
+          attribute :friends_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] For a community:; '1' — post will be published by the community; '0' — post will be published by the user (default)
-          attribute :from_group, API::Types::Bool.optional.default(nil)
+          attribute :from_group, API::Types::Form::Bool.optional.default(nil)
           # @return [String] (Required if 'attachments' is not set.) Text of the post.
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Array] (Required if 'message' is not set.) List of objects attached to the post, in the following format:; "<owner_id>_<media_id>,<owner_id>_<media_id>"; '' — Type of media attachment:; 'photo' — photo; 'video' — video; 'audio' — audio; 'doc' — document; 'page' — wiki-page; 'note' — note; 'poll' — poll; 'album' — photo album; '<owner_id>' — ID of the media application owner. ; '<media_id>' — Media application ID.; ; Example:; "photo100172_166443618,photo66748_265827614"; May contain a link to an external page to include in the post. Example:; "photo66748_265827614,http://habrahabr.ru"; "NOTE: If more than one link is being attached, an error will be thrown."
-          attribute :attachments, API::Types::Coercible::Array.optional.default(nil)
+          attribute :attachments, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [String, 'facebook'] List of services or websites the update will be exported to, if the user has so requested. Sample values: 'twitter', 'facebook'.
           attribute :services, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] Only for posts in communities with 'from_group' set to '1':; '1' — post will be signed with the name of the posting user; '0' — post will not be signed (default)
-          attribute :signed, API::Types::Bool.optional.default(nil)
+          attribute :signed, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Publication date (in Unix time). If used, posting will be delayed until the set time.
           attribute :publish_date, API::Types::Coercible::Int.optional.default(nil)
           # @return [Number] Geographical latitude of a check-in, in degrees (from -90 to 90).
@@ -59,7 +59,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :guid, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :mark_as_ads, API::Types::Bool.optional.default(nil)
+          attribute :mark_as_ads, API::Types::Form::Bool.optional.default(false)
         end
       end
     end

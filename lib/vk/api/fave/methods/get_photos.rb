@@ -24,9 +24,9 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of photos.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of photos to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(50)
           # @return [Boolean] '1' — to return photo sizes in a .
-          attribute :photo_sizes, API::Types::Bool.optional.default(nil)
+          attribute :photo_sizes, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

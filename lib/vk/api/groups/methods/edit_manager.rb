@@ -32,7 +32,7 @@ module Vk
           # @return [String] Manager role. Possible values:; *'moderator';; *'editor';; *'administrator'.
           attribute :role, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' — to show the manager in Contacts block of the community.
-          attribute :is_contact, API::Types::Bool.optional.default(nil)
+          attribute :is_contact, API::Types::Form::Bool.optional.default(nil)
           # @return [String] Position to show in Contacts block.
           attribute :contact_position, API::Types::Coercible::String.optional.default(nil)
           # @return [String] Contact phone.

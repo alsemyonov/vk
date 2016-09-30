@@ -26,7 +26,7 @@ module Vk
           # @return [Integer] offset required to get a certain subset of chairs
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] amount of chairs to get
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

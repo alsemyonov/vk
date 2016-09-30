@@ -26,7 +26,7 @@ module Vk
           # @return [String] Text of the message (up to 500 characters) for the friend request, if any.
           attribute :text, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' to pass an incoming request to followers list.
-          attribute :follow, API::Types::Bool.optional.default(nil)
+          attribute :follow, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

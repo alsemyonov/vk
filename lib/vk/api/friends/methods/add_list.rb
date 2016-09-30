@@ -23,7 +23,7 @@ module Vk
           # @return [String] Name of the friend list.
           attribute :name, API::Types::Coercible::String
           # @return [Array] IDs of users to be added to the friend list.;
-          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
         end
       end
     end

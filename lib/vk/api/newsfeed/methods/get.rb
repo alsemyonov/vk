@@ -28,9 +28,9 @@ module Vk
           # @!group Arguments
 
           # @return [Array] Filters to apply:; 'post' — new wall posts; 'photo' — new photos; 'photo_tag' — new photo tags; 'wall_photo' — new wall photos; 'friend' — new friends; 'note' — new notes
-          attribute :filters, API::Types::Coercible::Array.optional.default(nil)
+          attribute :filters, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
           # @return [Boolean] '1' — to return news items from banned sources
-          attribute :return_banned, API::Types::Bool.optional.default(nil)
+          attribute :return_banned, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Earliest timestamp (in Unix time) of a news item to return. By default, 24 hours ago.
           attribute :start_time, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Latest timestamp (in Unix time) of a news item to return. By default, the current time.
@@ -44,7 +44,7 @@ module Vk
           # @return [Integer] Number of news items to return (default 50; maximum 100). For auto feed, you can use the 'new_offset' parameter returned by this method.
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Additional fields of  and  to return.
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

@@ -23,7 +23,7 @@ module Vk
           # @return [Integer] user id, whose variables names are returned if they were requested with a server method.
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] amount of variable names the info needs to be collected from.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
         end
       end
     end

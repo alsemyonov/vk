@@ -32,13 +32,13 @@ module Vk
           # @return [String] search query string.
           attribute :query, API::Types::Coercible::String.optional.default(nil)
           # @return [Boolean] '1' – returns only page owner's posts.
-          attribute :owners_only, API::Types::Bool.optional.default(nil)
+          attribute :owners_only, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] count of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
           # @return [Boolean] show extended post info.
-          attribute :extended, API::Types::Bool.optional.default(nil)
+          attribute :extended, API::Types::Form::Bool.optional.default(nil)
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :fields, API::Types::Coercible::Array.optional.default(nil)
+          attribute :fields, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         end
       end
     end

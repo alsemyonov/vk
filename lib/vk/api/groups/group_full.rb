@@ -10,7 +10,7 @@ module Vk
         # @return [API::Groups::MarketInfo] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :market, Dry::Types[API::Groups::MarketInfo].optional.default(nil)
         # @return [Integer] Current user's member status
-        attribute :member_status, API::Types::Coercible::Int.optional.default(nil)
+        attribute :member_status, API::Types::Coercible::Int.enum(0, 1, 2, 3, 4, 5).optional.default(nil)
         # @return [API::Base::BoolInt] Information whether community is in faves
         attribute :is_favorite, API::Base::BoolInt.optional.default(nil)
         # @return [API::Base::BoolInt] Information whether current user is subscribed
@@ -52,7 +52,7 @@ module Vk
         # @return [String] Community's website
         attribute :site, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Main section of community
-        attribute :main_section, API::Types::Coercible::Int.optional.default(nil)
+        attribute :main_section, API::Types::Coercible::Int.enum(0, 1, 2, 3, 4, 5).optional.default(nil)
         # @return [Integer] Information whether current user can send a message to community
         attribute :can_message, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Start date of event in Unixtime
@@ -62,7 +62,7 @@ module Vk
         # @return [String] Information whether community is banned
         attribute :deactivated, API::Types::Coercible::String.optional.default(nil)
         # @return [Integer] Information whether age limit
-        attribute :age_limits, API::Types::Coercible::Int.optional.default(nil)
+        attribute :age_limits, API::Types::Coercible::Int.enum(1, 2, 3).optional.default(nil)
       end
     end
   end

@@ -29,7 +29,7 @@ module Vk
           # @return [String] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :client_secret, API::Types::Coercible::String
           # @return [Boolean] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :auth_by_phone, API::Types::Bool.optional.default(nil)
+          attribute :auth_by_phone, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

@@ -42,7 +42,7 @@ module Vk
           # @return [Integer] ID of conversation the message will relate to.
           attribute :chat_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] IDs of message recipients (if new conversation shall be started).
-          attribute :user_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :user_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [String] (Required if 'attachments' is not set.) Text of the message.
           attribute :message, API::Types::Coercible::String.optional.default(nil)
           # @return [Number] Geographical latitude of a check-in, in degrees (from -90 to 90).
@@ -56,7 +56,7 @@ module Vk
           # @return [Integer] Sticker id.
           attribute :sticker_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' if the message is a notification (for community messages).
-          attribute :notification, API::Types::Bool.optional.default(nil)
+          attribute :notification, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

@@ -21,9 +21,9 @@ module Vk
           # @!group Arguments
 
           # @return [Integer] number of returned orders.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(100)
           # @return [Boolean] if this parameter is set to 1, this method returns a list of test mode orders. By default — 0.
-          attribute :test_mode, API::Types::Bool.optional.default(nil)
+          attribute :test_mode, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

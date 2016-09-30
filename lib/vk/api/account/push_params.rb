@@ -8,9 +8,9 @@ module Vk
       # @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
       class PushParams < Vk::Schema::Object
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :msg, API::Types::Coercible::Array.optional.default(nil)
+        attribute :msg, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :chat, API::Types::Coercible::Array.optional.default(nil)
+        attribute :chat, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :friend, API::Types::Coercible::Array.member(API::Account::OnoffOptions).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
@@ -20,13 +20,13 @@ module Vk
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :reply, API::Types::Coercible::Array.member(API::Account::OnoffOptions).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :comment, API::Types::Coercible::Array.optional.default(nil)
+        attribute :comment, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :mention, API::Types::Coercible::Array.optional.default(nil)
+        attribute :mention, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :like, API::Types::Coercible::Array.optional.default(nil)
+        attribute :like, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :repost, API::Types::Coercible::Array.optional.default(nil)
+        attribute :repost, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :wall_post, API::Types::Coercible::Array.member(API::Account::OnoffOptions).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
@@ -38,7 +38,7 @@ module Vk
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :event_soon, API::Types::Coercible::Array.member(API::Account::OnoffOptions).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :photos_tag, API::Types::Coercible::Array.optional.default(nil)
+        attribute :photos_tag, API::Types::Coercible::Array.member(API::Types::Coercible::String).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :app_request, API::Types::Coercible::Array.member(API::Account::OnoffOptions).optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json

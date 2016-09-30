@@ -28,17 +28,17 @@ module Vk
           # @return [Integer] ID of the user or community that owns the albums.
           attribute :owner_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Array] Album IDs.
-          attribute :album_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :album_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
           # @return [Integer] Offset needed to return a specific subset of albums.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of albums to return.
           attribute :count, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return system albums with negative IDs
-          attribute :need_system, API::Types::Bool.optional.default(nil)
+          attribute :need_system, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return an additional 'thumb_src' field; '0' — (default)
-          attribute :need_covers, API::Types::Bool.optional.default(nil)
+          attribute :need_covers, API::Types::Form::Bool.optional.default(nil)
           # @return [Boolean] '1' — to return photo sizes in a
-          attribute :photo_sizes, API::Types::Bool.optional.default(nil)
+          attribute :photo_sizes, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

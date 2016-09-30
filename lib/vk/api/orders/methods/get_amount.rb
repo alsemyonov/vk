@@ -23,7 +23,7 @@ module Vk
           # @return [Integer] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
           attribute :user_id, API::Types::Coercible::Int
           # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-          attribute :votes, API::Types::Coercible::Array
+          attribute :votes, API::Types::Coercible::Array.member(API::Types::Coercible::String).constrained(max_size: 100)
         end
       end
     end

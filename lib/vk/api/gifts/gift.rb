@@ -18,7 +18,7 @@ module Vk
         # @return [API::Gifts::Layout] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
         attribute :gift, Dry::Types[API::Gifts::Layout].optional.default(nil)
         # @return [Integer] Gift privacy
-        attribute :privacy, API::Types::Coercible::Int.optional.default(nil)
+        attribute :privacy, API::Types::Coercible::Int.enum(0, 1, 2).optional.default(nil)
         # @return [String] Hash
         attribute :gift_hash, API::Types::Coercible::String.optional.default(nil)
       end

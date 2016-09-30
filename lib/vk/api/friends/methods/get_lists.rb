@@ -23,7 +23,7 @@ module Vk
           # @return [Integer] User ID.
           attribute :user_id, API::Types::Coercible::Int.optional.default(nil)
           # @return [Boolean] '1' — to return system friend lists. By default: '0'.
-          attribute :return_system, API::Types::Bool.optional.default(nil)
+          attribute :return_system, API::Types::Form::Bool.optional.default(nil)
         end
       end
     end

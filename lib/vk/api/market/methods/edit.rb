@@ -40,11 +40,11 @@ module Vk
           # @return [Number] Item price.
           attribute :price, API::Types::Coercible::Int
           # @return [Boolean] Item status ('1' — deleted, '0' — not deleted).
-          attribute :deleted, API::Types::Bool.optional.default(nil)
+          attribute :deleted, API::Types::Form::Bool.optional.default(nil)
           # @return [Integer] Cover photo ID.
           attribute :main_photo_id, API::Types::Coercible::Int
           # @return [Array] IDs of additional photos.
-          attribute :photo_ids, API::Types::Coercible::Array.optional.default(nil)
+          attribute :photo_ids, API::Types::Coercible::Array.member(API::Types::Coercible::Int).constrained(max_size: 4).optional.default(nil)
         end
       end
     end

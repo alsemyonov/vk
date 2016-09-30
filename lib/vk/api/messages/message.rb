@@ -18,9 +18,9 @@ module Vk
         # @return [Integer] ID used for sending messages. It returned only for outgoing messages
         attribute :random_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Boolean] Is it an important message
-        attribute :important, API::Types::Bool.optional.default(nil)
+        attribute :important, API::Types::Form::Bool.optional.default(nil)
         # @return [Boolean] Is it an deleted message
-        attribute :deleted, API::Types::Bool.optional.default(nil)
+        attribute :deleted, API::Types::Form::Bool.optional.default(nil)
         # @return [Array] Forwarded messages
         attribute :fwd_messages, API::Types::Coercible::Array.member(API::Messages::Message).optional.default(nil)
         # @return [API::Base::BoolInt] Information whether the messages is read
@@ -34,7 +34,7 @@ module Vk
         # @return [Integer] Chat ID
         attribute :chat_id, API::Types::Coercible::Int.optional.default(nil)
         # @return [Array] @see https://github.com/VKCOM/vk-api-schema/blob/master/objects.json
-        attribute :chat_active, API::Types::Coercible::Array.optional.default(nil)
+        attribute :chat_active, API::Types::Coercible::Array.member(API::Types::Coercible::Int).optional.default(nil)
         # @return [Integer] Chat users number
         attribute :users_count, API::Types::Coercible::Int.optional.default(nil)
         # @return [Integer] Chat administrator ID

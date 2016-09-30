@@ -32,7 +32,7 @@ module Vk
           # @return [Integer] Offset needed to return a specific subset of posts.
           attribute :offset, API::Types::Coercible::Int.optional.default(nil)
           # @return [Integer] Number of posts to return.
-          attribute :count, API::Types::Coercible::Int.optional.default(nil)
+          attribute :count, API::Types::Coercible::Int.optional.default(20)
         end
       end
     end
