@@ -48,7 +48,7 @@ module Vk
                  else
                    puts "Unknown definition: #{definition.inspect}"
                  end
-          type += '.optional' unless object.required_attribute?(@name)
+          type += '.optional.default(nil)' unless object.required_attribute?(@name)
           type
         end
 

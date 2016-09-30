@@ -7,7 +7,7 @@ module Vk
   class Schema
     # @abstract
     class Method < Dry::Struct
-      constructor_type :schema
+      constructor_type :strict_with_defaults
 
       class << self
         # @return [Boolean]
@@ -25,6 +25,12 @@ module Vk
       # @return [Hash]
       def call(client)
         client.request(method, to_hash).deep_symbolize_keys
+      end
+
+      def to_hash
+        super.each_with_object({}) do |(key, value), memo|
+          memo[key] = value unless value.nil?
+        end
       end
     end
   end

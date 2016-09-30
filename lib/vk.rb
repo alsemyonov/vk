@@ -6,6 +6,7 @@ require 'vk/version'
 # Module enclosing vk.com API client & related objects
 module Vk
   autoload :Access, 'vk/access'
+  autoload :API, 'vk/api'
   autoload :Client, 'vk/client'
   autoload :Error, 'vk/error'
   autoload :Logging, 'vk/logging'

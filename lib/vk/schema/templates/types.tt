@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'vk/schema'
+require 'vk/api'
 require 'dry-types'
 require 'vk/schema/namespace'
 
