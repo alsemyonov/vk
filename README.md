@@ -25,7 +25,7 @@ gem install vk
 
 ```ruby
 Vk.app_id = 12345
-Vk.app_secret = 'secret'
+Vk.client.access_token = 'secret token'
 ```
 
 ### Basic usage
